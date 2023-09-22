@@ -129,66 +129,9 @@ export default async function HomePage() {
                         <DrawerContent className="px-0">
                             <DrawerTitle className="px-4">Projects</DrawerTitle>
                             <DrawerDescription className="px-4">
-                                Find my best personal projects below. WIP
+                                Find my best personal projects below.{" "}
+                                <span className="opacity-50">—&nbsp;Click to expand</span> WIP
                             </DrawerDescription>
-                            <div className="mt-6 flex w-full flex-col space-y-4 md:space-y-16">
-                                <div className="grid grid-cols-4 gap-4 md:grid-cols-1 md:gap-x-0">
-                                    <div className="relative col-span-1 flex flex-col overflow-hidden md:col-span-full md:row-span-full md:w-full md:py-4">
-                                        <div className="absolute inset-0 hidden bg-neutral-200 object-cover md:block"></div>
-                                        <div className="z-10 ml-4 aspect-square h-full max-h-20 w-auto max-w-[80px] rounded-md bg-neutral-300" />
-                                    </div>
-                                    <div className="col-span-3 flex w-full flex-col space-y-0.5 pr-4 md:pl-4">
-                                        <h3 className="text-sm font-medium text-foreground">
-                                            Project
-                                        </h3>
-                                        <p className="text-xs text-muted-foreground">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                                            elit. Quo laborum veniam at nostrum quia tenetur magnam
-                                            quasi vitae.
-                                        </p>
-                                        <div className="flex items-center space-x-4">
-                                            <span className="truncate text-xs text-muted-foreground">
-                                                Next.js • Prisma • AWS
-                                            </span>
-                                            <Link
-                                                href="/"
-                                                className="flex items-center justify-center text-xs text-muted-foreground underline-offset-2 active:underline md:hover:underline">
-                                                View live
-                                                <ExternalLink className="ml-1 h-3 w-3" />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="mt-6 flex w-full flex-col space-y-4 md:space-y-16">
-                                <div className="grid grid-cols-4 gap-4 md:grid-cols-1 md:gap-x-0">
-                                    <div className="relative col-span-1 flex flex-col overflow-hidden md:col-span-full md:row-span-full md:w-full md:py-4">
-                                        <div className="absolute inset-0 hidden bg-neutral-200 object-cover md:block"></div>
-                                        <div className="z-10 ml-4 aspect-square h-full max-h-20 w-auto max-w-[80px] rounded-md bg-neutral-300" />
-                                    </div>
-                                    <div className="col-span-3 flex w-full flex-col space-y-0.5 pr-4 md:pl-4">
-                                        <h3 className="text-sm font-medium text-foreground">
-                                            Project
-                                        </h3>
-                                        <p className="text-xs text-muted-foreground">
-                                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                                            elit. Quo laborum veniam at nostrum quia tenetur magnam
-                                            quasi vitae.
-                                        </p>
-                                        <div className="flex items-center space-x-4">
-                                            <span className="truncate text-xs text-muted-foreground">
-                                                Next.js • Prisma • AWS
-                                            </span>
-                                            <Link
-                                                href="/"
-                                                className="flex items-center justify-center text-xs text-muted-foreground underline-offset-2 active:underline md:hover:underline">
-                                                View live
-                                                <ExternalLink className="ml-1 h-3 w-3" />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div className="mt-6 flex w-full flex-col space-y-4 md:space-y-16">
                                 <div className="grid grid-cols-4 gap-4 md:grid-cols-1 md:gap-x-0">
                                     <div className="relative col-span-1 flex flex-col overflow-hidden md:col-span-full md:row-span-full md:w-full md:py-4">

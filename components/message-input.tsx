@@ -10,8 +10,11 @@ import {
     FormMessage,
 } from "@/components/form";
 import { Textarea } from "@/components/textarea";
+import { registerMessage } from "@/lib/message";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { zodResolver } from "@hookform/resolvers/zod";
+// @ts-expect-error no type declaration
+import { DeviceUUID } from "device-uuid";
 import { AnimatePresence, motion } from "framer-motion";
 import * as React from "react";
 import { useForm } from "react-hook-form";
@@ -81,6 +84,13 @@ export const MessageInput = React.memo(function MessageInput() {
     function onSubmit(values: z.infer<typeof formSchema>) {
         form.clearErrors();
         form.reset();
+
+        const id = new DeviceUUID().get() as string;
+        React.startTransition(() => {
+            void (async () => {
+                await registerMessage(id, values.message);
+            })();
+        });
 
         setMessages((prevMessages) => [...prevMessages, values.message]);
         setSubmitted(true);
