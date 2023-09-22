@@ -94,7 +94,7 @@ export default async function HomePage() {
             </div>
             <div className="container flex w-full flex-col items-center space-y-4 pt-6 md:flex-row md:space-x-4 md:space-y-0">
                 <Link
-                    href="/"
+                    href="https://twitter.com/meetgilberto"
                     title="Twitter"
                     className="flex h-9 w-full items-center justify-center rounded-md border bg-transparent px-2.5 text-sm md:w-fit">
                     <Twitter className="mr-2 h-4 w-4" />
@@ -130,7 +130,9 @@ export default async function HomePage() {
                             <DrawerTitle className="px-4">Projects</DrawerTitle>
                             <DrawerDescription className="px-4">
                                 Find my best personal projects below.{" "}
-                                <span className="opacity-50">—&nbsp;Click to expand</span> WIP
+                                <span className="opacity-50">
+                                    —&nbsp;Click on a project to expand
+                                </span>
                             </DrawerDescription>
                             <div className="mt-6 flex w-full flex-col space-y-4 md:space-y-16">
                                 <div className="grid grid-cols-4 gap-4 md:grid-cols-1 md:gap-x-0">
@@ -149,7 +151,7 @@ export default async function HomePage() {
                                         </p>
                                         <div className="flex items-center space-x-4">
                                             <span className="truncate text-xs text-muted-foreground">
-                                                Next.js • Prisma • AWS
+                                                Lorem • ipsum • dolor
                                             </span>
                                             <Link
                                                 href="/"
@@ -178,7 +180,7 @@ export default async function HomePage() {
                                         </p>
                                         <div className="flex items-center space-x-4">
                                             <span className="truncate text-xs text-muted-foreground">
-                                                Next.js • Prisma • AWS
+                                                Lorem • ipsum • dolor
                                             </span>
                                             <Link
                                                 href="/"
@@ -200,7 +202,7 @@ export default async function HomePage() {
                             <MessageInput />
                             <div className="flex items-center justify-end space-x-4 pt-5">
                                 <Link
-                                    href="https://twitter.com"
+                                    href="https://twitter.com/meetgilberto"
                                     className="inline-flex items-center text-xs text-muted-foreground"
                                     title="Twitter">
                                     <Twitter className="mr-1 h-3 w-3" />
