@@ -1,5 +1,13 @@
 import prisma from "@/prisma";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import relativeTime from "dayjs/plugin/relativeTime";
+import timeZone from "dayjs/plugin/timezone";
 import { redirect } from "next/navigation";
+
+dayjs.extend(localizedFormat);
+dayjs.extend(relativeTime);
+dayjs.extend(timeZone);
 
 export default async function MessagesPage({ params }: { params: { pass: string } }) {
     if (params.pass !== process.env.ACCESS_PASS) {
@@ -21,7 +29,9 @@ export default async function MessagesPage({ params }: { params: { pass: string 
                     <div className="flex flex-col pl-6">
                         {userMessage.messages.map((message, j) => (
                             <div key={j} className="flex flex-col">
-                                <span className="text-xs">{message.createdAt}</span>
+                                <span className="text-xs">
+                                    {dayjs(message.createdAt).fromNow()}
+                                </span>
                                 <span className="text-sm">{message.content}</span>
                             </div>
                         ))}
