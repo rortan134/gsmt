@@ -69,7 +69,6 @@ export const MessageInput = React.memo(function MessageInput() {
     React.useEffect(() => {}, []);
 
     const form = useForm<z.infer<typeof formSchema>>({
-        // @ts-expect-error TODO: fix readonly type
         resolver: zodResolver(formSchema),
         defaultValues: {
             message: "",
