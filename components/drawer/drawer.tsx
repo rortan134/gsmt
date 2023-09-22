@@ -23,10 +23,12 @@ const DrawerContent = React.forwardRef<
             <DrawerPrimitive.Overlay className="fixed inset-0 bg-black/40" />
             <DrawerPrimitive.Content
                 ref={ref}
-                className={cn("p-4 bg-zinc-100 fixed bottom-0 inset-x-0 mt-20 rounded-t-lg", className)}
-                {...props}
-            >
-                <span className="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-1 rounded-2xl bg-neutral-300" />
+                className={cn(
+                    "fixed inset-x-0 bottom-0 mt-20 rounded-t-lg bg-zinc-100 p-4",
+                    className
+                )}
+                {...props}>
+                <span className="absolute left-1/2 top-2 h-1 w-12 -translate-x-1/2 rounded-2xl bg-neutral-300" />
                 {children}
             </DrawerPrimitive.Content>
         </DrawerPrimitive.Portal>
@@ -38,7 +40,13 @@ const DrawerTitle = React.forwardRef<
     React.ElementRef<typeof DrawerPrimitive.Title>,
     React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
 >(({ className, ...props }, ref) => {
-    return <DrawerPrimitive.Title ref={ref} className={cn("text-base font-medium", className)} {...props} />;
+    return (
+        <DrawerPrimitive.Title
+            ref={ref}
+            className={cn("text-base font-medium", className)}
+            {...props}
+        />
+    );
 });
 DrawerTitle.displayName = "DrawerTitle";
 
@@ -46,8 +54,23 @@ const DrawerDescription = React.forwardRef<
     React.ElementRef<typeof DrawerPrimitive.Description>,
     React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
 >(({ className, ...props }, ref) => {
-    return <DrawerPrimitive.Description ref={ref} className={cn("text-muted-foreground text-sm mt-3", className)} {...props} />;
+    return (
+        <DrawerPrimitive.Description
+            ref={ref}
+            className={cn("mt-3 text-sm text-muted-foreground", className)}
+            {...props}
+        />
+    );
 });
 DrawerDescription.displayName = "DrawerDescription";
 
-export { Drawer, DrawerTrigger, DrawerContent, DrawerPortal, DrawerOverlay, DrawerClose, DrawerTitle, DrawerDescription };
+export {
+    Drawer,
+    DrawerTrigger,
+    DrawerContent,
+    DrawerPortal,
+    DrawerOverlay,
+    DrawerClose,
+    DrawerTitle,
+    DrawerDescription,
+};

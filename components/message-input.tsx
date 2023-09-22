@@ -1,15 +1,23 @@
 "use client";
 
-import { Textarea } from "@/components/ui/textarea";
-import * as React from "react";
+import {
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/form";
+import { Textarea } from "@/components/textarea";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { AnimatePresence, motion } from "framer-motion";
+import * as React from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/form/form";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface MessageStoreProps {
     messages: string[];
@@ -89,16 +97,22 @@ export const MessageInput = React.memo(function MessageInput() {
     }
 
     return (
-        <div className="w-full flex flex-col">
-            <div ref={parent} className="w-full flex flex-col space-y-2 justify-end items-end">
+        <div className="flex w-full flex-col">
+            <div ref={parent} className="flex w-full flex-col items-end justify-end space-y-2">
                 {messages.map((message, i) => (
-                    <div key={i} className="max-w-1/2 rounded-3xl py-1 px-3 w-fit h-fit flex items-center justify-end bg-blue-600">
-                        <span className="text-sm text-primary-foreground text-right">{message}</span>
+                    <div
+                        key={i}
+                        className="max-w-1/2 flex h-fit w-fit items-center justify-end rounded-3xl bg-blue-600 px-3 py-1">
+                        <span className="text-right text-sm text-primary-foreground">
+                            {message}
+                        </span>
                     </div>
                 ))}
             </div>
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="inline-flex w-full justify-between mt-3 space-x-4">
+                <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="mt-3 inline-flex w-full justify-between space-x-4">
                     <FormField
                         control={form.control}
                         name="message"
@@ -109,13 +123,13 @@ export const MessageInput = React.memo(function MessageInput() {
                                     <Textarea
                                         required
                                         spellCheck
-                                        className="w-full min-h-fit h-[38px] rounded-3xl resize-none bg-transparent"
+                                        className="h-[38px] min-h-fit w-full resize-none rounded-3xl bg-transparent"
                                         placeholder="Send message"
                                         {...field}
                                         ref={textAreaRef}
                                     />
                                 </FormControl>
-                                <div className="max-h-11 overflow-hidden relative h-fit w-full">
+                                <div className="relative h-fit max-h-11 w-full overflow-hidden">
                                     <AnimatePresence>
                                         {submitted ? (
                                             <motion.span
@@ -123,8 +137,7 @@ export const MessageInput = React.memo(function MessageInput() {
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0, top: -100 }}
-                                                className="relative text-xs text-green-600 font-medium inline-block"
-                                            >
+                                                className="relative inline-block text-xs font-medium text-green-600">
                                                 Message sent
                                             </motion.span>
                                         ) : null}
@@ -134,9 +147,9 @@ export const MessageInput = React.memo(function MessageInput() {
                                                 initial={{ opacity: 0, top: 100 }}
                                                 animate={{ opacity: 1, top: "auto" }}
                                                 exit={{ opacity: 0, top: -100 }}
-                                                className="relative text-xs inline-block"
-                                            >
-                                                You will be contacted soon. Please make sure you have included your contact.
+                                                className="relative inline-block text-xs">
+                                                You will be contacted soon. Please make sure you
+                                                have included your contact.
                                             </motion.span>
                                         ) : null}
                                         {!submitted && !showNote ? (
@@ -144,10 +157,10 @@ export const MessageInput = React.memo(function MessageInput() {
                                                 initial={{ opacity: 0, top: 100 }}
                                                 animate={{ opacity: 1, top: "auto" }}
                                                 exit={{ opacity: 0, top: -100 }}
-                                                className="w-full relative"
-                                            >
+                                                className="relative w-full">
                                                 <FormDescription className="text-xs">
-                                                    Please provide a way to contact you (e.g. Email, LinkedIn, Twitter...).
+                                                    Please provide a way to contact you (e.g. Email,
+                                                    LinkedIn, Twitter...).
                                                 </FormDescription>
                                             </motion.div>
                                         ) : null}
@@ -159,8 +172,7 @@ export const MessageInput = React.memo(function MessageInput() {
                     />
                     <button
                         type="submit"
-                        className="relative top-[1.9rem] text-sm text-foreground w-fit h-11 flex items-center justify-center px-2 font-medium"
-                    >
+                        className="relative top-[1.9rem] flex h-11 w-fit items-center justify-center px-2 text-sm font-medium text-foreground">
                         Send
                     </button>
                 </form>
