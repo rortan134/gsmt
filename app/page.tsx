@@ -23,6 +23,8 @@ import {
 import Link from "next/link";
 import { ServerCountUpdate } from "./server-count-update";
 
+export const revalidate = 1;
+
 async function getPageViewCount() {
     const data = await prisma.counter.findUnique({
         where: { id: 1 },
