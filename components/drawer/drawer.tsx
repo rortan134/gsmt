@@ -1,18 +1,34 @@
 "use client";
 
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tooltip";
 import { cn } from "@/lib/cn";
 import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 
 const Drawer = DrawerPrimitive.Root;
 
-const DrawerTrigger = DrawerPrimitive.Trigger;
-
 const DrawerPortal = DrawerPrimitive.Portal;
 
 const DrawerOverlay = DrawerPrimitive.Overlay;
 
 const DrawerClose = DrawerPrimitive.Close;
+
+const DrawerTrigger = React.forwardRef<
+    React.ElementRef<typeof DrawerPrimitive.Trigger>,
+    React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger> & { tooltipLabel: string }
+>(({ tooltipLabel, ...props }, ref) => {
+    return (
+        <Tooltip>
+            <TooltipTrigger asChild>
+                <DrawerPrimitive.Trigger {...props} ref={ref} />
+            </TooltipTrigger>
+            <TooltipContent>
+                <span>{tooltipLabel}</span>
+            </TooltipContent>
+        </Tooltip>
+    );
+});
+DrawerTrigger.displayName = "DrawerTrigger";
 
 const DrawerContent = React.forwardRef<
     React.ElementRef<typeof DrawerPrimitive.Content>,

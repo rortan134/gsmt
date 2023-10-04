@@ -40,9 +40,13 @@ export default async function HomePage() {
         <main className="relative mb-24 h-full w-full py-6">
             <ServerCountUpdate />
             <header className="container flex w-full items-center">
-                <h1 className="text-sm font-medium text-foreground md:text-base">gsmt</h1>
+                <h1 className="text-sm font-medium text-foreground md:text-base">
+                    <Link href="/" className="underline-offset-1 hover:underline hover:opacity-80">
+                        gsmt
+                    </Link>
+                </h1>
             </header>
-            <div className="container flex flex-col space-y-6 pt-8">
+            <div className="container flex flex-col space-y-6 pt-9">
                 <div className="flex w-full flex-col space-y-4">
                     <div className="flex w-full justify-between">
                         <span className="text-xs text-muted-foreground/80">
@@ -54,15 +58,15 @@ export default async function HomePage() {
                         </span>
                     </div>
                     <p className="text-sm text-foreground">
-                        Hi there, I&apos;m a software developer passionate about building a better
-                        web, creating great experiences for end users, and trying to solve
-                        real-world <Globe className="inline-block h-4 w-4 opacity-50" /> problems
-                        with an eye for design. I&apos;m also a fan of open-source software, and
-                        cool-looking watches <Watch className="inline-block h-4 w-4 opacity-50" />.
+                        Developer at heart, passionate about building a better web, creating great
+                        experiences for end users, and trying to solve real-world{" "}
+                        <Globe className="inline-block h-4 w-4 opacity-50" /> problems with an eye
+                        for design. I&apos;m also a fan of open-source software, and cool-looking
+                        watches <Watch className="inline-block h-4 w-4 opacity-50" />.
                         <br />
                         <br />
                         Introduced to technology at a young age, I have been building software for
-                        over 3 years now. Doing everything from data scrapers{" "}
+                        over 4 years now. Doing everything from data scrapers{" "}
                         <Braces className="inline-block h-4 w-4 opacity-50" />, dynamic websites and
                         APIs, native applications, fractal simulations and data visualizations.
                         <br />
@@ -88,7 +92,7 @@ export default async function HomePage() {
                 </div>
                 <div className="flex w-full flex-col space-y-2">
                     <p className="text-sm text-foreground">
-                        If you&apos;d like to connect find me on the links below or chat
+                        If you&apos;d like to connect find me on the links below
                     </p>
                 </div>
             </div>
@@ -115,21 +119,33 @@ export default async function HomePage() {
                     Email
                 </Link>
             </div>
+            <div className="container pt-8">
+                <span className="text-xs text-muted-foreground/50">
+                    @ {new Date().getUTCFullYear()} GSMT
+                </span>
+            </div>
             <nav className="fixed inset-x-0 bottom-0 bg-gradient-to-t from-black/10 pb-12">
                 <div className="absolute bottom-3 left-1/2 flex w-64 -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-200/70 px-1 py-0.5 backdrop-blur-sm">
                     <Link
                         href="/"
+                        title="Home"
                         className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/50 px-3 py-1.5">
                         <Home className="h-4 w-4" />
+                        <span className="sr-only">Go to home</span>
                     </Link>
                     <Drawer>
-                        <DrawerTrigger className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5 text-sm font-medium opacity-90">
+                        <DrawerTrigger
+                            tooltipLabel="Featured projects"
+                            className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5 text-sm font-medium opacity-90">
                             Projects
+                            <span className="sr-only">Open projects drawer</span>
                         </DrawerTrigger>
                         <DrawerContent className="px-0">
                             <DrawerTitle className="px-4">Projects</DrawerTitle>
-                            <DrawerDescription className="px-4">
-                                Find my best personal projects below.{" "}
+                            <DrawerDescription className="max-w-lg px-4">
+                                My focus these days is mainly on the web ecosystem, but I have
+                                worked with many languages and platforms. Find my best personal
+                                projects below.{" "}
                                 <span className="opacity-50">
                                     —&nbsp;Click on a project to expand
                                 </span>
@@ -195,8 +211,11 @@ export default async function HomePage() {
                         </DrawerContent>
                     </Drawer>
                     <Drawer>
-                        <DrawerTrigger className="inline-flex w-full items-center justify-center rounded-2xl px-3 py-1.5 opacity-90">
+                        <DrawerTrigger
+                            tooltipLabel="Chat with me"
+                            className="inline-flex w-full items-center justify-center rounded-2xl px-3 py-1.5 opacity-90">
                             <MessageCircle className="h-4 w-4" />
+                            <span className="sr-only">Chat with Gilbert</span>
                         </DrawerTrigger>
                         <DrawerContent>
                             <MessageInput />
@@ -206,7 +225,7 @@ export default async function HomePage() {
                                     className="inline-flex items-center text-xs text-muted-foreground"
                                     title="Twitter">
                                     <Twitter className="mr-1 h-3 w-3" />
-                                    Twitter
+                                    Twitter/X
                                     <ExternalLink className="ml-1 h-3 w-3" />
                                 </Link>
                                 <Link
