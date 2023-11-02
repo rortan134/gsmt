@@ -19,6 +19,7 @@ import {
     MessageCircle,
     Twitter,
     Watch,
+    Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 import { ServerCountUpdate } from "./server-count-update";
@@ -41,8 +42,8 @@ export default async function HomePage() {
             <ServerCountUpdate />
             <header className="container flex w-full items-center">
                 <h1 className="text-sm font-medium text-foreground md:text-base">
-                    <Link href="/" className="underline-offset-1 hover:underline hover:opacity-80">
-                        gsmt
+                    <Link href="/" className="flex items-center underline-offset-1 hover:underline hover:opacity-80">
+                        gsmt <Sparkles className="ml-1 h-3.5 w-3.5 inline-block opacity-50" />
                     </Link>
                 </h1>
             </header>
@@ -50,7 +51,7 @@ export default async function HomePage() {
                 <div className="flex w-full flex-col space-y-4">
                     <div className="flex w-full justify-between">
                         <span className="text-xs text-muted-foreground/80">
-                            IPA&nbsp;<i>/ˈɡɪlbət/</i> —&nbsp;Software Dev
+                            IPA&nbsp;<i>/ˈɡɪlbət/</i> —&nbsp;Software Dev in Europe
                         </span>
                         <span className="flex items-center text-xs text-muted-foreground/80">
                             <Eye className="mr-1 h-4 w-4" />
@@ -61,7 +62,7 @@ export default async function HomePage() {
                         Developer at heart, passionate about building a better web, creating great
                         experiences for end users, and trying to solve real-world{" "}
                         <Globe className="inline-block h-4 w-4 opacity-50" /> problems with an eye
-                        for design. I&apos;m also a fan of open-source software, and cool-looking
+                        for design and fluid experiences. I&apos;m also a fan of open-source software, and cool-looking
                         watches <Watch className="inline-block h-4 w-4 opacity-50" />.
                         <br />
                         <br />
@@ -72,7 +73,7 @@ export default async function HomePage() {
                         <br />
                         <br />
                         I&apos;m always looking for new ways to use technology to make a positive
-                        impact on people. I have been particularly interested in using ML{" "}
+                        impact on people and consistently improve. I have been particularly interested in using ML{" "}
                         <BrainCircuit className="inline-block h-4 w-4 opacity-50" /> to create more
                         personalized and engaging experiences for users.
                     </p>
@@ -86,8 +87,7 @@ export default async function HomePage() {
                             target="_blank"
                             rel="nofollow">
                             AI productivity app
-                        </Link>{" "}
-                        at <strong className="font-medium">buildspace</strong>.
+                        </Link>.
                     </p>
                 </div>
                 <div className="flex w-full flex-col space-y-2">
@@ -121,7 +121,7 @@ export default async function HomePage() {
             </div>
             <div className="container pt-8">
                 <span className="text-xs text-muted-foreground/50">
-                    @ {new Date().getUTCFullYear()} GSMT
+                    @ {new Date().getUTCFullYear()} GSMT. Based on Spain
                 </span>
             </div>
             <nav className="fixed inset-x-0 bottom-0 bg-gradient-to-t from-black/10 pb-12">
