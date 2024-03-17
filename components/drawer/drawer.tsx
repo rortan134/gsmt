@@ -14,8 +14,8 @@ const DrawerClose = DrawerPrimitive.Close;
 
 const DrawerTrigger = React.forwardRef<
     React.ElementRef<typeof DrawerPrimitive.Trigger>,
-    React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger> & { tooltipLabel: string }
->(({ tooltipLabel, ...props }, ref) => <DrawerPrimitive.Trigger {...props} ref={ref} />);
+    React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger>
+>((props, ref) => <DrawerPrimitive.Trigger {...props} ref={ref} />);
 DrawerTrigger.displayName = "DrawerTrigger";
 
 const DrawerContent = React.forwardRef<

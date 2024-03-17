@@ -143,7 +143,7 @@ export default async function HomePage() {
                     </Link>
                     <Drawer>
                         <DrawerTrigger
-                            tooltipLabel="Featured projects"
+                            title="Featured projects"
                             className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5 text-sm font-medium opacity-90">
                             Projects
                             <span className="sr-only">Open projects drawer</span>
@@ -220,10 +220,10 @@ export default async function HomePage() {
                     </Drawer>
                     <Drawer>
                         <DrawerTrigger
-                            tooltipLabel="Chat with me"
+                            title="Send a Message"
                             className="inline-flex w-full items-center justify-center rounded-2xl px-3 py-1.5 opacity-90">
                             <MessageCircle className="h-4 w-4" />
-                            <span className="sr-only">Chat with Gilbert</span>
+                            <span className="sr-only">Send a Message</span>
                         </DrawerTrigger>
                         <DrawerContent>
                             <MessageInput />
