@@ -17,9 +17,9 @@ import {
     Home,
     Mail,
     MessageCircle,
+    Sparkles,
     Twitter,
     Watch,
-    Sparkles,
 } from "lucide-react";
 import Link from "next/link";
 import { ServerCountUpdate } from "./server-count-update";
@@ -42,16 +42,19 @@ export default async function HomePage() {
             <ServerCountUpdate />
             <header className="container flex w-full items-center">
                 <h1 className="text-sm font-medium text-foreground md:text-base">
-                    <Link href="/" className="flex items-center underline-offset-1 hover:underline hover:opacity-80">
-                        gsmt <Sparkles className="ml-1 h-3.5 w-3.5 inline-block opacity-50" />
+                    <Link
+                        href="/"
+                        className="flex items-center underline-offset-1 hover:underline hover:opacity-80">
+                        gsmt
                     </Link>
                 </h1>
             </header>
             <div className="container flex flex-col space-y-6 pt-9">
                 <div className="flex w-full flex-col space-y-4">
                     <div className="flex w-full justify-between">
-                        <span className="text-xs text-muted-foreground/80">
-                            IPA&nbsp;<i>/ˈɡɪlbət/</i> —&nbsp;Software Dev in Europe
+                        <span className="text-xs text-muted-foreground/90">
+                            <span className="text-muted-foreground/60">IPA</span>&nbsp;
+                            <i>/ˈɡɪlbət/</i> —&nbsp;software dev
                         </span>
                         <span className="flex items-center text-xs text-muted-foreground/80">
                             <Eye className="mr-1 h-4 w-4" />
@@ -62,18 +65,20 @@ export default async function HomePage() {
                         Developer at heart, passionate about building a better web, creating great
                         experiences for end users, and trying to solve real-world{" "}
                         <Globe className="inline-block h-4 w-4 opacity-50" /> problems with an eye
-                        for design and fluid experiences. I&apos;m also a fan of open-source software, and cool-looking
-                        watches <Watch className="inline-block h-4 w-4 opacity-50" />.
+                        for design and fluid experiences. I&apos;m also a fan of open-source
+                        software, and cool looking watches{" "}
+                        <Watch className="inline-block h-4 w-4 opacity-50" />.
                         <br />
                         <br />
                         Introduced to technology at a young age, I have been building software for
-                        over 4 years now. Doing everything from data scrapers{" "}
+                        over 3 years now. Doing everything from data scrapers{" "}
                         <Braces className="inline-block h-4 w-4 opacity-50" />, dynamic websites and
                         APIs, native applications, fractal simulations and data visualizations.
                         <br />
                         <br />
                         I&apos;m always looking for new ways to use technology to make a positive
-                        impact on people and consistently improve. I have been particularly interested in using ML{" "}
+                        impact on people and consistently improve. I have been particularly
+                        interested in using ML{" "}
                         <BrainCircuit className="inline-block h-4 w-4 opacity-50" /> to create more
                         personalized and engaging experiences for users.
                     </p>
@@ -87,7 +92,8 @@ export default async function HomePage() {
                             target="_blank"
                             rel="nofollow">
                             AI productivity app
-                        </Link>.
+                        </Link>
+                        .
                     </p>
                 </div>
                 <div className="flex w-full flex-col space-y-2">
@@ -100,28 +106,30 @@ export default async function HomePage() {
                 <Link
                     href="https://twitter.com/meetgilberto"
                     title="Twitter"
-                    className="flex h-9 w-full items-center justify-center rounded-md border bg-transparent px-2.5 text-sm md:w-fit">
-                    <Twitter className="mr-2 h-4 w-4" />
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
+                    <Twitter className="mr-2 h-4 w-4 shrink-0" />
                     Twitter
                 </Link>
                 <Link
                     href="https://github.com/rortan134"
                     title="GitHub"
-                    className="flex h-9 w-full items-center justify-center rounded-md border bg-transparent px-2.5 text-sm md:w-fit">
-                    <Github className="mr-2 h-4 w-4" />
+                    className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
+                    <Github className="mr-2 h-4 w-4 shrink-0" />
                     Github
                 </Link>
                 <Link
                     href="mailto:gsmt.dev@gmail.com"
                     title="Email"
-                    className="flex h-9 w-full items-center justify-center rounded-md border bg-transparent px-2.5 text-sm md:w-fit">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Email
+                    className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
+                    <Mail className="mr-2 h-4 w-4 shrink-0" />
+                    gsmt.dev@gmail.com
                 </Link>
             </div>
             <div className="container pt-8">
                 <span className="text-xs text-muted-foreground/50">
-                    @ {new Date().getUTCFullYear()} GSMT. Based on Spain
+                    @ {new Date().getUTCFullYear()} GSMT. based on Spain ❤️
                 </span>
             </div>
             <nav className="fixed inset-x-0 bottom-0 bg-gradient-to-t from-black/10 pb-12">

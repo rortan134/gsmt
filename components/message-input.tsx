@@ -54,7 +54,7 @@ const formSchema = z.object({
         .max(1000),
 });
 
-export const MessageInput = React.memo(function MessageInput() {
+export const MessageInput = () => {
     const { messages, setMessages } = useMessageStore();
     const [parent] = useAutoAnimate();
 
@@ -64,7 +64,6 @@ export const MessageInput = React.memo(function MessageInput() {
         setTimeout(() => {
             if (!textAreaRef.current) return;
             // Manually focusing because `autoFocus` glitches the drawer
-            // https://github.com/emilkowalski/vaul/issues/52
             textAreaRef.current.focus();
         }, 400);
     }, []);
@@ -188,4 +187,4 @@ export const MessageInput = React.memo(function MessageInput() {
             </Form>
         </div>
     );
-});
+};

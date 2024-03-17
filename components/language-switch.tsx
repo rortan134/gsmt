@@ -12,8 +12,7 @@ export function LanguageSwitch() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger>
-                <Languages className="mr-2 h-4 w-4" />
-                Language
+                <Languages className="mr-2 h-4 w-4 shrink" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuGroup>
