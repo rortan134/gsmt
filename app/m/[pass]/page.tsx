@@ -1,13 +1,6 @@
 import prisma from "@/prisma";
-import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
-import relativeTime from "dayjs/plugin/relativeTime";
-import timeZone from "dayjs/plugin/timezone";
+import { dayjs } from "@lib/dayjs";
 import { redirect } from "next/navigation";
-
-dayjs.extend(localizedFormat);
-dayjs.extend(relativeTime);
-dayjs.extend(timeZone);
 
 export default async function MessagesPage({ params }: { params: { pass: string } }) {
     if (params.pass !== process.env.ACCESS_PASS) {
