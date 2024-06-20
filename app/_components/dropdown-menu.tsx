@@ -40,21 +40,10 @@ const DropdownMenuItem = ({
     />
 );
 
-const DropdownMenuLabel = ({
-    className,
-    ...props
-}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label>) => (
-    <DropdownMenuPrimitive.Label
-        {...props}
-        className={cn("px-2 py-1.5 text-sm font-semibold", className)}
-    />
-);
-
 export {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuGroup,
     DropdownMenuItem,
-    DropdownMenuLabel,
     DropdownMenuTrigger,
 };

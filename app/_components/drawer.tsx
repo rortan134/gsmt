@@ -21,10 +21,10 @@ const DrawerContent = ({
         <DrawerPrimitive.Content
             {...props}
             className={cn(
-                "fixed inset-x-0 bottom-0 mt-20 rounded-t-lg bg-zinc-100 p-4",
+                "fixed inset-x-0 bottom-0 mt-20 rounded-t-lg bg-zinc-100 px-4 py-3",
                 className,
             )}>
-            <DrawerPrimitive.Handle className="bg-neutral-300" />
+            <DrawerPrimitive.Handle className="rounded-full bg-neutral-300" />
             {children}
         </DrawerPrimitive.Content>
     </DrawerPrimitive.Portal>

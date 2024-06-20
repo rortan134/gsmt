@@ -160,8 +160,8 @@ function MessageInput() {
                                                 exit={{ opacity: 0, top: -100 }}
                                                 className="relative w-full">
                                                 <FormDescription className="text-xs">
-                                                    Please provide a way to contact you (e.g. Email,
-                                                    LinkedIn, Twitter...).
+                                                    Please provide a way to contact you (Email,
+                                                    LinkedIn, Twitter...)
                                                 </FormDescription>
                                             </motion.div>
                                         ) : null}
