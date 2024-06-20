@@ -9,7 +9,7 @@
         "db-migrate": "pnpm prisma migrate dev",
         "dev": "next dev",
         "format": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --write --cache --cache-strategy=content --cache-location=.prettiercache",
-        "postinstall": "pnpm run prisma generate && prisma format",
+        "postinstall": "pnpm prisma generate && prisma format",
         "lint": "next lint && pnpm run format",
         "start": "next start"
     },
