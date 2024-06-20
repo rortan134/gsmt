@@ -4,9 +4,9 @@ import {
     DrawerDescription,
     DrawerTitle,
     DrawerTrigger,
-} from "@/components/drawer";
-import { LanguageSwitch } from "@/components/language-switch";
-import { MessageInput } from "@/components/message-input";
+} from "@/app/_components/drawer";
+import { LanguageSwitch } from "@/app/_components/language-switch";
+import { MessageInput } from "@/app/_components/message-input";
 import prisma from "@/prisma";
 import {
     Braces,
