@@ -8,12 +8,9 @@
         "db-deploy": "pnpm prisma migrate deploy",
         "db-migrate": "pnpm prisma migrate dev",
         "dev": "next dev",
-        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-        "generate": "prisma generate && prisma format",
-        "postinstall": "pnpm run generate",
-        "lint": "next lint",
-        "lint:fix": "eslint . --ext .ts,.js,.tsx,.jsx --fix && pnpm run format",
-        "pre-commit": "lint-staged",
+        "format": "prettier \"**/*.{js,mjs,ts,tsx,md,mdx,json,yml,css}\" --write --cache --cache-strategy=content --cache-location=.prettiercache",
+        "postinstall": "pnpm run prisma generate && prisma format",
+        "lint": "next lint && pnpm run format",
         "start": "next start"
     },
     "dependencies": {
@@ -59,7 +56,6 @@
         "eslint": "8.57.0",
         "eslint-config-next": "14.2.4",
         "husky": "^9.0.11",
-        "lint-staged": "^15.2.7",
         "postcss": "8.4.38",
         "postcss-import": "^16.1.0",
         "postcss-preset-env": "^9.5.14",
