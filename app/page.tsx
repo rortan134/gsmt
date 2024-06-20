@@ -109,7 +109,7 @@ export default function HomePage() {
                         create more personalized and engaging experiences for users.
                     </p>
                 </div>
-            <h4 className="mt-6 flex w-full flex-col text-sm text-foreground">Links</h4>
+                <h4 className="mt-6 flex w-full flex-col text-sm text-foreground">Links</h4>
             </div>
             <div className="container flex w-full flex-col items-center space-y-4 pt-6 md:flex-row md:space-x-4 md:space-y-0">
                 <Link

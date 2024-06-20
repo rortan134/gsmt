@@ -54,7 +54,7 @@ const formSchema = z.object({
         .max(5000),
 });
 
-function MessageInput () {
+function MessageInput() {
     const { messages, setMessages } = useMessageStore();
     const [parent] = useAutoAnimate();
     const [submitted, setSubmitted] = React.useState(false);
@@ -174,6 +174,6 @@ function MessageInput () {
             </Form>
         </div>
     );
-};
+}
 
 export { MessageInput };

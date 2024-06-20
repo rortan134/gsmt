@@ -10,7 +10,11 @@ const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
 const DropdownMenuGroup = DropdownMenuPrimitive.Group;
 
-const DropdownMenuContent = ({ className, sideOffset = 4, ...props }: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>) => (
+const DropdownMenuContent = ({
+    className,
+    sideOffset = 4,
+    ...props
+}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>) => (
     <DropdownMenuPrimitive.Portal>
         <DropdownMenuPrimitive.Content
             {...props}
@@ -21,9 +25,12 @@ const DropdownMenuContent = ({ className, sideOffset = 4, ...props }: React.Comp
             )}
         />
     </DropdownMenuPrimitive.Portal>
-)
+);
 
-const DropdownMenuItem = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item>) => (
+const DropdownMenuItem = ({
+    className,
+    ...props
+}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item>) => (
     <DropdownMenuPrimitive.Item
         {...props}
         className={cn(
@@ -31,14 +38,17 @@ const DropdownMenuItem = ({ className, ...props }: React.ComponentPropsWithoutRe
             className,
         )}
     />
-)
+);
 
-const DropdownMenuLabel = ({ className, ...props }:React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label>) => (
+const DropdownMenuLabel = ({
+    className,
+    ...props
+}: React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label>) => (
     <DropdownMenuPrimitive.Label
         {...props}
         className={cn("px-2 py-1.5 text-sm font-semibold", className)}
     />
-)
+);
 
 export {
     DropdownMenu,
