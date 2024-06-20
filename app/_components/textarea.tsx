@@ -6,7 +6,7 @@ const Textarea = ({
     className,
     placeholder = "",
     ...props
-}: React.ComponentPropsWithoutRef<typeof TextareaAutosize>) => (
+}: React.ComponentPropsWithRef<typeof TextareaAutosize>) => (
     <TextareaAutosize
         {...props}
         className={cn(

@@ -56,7 +56,7 @@ const formSchema = z.object({
 
 function MessageInput() {
     const { messages, setMessages } = useMessageStore();
-    const [parent] = useAutoAnimate();
+    const [parentContainer] = useAutoAnimate();
     const [, startTransition] = React.useTransition();
     const [submitted, setSubmitted] = React.useState(false);
     const [showNote, setShowNote] = React.useState(false);
@@ -97,7 +97,9 @@ function MessageInput() {
 
     return (
         <div className="flex w-full flex-col">
-            <div ref={parent} className="flex w-full flex-col items-end justify-end space-y-2">
+            <div
+                ref={parentContainer}
+                className="flex w-full flex-col items-end justify-end space-y-2">
                 {messages.map((message, i) => (
                     <div
                         key={i}
