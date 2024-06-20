@@ -3,11 +3,11 @@
 import prisma from "@/prisma";
 
 export async function registerMessage(id: string, message: string) {
-    const response = prisma.userMessage.upsert({
+    const response = await prisma.userMessage.upsert({
         where: { id },
         update: { messages: { create: { content: message } } },
         create: { id, messages: { create: { content: message } } },
     });
-    const resId = (await response).id;
+    const resId = response.id;
     return { ok: true, resId };
 }

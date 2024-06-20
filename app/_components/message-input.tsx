@@ -57,6 +57,7 @@ const formSchema = z.object({
 function MessageInput() {
     const { messages, setMessages } = useMessageStore();
     const [parent] = useAutoAnimate();
+    const [, startTransition] = React.useTransition();
     const [submitted, setSubmitted] = React.useState(false);
     const [showNote, setShowNote] = React.useState(false);
 
@@ -77,11 +78,14 @@ function MessageInput() {
     function onSubmit(values: z.infer<typeof formSchema>) {
         form.clearErrors();
         form.reset();
+        setMessages((prevMessages) => [...prevMessages, values.message]);
 
         const id = new DeviceUUID().get() as string;
-        React.startTransition(async () => await registerMessage(id, values.message));
+        startTransition(async () => {
+            await registerMessage(id, values.message);
+            return;
+        });
 
-        setMessages((prevMessages) => [...prevMessages, values.message]);
         setSubmitted(true);
 
         window.setTimeout(() => {
