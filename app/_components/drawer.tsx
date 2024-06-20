@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/cn";
+import { cn } from "@lib/cn";
 import { X } from "lucide-react";
 import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
@@ -55,4 +55,4 @@ const DrawerDescription = ({
     />
 );
 
-export { Drawer, DrawerTrigger, DrawerContent, DrawerTitle, DrawerDescription };
+export { Drawer, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger };

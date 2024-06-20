@@ -8,11 +8,11 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/form";
-import { Textarea } from "@/components/textarea";
-import { registerMessage } from "@/lib/message";
+} from "@components/form";
+import { Textarea } from "@components/textarea";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { registerMessage } from "@lib/message";
 // @ts-expect-error no type declaration
 import { DeviceUUID } from "device-uuid";
 import { AnimatePresence, motion } from "framer-motion";

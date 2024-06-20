@@ -4,7 +4,7 @@ import {
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@/components/dropdown-menu";
+} from "@components/dropdown-menu";
 import { Languages } from "lucide-react";
 import Link from "next/link";
 
