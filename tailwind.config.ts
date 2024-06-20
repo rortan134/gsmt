@@ -1,14 +1,13 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-    darkMode: ["class"],
+import { type Config } from "tailwindcss";
+
+export default {
     content: ["./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}"],
+    future: { hoverOnlyWhenSupported: true },
     theme: {
         container: {
             center: true,
             padding: "2rem",
-            screens: {
-                "2xl": "650px",
-            },
+            screens: {"2xl": "650px"},
         },
         extend: {
             colors: {
@@ -68,4 +67,4 @@ module.exports = {
         },
     },
     plugins: [require("tailwindcss-animate")],
-};
+} satisfies Config;

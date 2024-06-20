@@ -41,8 +41,8 @@ const useMessageStore = create<MessageStoreProps>()(
         {
             name: "gsmt-app-storage",
             version: 0, // update on breaking changes (e.g. renaming a value)
-        }
-    )
+        },
+    ),
 );
 
 const formSchema = z.object({
@@ -51,56 +51,43 @@ const formSchema = z.object({
         .min(2, {
             message: "Message must be at least 2 characters.",
         })
-        .max(1000),
+        .max(5000),
 });
 
-export const MessageInput = () => {
+function MessageInput () {
     const { messages, setMessages } = useMessageStore();
     const [parent] = useAutoAnimate();
+    const [submitted, setSubmitted] = React.useState(false);
+    const [showNote, setShowNote] = React.useState(false);
 
     const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
-    React.useEffect(() => {
-        setTimeout(() => {
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: { message: "" },
+    });
+
+    React.useEffect(function focusInputOnMount() {
+        window.setTimeout(() => {
             if (!textAreaRef.current) return;
-            // Manually focusing because `autoFocus` glitches the drawer
             textAreaRef.current.focus();
         }, 400);
     }, []);
-
-    React.useEffect(() => {}, []);
-
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            message: "",
-        },
-    });
-
-    const [submitted, setSubmitted] = React.useState(false);
-    const [showNote, setShowNote] = React.useState(false);
 
     function onSubmit(values: z.infer<typeof formSchema>) {
         form.clearErrors();
         form.reset();
 
         const id = new DeviceUUID().get() as string;
-        React.startTransition(() => {
-            void (async () => {
-                await registerMessage(id, values.message);
-            })();
-        });
+        React.startTransition(async () => await registerMessage(id, values.message));
 
         setMessages((prevMessages) => [...prevMessages, values.message]);
         setSubmitted(true);
 
-        setTimeout(() => {
+        window.setTimeout(() => {
             setSubmitted(false);
             setShowNote(true);
-
-            setTimeout(() => {
-                setShowNote(false);
-            }, 5000);
+            window.setTimeout(() => setShowNote(false), 5000);
         }, 3000);
     }
 
@@ -126,7 +113,7 @@ export const MessageInput = () => {
                         name="message"
                         render={({ field }) => (
                             <FormItem className="w-full flex-1">
-                                <FormLabel>Message Gilbert</FormLabel>
+                                <FormLabel>Send a message</FormLabel>
                                 <FormControl>
                                     <Textarea
                                         required
@@ -188,3 +175,5 @@ export const MessageInput = () => {
         </div>
     );
 };
+
+export { MessageInput };

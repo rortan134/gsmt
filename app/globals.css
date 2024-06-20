@@ -1,106 +1,160 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
- 
+@charset "utf-8";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
-
     --card: 0 0% 100%;
     --card-foreground: 20 14.3% 4.1%;
- 
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
- 
     --primary: 24 9.8% 10%;
     --primary-foreground: 60 9.1% 97.8%;
- 
     --secondary: 60 4.8% 95.9%;
     --secondary-foreground: 24 9.8% 10%;
- 
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 25 5.3% 44.7%;
- 
     --accent: 60 4.8% 95.9%;
     --accent-foreground: 24 9.8% 10%;
- 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 60 9.1% 97.8%;
-
     --border: 20 5.9% 90%;
     --input: 20 5.9% 90%;
     --ring: 20 14.3% 4.1%;
- 
-    --radius: 0.5rem;
+    --radius: 0.55rem;
   }
- 
-  .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
- 
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
- 
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
- 
-    --primary: 60 9.1% 97.8%;
-    --primary-foreground: 24 9.8% 10%;
- 
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
- 
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
- 
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
- 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
- 
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 24 5.7% 82.9%;
-  }
-}
-
-@layer base {
-    * {
-        @apply border-border;
+  * {
+        @apply border-border motion-safe:scroll-smooth;
+        word-wrap: break-word;
     }
+    html,
+    body,
+    button,
+    input {
+        @apply antialiased;
+        direction: ltr;
+    }
+    html,
     body {
-        @apply bg-background text-foreground;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
+        @apply h-full w-full overflow-x-hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    html {
+        quotes: "“" "”" "‘" "’";
+        text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        font-synthesis-weight: none;
         font-feature-settings:
-            "rlig" 1,
+            "liga" 1,
             "calt" 1;
+    };
+    body {
+        @apply bg-background text-foreground relative min-h-screen max-w-full break-words text-left antialiased;
+        text-rendering: optimizeLegibility;
+        font-synthesis: none;
     }
     svg {
+        @apply shrink-0;
         text-rendering: optimizeLegibility;
     }
     svg path {
         shape-rendering: geometricPrecision;
     }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-balance;
+        & * {
+            text-wrap: inherit;
+        }
+    }
+    span,
+    p {
+        @apply text-pretty;
+    }
+    /* Override default browser behavior */
     a,
-    button {
+    button,
+    select,
+    header,
+    img,
+    video,
+    canvas,
+    [type="button"],
+    [type="image"],
+    [type="reset"],
+    [type="submit"],
+    [type="checkbox"],
+    [type="color"],
+    [type="radio"],
+    [type="range"],
+    [draggable] {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
+        touch-action: manipulation;
+        -ms-touch-action: manipulation;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        text-indent: 0;
+    }
+    button,
+    select {
+        text-transform: none;
+        text-decoration: none;
     }
 }
 
-/**
- * Makes sure h-screen works on mobile Safari. By default h-screen
- * does not take into account the height of the address bar, causing
- * weird behaviour when scrolling — sometimes the height will be correct
- * and sometimes it won't, depending on whether the address bar is
- * in 'collapsed' state or not.
- * @see: https://benborgers.com/posts/tailwind-h-screen
- */
- @supports (-webkit-touch-callout: none) {
-    .h-screen {
-        height: -webkit-fill-available;
+@layer utilities {
+    .max-w-readable {
+        @apply max-w-[calc(1080px*0.25*3)];
     }
+    .max-w-readable-lg {
+        @apply max-w-[calc(1080px*0.25*4)];
+    }
+    .gutter-stable {
+        scrollbar-gutter: stable both-edges;
+    }
+    .background-noise {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=);
+    }
+    .animate-shine {
+        @apply pointer-events-none absolute inset-0 transform-gpu overflow-hidden;
+    }
+    .animate-shine::before {
+        @apply absolute top-0 block h-full w-14 transform-gpu bg-white/50 blur-[30px] duration-700 content-[""];
+        transform: translateX(-200px) skewX(-15deg);
+        animation: ShimmerWave 3.7s infinite;
+    }
+    .animate-shine::after {
+        @apply absolute top-0 block h-full w-7 transform-gpu bg-white/30 blur-[5px] duration-700;
+        transform: translateX(-200px) skewX(-15deg);
+        animation: ShimmerWave 3.7s infinite;
+    }
+}
+
+@keyframes ShimmerWave {
+    0% {
+        transform: translateX(-200px) skewX(-15deg);
+    }
+    20%,
+    100% {
+        transform: translateX(500px) skewX(-15deg);
+    }
+}
+
+::selection, ::-moz-selection {
+    color: hsl(180 48% 48%);
+    background-color: #bdffe8;
 }

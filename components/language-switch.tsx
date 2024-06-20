@@ -10,17 +10,17 @@ import Link from "next/link";
 
 export function LanguageSwitch() {
     return (
-        <DropdownMenu>
-            <DropdownMenuTrigger>
-                <Languages className="mr-2 h-4 w-4 shrink" />
+        <DropdownMenu modal={false}>
+            <DropdownMenuTrigger className="inline-flex size-5 items-center justify-center text-blue-600">
+                <Languages className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuGroup>
                     <DropdownMenuItem>
-                        <Link href="/">English</Link>
+                        <Link href="/">Español</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
-                        <Link href="/">Spanish</Link>
+                        <Link href="/">English</Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
             </DropdownMenuContent>

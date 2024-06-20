@@ -3,7 +3,6 @@ const config = {
         "postcss-import": {},
         tailwindcss: {},
         autoprefixer: {},
-        "postcss-preset-env": {},
     },
 };
 
