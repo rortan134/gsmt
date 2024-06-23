@@ -3,12 +3,15 @@ import { LanguageSelector } from "@components/language-selector";
 import { PageShell } from "@components/page-shell";
 import { cn } from "@lib/cn";
 import { ArrowUpRight } from "lucide-react";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import * as React from "react";
 
 export const dynamic = "force-static";
 
 export default function ReadsPage() {
+      unstable_setRequestLocale("en");
+
     return (
         <PageShell>
             <header className="container flex w-full items-center justify-between">

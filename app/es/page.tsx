@@ -15,6 +15,7 @@ import {
     Twitter,
     Watch,
 } from "lucide-react";
+import { unstable_setRequestLocale } from "next-intl/server";
 import * as React from "react";
 
 export const dynamic = "force-static";
@@ -54,6 +55,8 @@ async function PageViews() {
 }
 
 export default function HomePage() {
+      unstable_setRequestLocale("es");
+
     return (
         <PageShell>
             <header className="container flex w-full items-center justify-between">
