@@ -11,4 +11,4 @@ const robots = (): MetadataRoute.Robots => ({
 
 export default robots;
 
-export const dynamic = "error";
+// export const dynamic = "error";
