@@ -1,9 +1,8 @@
 import { dayjs } from "@lib/dayjs";
-import { getLocale } from "next-intl/server";
+import { useLocale } from "next-intl";
 
-const Timezone = async () => {
-    const locale = await getLocale();
-    dayjs.locale(locale);
+const Timezone = () => {
+    dayjs.locale(useLocale());
 
     return (
         <section className="container mt-16 grid w-full gap-6 md:grid-cols-2">

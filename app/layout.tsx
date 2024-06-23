@@ -1,10 +1,18 @@
 import "./globals.css";
 import { Link } from "@/navigation";
-import { Drawer, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "@components/drawer";
+import {
+    Drawer,
+    DrawerContent,
+    DrawerDescription,
+    DrawerTitle,
+    DrawerTrigger,
+} from "@components/drawer";
 import { MessageInput } from "@components/message-input";
 import { cn } from "@lib/cn";
 import { ExternalLink, Home, MessageCircle } from "lucide-react";
 import type { Metadata, Viewport } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { Inter } from "next/font/google";
 
 export const dynamic = "force-dynamic";
@@ -52,12 +60,15 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+    const messages = await getMessages();
     return (
         <html lang="en" dir="ltr">
             <body className={cn("pb-20", inter.className)}>
-                {children}
-                <FloatingNavigation />
+                <NextIntlClientProvider messages={messages}>
+                    {children}
+                    <FloatingNavigation />
+                </NextIntlClientProvider>
             </body>
         </html>
     );

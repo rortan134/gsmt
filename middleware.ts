@@ -6,4 +6,4 @@ export default createMiddleware({
     localePrefix: "as-needed",
 });
 
-export const config = { matcher: ["/", "/es/:path*", "/en/:path*"] };
+export const config = { matcher: ["/", "/((?!api|_next|_vercel|m|.*\\..*).*)"] };
