@@ -8,4 +8,4 @@ export default createMiddleware({
 
 // We only want the middleware to run on the `/` route
 // to redirect users to their preferred locale
-export const config = { matcher: ["/"] };
+export const config = { matcher: ["/", "/es", "/en"] };
