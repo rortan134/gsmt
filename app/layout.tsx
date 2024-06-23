@@ -1,17 +1,14 @@
 import "./globals.css";
 import { Link } from "@/navigation";
-import {
-    Drawer,
-    DrawerContent,
-    DrawerDescription,
-    DrawerTitle,
-    DrawerTrigger,
-} from "@components/drawer";
+import { Drawer, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "@components/drawer";
 import { MessageInput } from "@components/message-input";
 import { cn } from "@lib/cn";
 import { ExternalLink, Home, MessageCircle } from "lucide-react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+
+
+export const dynamic = "force-dynamic";
 
 const WEBSITE_URL = "https://gsmt.link";
 
