@@ -7,7 +7,6 @@ import { ExternalLink, Home, MessageCircle } from "lucide-react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
-
 export const dynamic = "force-dynamic";
 
 const WEBSITE_URL = "https://gsmt.link";
