@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 function FloatingNavigation() {
     return (
-        <nav className="fixed inset-x-0 bottom-0 bg-gradient-to-t from-black/15 pb-12 pt-6 backdrop-blur-sm">
+        <nav className="fixed inset-x-0 bottom-0 pb-12">
             <div className="absolute bottom-3 left-1/2 flex w-64 -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-300/80 px-1 py-0.5 backdrop-blur-md">
                 <Link
                     href="/"

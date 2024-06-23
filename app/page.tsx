@@ -117,7 +117,7 @@ export default function HomePage() {
                     Check out my work in the navigation bar below.
                 </p>
                 <p className="text-sm text-foreground">Also find me on the links below</p>
-                <div className="flex items-center gap-2.5 md:flex-row">
+                <div className="flex flex-col items-center gap-2.5 md:flex-row">
                     <Link
                         href="https://twitter.com/meetgilberto"
                         title="Twitter"
