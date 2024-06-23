@@ -1,8 +1,6 @@
-import { Link } from "@/navigation";
+import { BookCard } from "@components/book-card";
 import { LanguageSelector } from "@components/language-selector";
 import { PageShell } from "@components/page-shell";
-import { cn } from "@lib/cn";
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import * as React from "react";
 
@@ -26,21 +24,3 @@ export default function ReadsPage() {
         </PageShell>
     );
 }
-
-const BookCard = ({
-    className,
-    children,
-    ...props
-}: React.ComponentPropsWithoutRef<typeof Link>) => (
-    <Link
-        {...props}
-        className={cn(
-            "relative flex h-[600px] origin-center flex-col justify-end rounded-3xl border object-cover p-3 md:p-4",
-            className,
-        )}>
-        {children}
-        <span className="absolute bottom-0 right-0 flex size-8 items-center justify-center rounded-full border bg-black/60 text-white backdrop-blur-lg lg:size-10">
-            <ArrowUpRight className="size-6" aria-hidden focusable="false" />
-        </span>
-    </Link>
-);
