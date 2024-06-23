@@ -81,13 +81,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 const FloatingNavigation = () => (
     <nav className="fixed inset-x-0 bottom-0 pb-12">
-        <div className="absolute bottom-3 left-1/2 flex w-64 -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-300/75 px-1 py-0.5 shadow-sm backdrop-blur-md">
+        <div className="absolute bottom-3 left-1/2 flex w-fit -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-200/80 px-1 py-0.5 shadow backdrop-blur-xl">
             <Link
                 href="/"
                 title="Home"
-                className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-400/60 px-3 py-1.5">
+                className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/80 px-4 py-1.5">
                 <Home className="h-4 w-4" />
-                <span className="sr-only">Go to home</span>
+                <span className="sr-only">Go to home page</span>
             </Link>
             <Drawer>
                 <DrawerTrigger
@@ -127,7 +127,7 @@ const FloatingNavigation = () => (
             <Drawer>
                 <DrawerTrigger
                     title="Send a Message"
-                    className="inline-flex w-full items-center justify-center rounded-2xl px-3 py-1.5">
+                    className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
                     <MessageCircle className="h-4 w-4" />
                     <span className="sr-only">Send a Message</span>
                 </DrawerTrigger>
