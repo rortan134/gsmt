@@ -1,12 +1,11 @@
+import { Link } from "@/navigation";
 import prisma from "@/prisma";
 import { LanguageSelector } from "@components/language-selector";
 import { PageShell } from "@components/page-shell";
 import { dayjs } from "@lib/dayjs";
 import { Braces, BrainCircuit, Eye, Github, Globe, Mail, Twitter, Watch } from "lucide-react";
-import Link from "next/link";
 import * as React from "react";
 
-export const dynamicParams = true;
 export const dynamic = "force-static";
 export const revalidate = 1;
 
@@ -56,7 +55,7 @@ export default function HomePage() {
                 </h1>
                 <LanguageSelector />
             </header>
-            <section className="container flex flex-col space-y-6 mt-9">
+            <section className="container mt-9 flex flex-col space-y-6">
                 <div className="flex w-full flex-col space-y-4">
                     <div className="flex w-full justify-between">
                         <span className="text-xs text-muted-foreground/90">
@@ -75,8 +74,8 @@ export default function HomePage() {
                             aria-hidden
                             focusable="false"
                         />{" "}
-                        problems with an eye for design. I&apos;m also a fan
-                        of open-source software, and cool looking watches{" "}
+                        problems with an eye for design. I&apos;m also a fan of open-source
+                        software, and cool looking watches{" "}
                         <Watch
                             className="inline-block h-4 w-4 opacity-50"
                             aria-hidden
@@ -92,8 +91,8 @@ export default function HomePage() {
                             aria-hidden
                             focusable="false"
                         />
-                        , dynamic websites and APIs, native applications, fractal simulations,
-                        data visualizations and much more.
+                        , dynamic websites and APIs, native applications, fractal simulations, data
+                        visualizations and much more.
                         <br />
                         <br />
                         Outside of programming, I enjoy doing photography and traveling. I&apos;m
@@ -109,7 +108,7 @@ export default function HomePage() {
                     </p>
                 </div>
             </section>
-            <section className="container flex w-full flex-col space-y-4 mt-12">
+            <section className="container mt-12 flex w-full flex-col space-y-4">
                 <h4 className="text-sm text-foreground">Find me on the links below</h4>
                 <div className="flex items-center space-y-3 md:flex-row md:space-x-4 md:space-y-0">
                     <Link
@@ -137,12 +136,12 @@ export default function HomePage() {
                     </Link>
                 </div>
             </section>
-            <section className="container grid w-full gap-6 md:grid-cols-2 mt-12">
+            <section className="container mt-12 grid w-full gap-6 md:grid-cols-2">
                 <div className="flex w-full flex-col space-y-2">
                     <h4 className="text-sm text-foreground">Your timezone</h4>
                     <div className="flex items-center justify-between rounded-xl border p-3">
                         <div className="flex flex-col space-y-1">
-                            <span className="font-medium text-xs text-muted-foreground/90">
+                            <span className="text-xs font-medium text-muted-foreground/90">
                                 {dayjs.tz.guess()}
                             </span>
                             <span className="text-xs text-muted-foreground/60">
@@ -150,7 +149,7 @@ export default function HomePage() {
                             </span>
                         </div>
                         <div className="flex flex-col space-y-0.5">
-                            <span className="text-xs text-muted-foreground/90 font-medium">
+                            <span className="text-xs font-medium text-muted-foreground/90">
                                 {dayjs().tz(dayjs.tz.guess()).format("h:mm A")}
                             </span>
                             <span className="text-xs text-muted-foreground/60">
@@ -163,13 +162,15 @@ export default function HomePage() {
                     <h4 className="text-sm text-foreground">My timezone</h4>
                     <div className="flex items-center justify-between rounded-xl border p-3">
                         <div className="flex flex-col space-y-1">
-                            <span className="font-medium text-xs text-muted-foreground/90">Europe/Madrid</span>
+                            <span className="text-xs font-medium text-muted-foreground/90">
+                                Europe/Madrid
+                            </span>
                             <span className="text-xs text-muted-foreground/60">
                                 (GMT {dayjs().tz("Europe/Madrid").format("Z")})
                             </span>
                         </div>
                         <div className="flex flex-col space-y-0.5">
-                            <span className="text-xs text-muted-foreground/90 font-medium">
+                            <span className="text-xs font-medium text-muted-foreground/90">
                                 {dayjs().tz("Europe/Madrid").format("h:mm A")}
                             </span>
                             <span className="text-xs text-muted-foreground/60">

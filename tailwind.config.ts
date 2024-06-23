@@ -7,7 +7,7 @@ export default {
         container: {
             center: true,
             padding: "2rem",
-            screens: { "2xl": "650px" },
+            screens: { "2xl": "640px" },
         },
         extend: {
             colors: {

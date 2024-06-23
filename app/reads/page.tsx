@@ -1,9 +1,9 @@
+import { Link } from "@/navigation";
 import { LanguageSelector } from "@components/language-selector";
 import { PageShell } from "@components/page-shell";
 import { cn } from "@lib/cn";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import * as React from "react";
 
 export const dynamic = "force-static";

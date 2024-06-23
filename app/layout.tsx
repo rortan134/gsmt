@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Link } from "@/navigation";
 import {
     Drawer,
     DrawerContent,
@@ -10,7 +11,6 @@ import { MessageInput } from "@components/message-input";
 import { ExternalLink, Home, MessageCircle } from "lucide-react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
 
 const WEBSITE_URL = "https://gsmt.link";
 
@@ -41,19 +41,13 @@ export const metadata: Metadata = {
     referrer: "origin",
     alternates: { canonical: "/" },
     robots: { noimageindex: true },
-    appleWebApp: {
-        capable: true,
-        statusBarStyle: "default",
-    },
+    appleWebApp: { capable: true, statusBarStyle: "default" },
     twitter: {
         card: "summary_large_image",
         site: "@gsmmtt",
         creator: "@gsmmtt",
     },
-    formatDetection: {
-        address: false,
-        telephone: false,
-    },
+    formatDetection: { address: false, telephone: false },
     other: {
         "msapplication-TileColor": "#000000",
         "msapplication-starturl": "/",
@@ -65,7 +59,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en" dir="ltr">
             <body className={inter.className}>
-                {children} <FloatingNavigation />
+                {children}
+                <FloatingNavigation />
             </body>
         </html>
     );
@@ -73,8 +68,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 function FloatingNavigation() {
     return (
-        <nav className="fixed inset-x-0 bottom-0 bg-gradient-to-t from-black/15 pb-12">
-            <div className="absolute bottom-3 left-1/2 flex w-64 -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-300/90 px-1 py-0.5 backdrop-blur-sm">
+        <nav className="fixed inset-x-0 bottom-0 bg-gradient-to-t from-black/15 pb-12 pt-6 backdrop-blur-sm">
+            <div className="absolute bottom-3 left-1/2 flex w-64 -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-300/80 px-1 py-0.5 backdrop-blur-md">
                 <Link
                     href="/"
                     title="Home"
@@ -89,8 +84,8 @@ function FloatingNavigation() {
                         Work
                         <span className="sr-only">Expand work drawer</span>
                     </DrawerTrigger>
-                    <DrawerContent className="px-0">
-                        <DrawerTitle className="px-4">Work</DrawerTitle>
+                    <DrawerContent>
+                        <DrawerTitle>Work</DrawerTitle>
                         <DrawerDescription className="max-w-lg px-4">
                             My focus these days is mainly on the web ecosystem, but I have worked
                             with many languages and platforms.{" "}
@@ -154,7 +149,7 @@ function FloatingNavigation() {
                 </Drawer>
                 <Link
                     href="/reads"
-                    title="Reads"
+                    title="Recommended reads"
                     className="inline-flex w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
                     Reads
                 </Link>

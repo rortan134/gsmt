@@ -26,4 +26,4 @@ export type Dayjs = dayjs.Dayjs;
 
 export type { ConfigType } from "dayjs";
 
-export {dayjs};
+export { dayjs };

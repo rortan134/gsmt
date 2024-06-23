@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@/navigation";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -9,8 +10,6 @@ import {
 } from "@components/dropdown-menu";
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import { Languages } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const SpanishFlag = () => (
     <AccessibleIcon.Root label="ES">
@@ -74,36 +73,32 @@ const EnglishFlag = () => (
     </AccessibleIcon.Root>
 );
 
-const LanguageSelector = () => {
-    const pathname = usePathname();
-
-    return (
-        <DropdownMenu modal={false}>
-            <DropdownMenuTrigger
-                title="Change language"
-                className="inline-flex size-5 items-center justify-center text-blue-600">
-                <AccessibleIcon.Root label="Change language">
-                    <Languages className="h-4 w-4" />
-                </AccessibleIcon.Root>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuGroup>
-                    <DropdownMenuItem asChild>
-                        <Link href={`/es${pathname}`}>
-                            <SpanishFlag />
-                            Español
-                        </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                        <Link href={pathname.replace("/es/", "/")}>
-                            <EnglishFlag />
-                            English
-                        </Link>
-                    </DropdownMenuItem>
-                </DropdownMenuGroup>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    );
-};
+const LanguageSelector = () => (
+    <DropdownMenu modal={false}>
+        <DropdownMenuTrigger
+            title="Change language"
+            className="inline-flex size-5 items-center justify-center text-blue-600">
+            <AccessibleIcon.Root label="Change language">
+                <Languages className="h-4 w-4" />
+            </AccessibleIcon.Root>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+            <DropdownMenuGroup>
+                <DropdownMenuItem asChild>
+                    <Link locale="es" href="/">
+                        <SpanishFlag />
+                        Español
+                    </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                    <Link locale="en" href="/">
+                        <EnglishFlag />
+                        English
+                    </Link>
+                </DropdownMenuItem>
+            </DropdownMenuGroup>
+        </DropdownMenuContent>
+    </DropdownMenu>
+);
 
 export { LanguageSelector };

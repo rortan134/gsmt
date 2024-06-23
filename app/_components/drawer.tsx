@@ -7,9 +7,7 @@ import { Drawer as DrawerPrimitive } from "vaul";
 
 const Drawer = DrawerPrimitive.Root;
 
-const DrawerTrigger = (props: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Trigger>) => (
-    <DrawerPrimitive.Trigger {...props} />
-);
+const DrawerTrigger = DrawerPrimitive.Trigger;
 
 const DrawerContent = ({
     className,
@@ -38,12 +36,11 @@ const DrawerTitle = ({
         <DrawerPrimitive.Title {...props} className={cn("text-base font-medium", className)} />
         <DrawerPrimitive.Close
             title="Close"
-            className="ml-auto h-4 w-4 rounded-full bg-muted-foreground text-foreground">
-            <X className="h-4 w-4 text-foreground" />
+            className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-neutral-300 text-foreground">
+            <X className="h-3 w-3" />
         </DrawerPrimitive.Close>
     </div>
 );
-DrawerTitle.displayName = "DrawerTitle";
 
 const DrawerDescription = ({
     className,
