@@ -7,10 +7,10 @@ import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import * as React from "react";
 
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 
 export default function ReadsPage() {
-      unstable_setRequestLocale("en");
+    unstable_setRequestLocale("en");
 
     return (
         <PageShell>

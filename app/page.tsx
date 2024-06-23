@@ -18,8 +18,8 @@ import {
 import { unstable_setRequestLocale } from "next-intl/server";
 import * as React from "react";
 
-export const dynamic = "force-static";
-export const revalidate = 1;
+// export const dynamic = "force-static";
+// export const revalidate = 1;
 
 async function updateCount() {
     try {
@@ -55,7 +55,7 @@ async function PageViews() {
 }
 
 export default function HomePage() {
-      unstable_setRequestLocale("en");
+    unstable_setRequestLocale("en");
 
     return (
         <PageShell>
