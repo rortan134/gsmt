@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@lib/cn";
+import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import { X } from "lucide-react";
 import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
@@ -36,8 +37,10 @@ const DrawerTitle = ({
         <DrawerPrimitive.Title {...props} className={cn("text-base font-medium", className)} />
         <DrawerPrimitive.Close
             title="Close"
-            className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-neutral-300 text-foreground">
-            <X className="h-3 w-3" />
+            className="ml-auto flex size-6 items-center justify-center rounded-full bg-neutral-200 text-foreground">
+            <AccessibleIcon.Root label="Close drawer">
+                <X className="size-4" />
+            </AccessibleIcon.Root>
         </DrawerPrimitive.Close>
     </div>
 );

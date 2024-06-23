@@ -8,6 +8,7 @@ import {
     DrawerTrigger,
 } from "@components/drawer";
 import { MessageInput } from "@components/message-input";
+import { cn } from "@lib/cn";
 import { ExternalLink, Home, MessageCircle } from "lucide-react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" dir="ltr">
-            <body className={inter.className}>
+            <body className={cn("pb-20", inter.className)}>
                 {children}
                 <FloatingNavigation />
             </body>

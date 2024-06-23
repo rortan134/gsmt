@@ -41,8 +41,8 @@ const BookCard = ({
             className,
         )}>
         {children}
-        <span className="absolute bottom-0 right-0 flex size-8 items-center justify-center rounded-full border bg-black/60 text-white backdrop-blur-lg lg:size-10">
-            <ArrowUpRight className="size-6" aria-hidden focusable="false" />
+        <span className="absolute bottom-4 right-4 flex size-12 items-center justify-center rounded-full border bg-black/60 text-white backdrop-blur-lg">
+            <ArrowUpRight className="size-8" aria-hidden focusable="false" />
         </span>
     </Link>
 );
