@@ -61,7 +61,7 @@
         "pretty-quick": "^4.0.0",
         "typescript": "5.5.2"
     },
-    "packageManager": "pnpm@7.18.1",
+    "packageManager": "pnpm@8.15.8",
     "engines": {
         "node": ">=20.x",
         "npm": ">=9.0.0"
