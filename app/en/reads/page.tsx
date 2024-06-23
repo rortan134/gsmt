@@ -1,8 +1,8 @@
+import { BookCard } from "@components/book-card";
 import { LanguageSelector } from "@components/language-selector";
 import { PageShell } from "@components/page-shell";
 import Image from "next/image";
 import * as React from "react";
-import { BookCard } from "@components/book-card";
 
 export default function ReadsPage() {
     return (
@@ -24,5 +24,3 @@ export default function ReadsPage() {
         </PageShell>
     );
 }
-
-
