@@ -38,10 +38,7 @@ const useMessageStore = create<MessageStoreProps>()(
                       }))
                     : set({ messages }),
         }),
-        {
-            name: "gsmt-app-storage",
-            version: 0, // update on breaking changes (e.g. renaming a value)
-        },
+        { name: "gsmt-app-storage" },
     ),
 );
 
@@ -54,13 +51,12 @@ const formSchema = z.object({
         .max(5000),
 });
 
-function MessageInput() {
+const MessageInput = () => {
     const { messages, setMessages } = useMessageStore();
     const [parentContainer] = useAutoAnimate();
     const [, startTransition] = React.useTransition();
     const [submitted, setSubmitted] = React.useState(false);
     const [showNote, setShowNote] = React.useState(false);
-
     const textAreaRef = React.useRef<HTMLTextAreaElement>(null);
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -180,6 +176,6 @@ function MessageInput() {
             </Form>
         </div>
     );
-}
+};
 
 export { MessageInput };

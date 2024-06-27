@@ -8,6 +8,4 @@ export const projects = [
     },
 ];
 
-export const reads = [
-    
-]
+export const reads = [];

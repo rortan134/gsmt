@@ -2,6 +2,7 @@ import { Link } from "@/navigation";
 import prisma from "@/prisma";
 import { LanguageSelector } from "@components/language-selector";
 import { PageShell } from "@components/page-shell";
+import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import {
     ArrowUpRight,
@@ -158,14 +159,19 @@ export default function HomePage() {
                 <span className="text-[10px] text-muted-foreground/60">
                     @ {new Date().getUTCFullYear()} GSMT. All rights reserved.
                 </span>
-                <div className="inline-flex w-fit shrink flex-col">
-                    <span className="text-[10px] text-muted-foreground/60">gsmt.link</span>
-                    <Link
-                        href="https://github.com/rortan134/gsmt"
-                        target="_blank"
-                        className="text-[10px] text-muted-foreground/60 underline underline-offset-4">
-                        view source
-                    </Link>
+                <div className="inline-flex shrink gap-1 md:gap-2">
+                    <div className="inline-flex flex-col">
+                        <span className="truncate text-[10px] text-muted-foreground/60">
+                            gsmt.link
+                        </span>
+                        <Link
+                            href="https://github.com/rortan134/gsmt"
+                            target="_blank"
+                            className="truncate text-[10px] text-muted-foreground/60 underline underline-offset-4">
+                            view source
+                        </Link>
+                    </div>
+                    <Signature />
                 </div>
             </footer>
             <React.Suspense>

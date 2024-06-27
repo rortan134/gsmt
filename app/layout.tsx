@@ -69,7 +69,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
     return (
         <html lang="en" dir="ltr">
-            <body className={cn("pb-32", inter.className)}>
+            <body className={cn("pb-16", inter.className)}>
                 <NextIntlClientProvider messages={messages}>
                     {children}
                     <FloatingNavigation />

@@ -14,12 +14,12 @@ import {
 
 const Form = FormProvider;
 
-type FormFieldContextValue<
+interface FormFieldContextValue<
     TFieldValues extends FieldValues = FieldValues,
     TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
-> = {
+> {
     name: TName;
-};
+}
 
 const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue);
 
@@ -28,13 +28,11 @@ const FormField = <
     TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
     ...props
-}: ControllerProps<TFieldValues, TName>) => {
-    return (
-        <FormFieldContext.Provider value={{ name: props.name }}>
-            <Controller {...props} />
-        </FormFieldContext.Provider>
-    );
-};
+}: ControllerProps<TFieldValues, TName>) => (
+    <FormFieldContext.Provider value={{ name: props.name }}>
+        <Controller {...props} />
+    </FormFieldContext.Provider>
+);
 
 const useFormField = () => {
     const fieldContext = React.useContext(FormFieldContext);
@@ -58,9 +56,9 @@ const useFormField = () => {
     };
 };
 
-type FormItemContextValue = {
+interface FormItemContextValue {
     id: string;
-};
+}
 
 const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
 
@@ -119,7 +117,9 @@ const FormMessage = ({
 }: React.HTMLAttributes<HTMLParagraphElement>) => {
     const { error, formMessageId } = useFormField();
     const body = error ? String(error?.message) : children;
-    if (!body) return null;
+    if (!body) {
+        return null;
+    }
     return (
         <p
             id={formMessageId}
