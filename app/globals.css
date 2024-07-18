@@ -8,7 +8,7 @@
     :root {
         --background: 0 0% 100%;
         --foreground: 20 14.3% 4.1%;
-        --card: 0 0% 100%;
+        --card: 0 14.3% 90%;
         --card-foreground: 20 14.3% 4.1%;
         --popover: 0 0% 100%;
         --popover-foreground: 20 14.3% 4.1%;
@@ -43,6 +43,7 @@
     html,
     body {
         @apply h-full w-full overflow-x-hidden;
+         -webkit-overflow-scrolling: touch;
     }
     html {
         quotes: "“" "”" "‘" "’";
@@ -55,13 +56,16 @@
             "calt" 1;
     }
     body {
-        @apply relative min-h-screen max-w-full break-words bg-background text-left text-foreground antialiased;
+        @apply relative min-h-screen max-w-full break-words bg-background text-left text-foreground;
         text-rendering: optimizeLegibility;
         font-synthesis: none;
     }
     svg {
         @apply shrink-0;
         text-rendering: optimizeLegibility;
+        vertical-align: center;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
     svg path {
         shape-rendering: geometricPrecision;
@@ -88,7 +92,6 @@
     header,
     img,
     video,
-    canvas,
     [type="button"],
     [type="image"],
     [type="reset"],
@@ -135,7 +138,7 @@
         background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=);
     }
     .animate-shine {
-        @apply pointer-events-none absolute inset-0 transform-gpu overflow-hidden;
+        @apply pointer-events-none absolute inset-0 transform-gpu overflow-hidden transition-opacity group-active:opacity-0;
     }
     .animate-shine::before {
         @apply absolute top-0 block h-full w-14 transform-gpu bg-white/50 blur-[30px] duration-700 content-[""];

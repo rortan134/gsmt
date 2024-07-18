@@ -1,19 +1,37 @@
 import { Link } from "@/navigation";
-import prisma from "@/prisma";
 import { Carousel } from "@components/carousel";
 import { Copy } from "@components/copy";
-import { Drawer, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "@components/drawer";
+import {
+    Drawer,
+    DrawerContent,
+    DrawerDescription,
+    DrawerTitle,
+    DrawerTrigger,
+} from "@components/drawer";
 import { LanguageSelector } from "@components/language-selector";
 import { MessageInput } from "@components/message-input";
 import { PageShell } from "@components/page-shell";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import { slugify } from "@lib/slugify";
-import { ArrowUpRight, Asterisk, Braces, BrainCircuit, Clipboard, Eye, Github, Globe, Home, Mail, MessageCircle, Watch } from "lucide-react";
+import { getPageViewCount, UpdateServerCounter } from "@lib/views";
+import {
+    ArrowUpRight,
+    Asterisk,
+    Braces,
+    BrainCircuit,
+    Clipboard,
+    Eye,
+    Github,
+    Globe,
+    Home,
+    Mail,
+    MessageCircle,
+    Watch,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import * as React from "react";
-
 
 export const metadata: Metadata = {
     title: "Gilberto",
@@ -29,36 +47,13 @@ const projects = [
     },
 ];
 
-async function updateCount() {
-    try {
-        await prisma.counter.upsert({
-            where: { id: 1 },
-            update: { visitCount: { increment: 1 } },
-            create: { id: 1, visitCount: 1 },
-        });
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-async function UpdateServerCounter() {
-    await updateCount();
-    return null;
-}
-
-async function getPageViewCount() {
-    const data = await prisma.counter.findUnique({ where: { id: 1 } });
-    return data?.visitCount ?? "?";
-}
-
 async function PageViews() {
     const pageViewCount = await getPageViewCount();
-
     return (
-        <span className="flex items-center text-xs text-muted-foreground/80">
+        <button className="inline-flex items-center text-xs text-muted-foreground/80">
             <Eye className="mr-1 h-4 w-4" aria-hidden focusable="false" />
-            {pageViewCount} page views
-        </span>
+            {pageViewCount} visitas
+        </button>
     );
 }
 
@@ -73,19 +68,19 @@ export default function HomePage() {
                     <LanguageSelector />
                 </header>
                 <section className="container mt-12 flex w-full items-center justify-between">
-                    <div className="flex flex-col space-y-0.5">
-                        <span className="text-xs text-muted-foreground/90">
-                            <span className="pr-0.5 text-muted-foreground/60">IPA</span>&nbsp;
-                            <i>/ˈɡɪlbət/</i> —&nbsp;desarrollador,{" "}
-                            <span className="opacity-60">creador</span>
+                    <div className="flex flex-col space-y-2">
+                        <h1 className="font-serif text-sm font-medium text-foreground">Gilberto</h1>
+                        <span className="font-serif text-xs text-muted-foreground">
+                            <span className="mr-0.5 opacity-60">IPA</span>&nbsp;
+                            <i className="mr-0.5">/ˈɡɪlbət/</i> —&nbsp;desarrollador,{" "}
+                            <span className="opacity-60">creador.</span>
                         </span>
-                        <h1 className="text-sm font-medium text-foreground">Gilberto</h1>
                     </div>
                     <React.Suspense>
                         <PageViews />
                     </React.Suspense>
                 </section>
-                <section className="container mt-6 flex flex-col space-y-4">
+                <section className="container mt-8 flex flex-col space-y-4">
                     <h1 className="text-sm font-semibold text-foreground">Hoy</h1>
                     <p className="text-sm text-foreground">
                         Developer at heart, passionate about building a better web, creating great
@@ -128,24 +123,16 @@ export default function HomePage() {
                         />{" "}
                         to create more personalized and engaging in-app experiences.
                     </p>
-                    <p className="text-sm text-foreground">Encuéntrame también en los enlaces a continuación</p>
+                    <p className="text-sm text-foreground">
+                        Encuéntrame también en los enlaces a continuación
+                    </p>
                     <div className="flex flex-col items-center gap-2.5 md:flex-row">
-                        <Link
-                            href="https://github.com/rortan134"
-                            title="GitHub"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Github className="mr-2 h-4 w-4" aria-hidden focusable="false" />
-                            GitHub
-                            <ArrowUpRight className="ml-1 size-3 text-muted-foreground/80" />
-                        </Link>
-                        <div className="flex h-fit w-fit items-center pr-6">
+                        <div className="flex h-fit w-fit items-center">
                             <Link
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
-                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-6 text-sm md:w-fit">
-                                <Mail className="mr-2 h-4 w-4" aria-hidden focusable="false" />
+                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-8 text-sm md:w-fit">
+                                <Mail className="mr-3 h-4 w-4" aria-hidden focusable="false" />
                                 gsmt.dev@gmail.com
                             </Link>
                             <Copy text="gsmt.dev@gmail.com">
@@ -155,40 +142,55 @@ export default function HomePage() {
                             </Copy>
                         </div>
                         <Link
+                            href="https://github.com/rortan134"
+                            title="GitHub"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
+                            <Github className="mr-2 h-4 w-4" aria-hidden focusable="false" />
+                            GitHub
+                            <ArrowUpRight className="ml-1 size-3" />
+                        </Link>
+                        <Link
                             href="https://read.cv/gsmt"
                             title="read.cv"
                             target="_blank"
                             className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
                             <Asterisk className="mr-1.5 h-4 w-4" aria-hidden focusable="false" />
                             CV
-                            <ArrowUpRight className="ml-1 size-3 text-muted-foreground/80" />
+                            <ArrowUpRight className="ml-1 size-3" />
                         </Link>
                     </div>
                 </section>
                 <section className="container mt-24">
                     <Carousel>
-                        <div className="flex h-full flex-col-reverse justify-between gap-2 md:flex-row md:items-end">
-                            <div className="h-full w-full bg-neutral-400" />
+                        <div className="relative flex aspect-square h-full">
+                            <div className="h-full w-auto object-cover" />
                         </div>
-                        <div className="flex h-full flex-col-reverse justify-between gap-2 md:flex-row md:items-end">
-                            <div className="h-full w-full bg-neutral-400" />
+                        <div className="relative flex h-full">
+                            <div className="h-full w-auto object-cover" />
                         </div>
-                        <div className="flex h-full flex-col-reverse justify-between gap-2 md:flex-row md:items-end">
-                            <div className="h-full w-full bg-neutral-400" />
+                        <div className="relative flex aspect-square h-full">
+                            <div className="h-full w-auto object-cover" />
                         </div>
-                        <div className="flex h-full flex-col-reverse justify-between gap-2 md:flex-row md:items-end">
-                            <div className="h-full w-full bg-neutral-400" />
+                        <div className="relative flex h-full">
+                            <div className="h-full w-auto object-cover" />
                         </div>
-                        <div className="flex h-full flex-col-reverse justify-between gap-2 md:flex-row md:items-end">
-                            <div className="h-full w-full bg-neutral-400" />
+                        <div className="relative flex aspect-square h-full">
+                            <div className="h-full w-auto object-cover" />
                         </div>
                     </Carousel>
                 </section>
                 <Timezone />
                 <footer className="container mt-16 flex flex-row items-center justify-between">
-                    <span className="text-[10px] text-muted-foreground/60">
-                        @ {new Date().getUTCFullYear()} GSMT. Todos los derechos reservados.
-                    </span>
+                    <div className="flex flex-col space-y-1">
+                        <span className="text-[10px] text-muted-foreground/60">
+                            <Globe className="mr-1 inline-block size-3" /> España
+                        </span>
+                        <span className="text-[10px] text-muted-foreground/60">
+                            @ {new Date().getUTCFullYear()} GSMT. Todos los derechos reservados.
+                        </span>
+                    </div>
                     <div className="inline-flex shrink gap-1 md:gap-2">
                         <div className="inline-flex flex-col">
                             <span className="truncate text-[10px] text-muted-foreground/60">
@@ -223,18 +225,21 @@ const FloatingNavigation = () => (
                 <Home className="h-4 w-4" />
                 <span className="sr-only">Ir a inicio</span>
             </Link>
-            {/* <Drawer>
+            <Drawer>
                 <DrawerTrigger
                     title="Featured projects"
-                    className="inline-flex w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
+                    className="hidden w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
                     Proyectos
                     <span className="sr-only">Expandir panel de proyectos</span>
                 </DrawerTrigger>
                 <DrawerContent>
                     <DrawerTitle>Proyectos</DrawerTitle>
                     <DrawerDescription className="max-w-lg px-4">
-                        En la actualidad me centro principalmente en el ecosistema web, pero ya trabajé con muchos lenguajes y plataformas.{" "}
-                        <span className="opacity-50">—&nbsp;Haga clic en un proyecto para ampliarlo</span>
+                        En la actualidad me centro principalmente en el ecosistema web, pero ya
+                        trabajé con muchos lenguajes y plataformas.{" "}
+                        <span className="opacity-50">
+                            —&nbsp;Haga clic en un proyecto para ampliarlo
+                        </span>
                     </DrawerDescription>
                     {projects.map(({ name, description, tech, image }, i) => (
                         <Link
@@ -250,12 +255,13 @@ const FloatingNavigation = () => (
                         </Link>
                     ))}
                 </DrawerContent>
-            </Drawer> */}
+            </Drawer>
             <Drawer>
                 <DrawerTrigger
                     title="Enviar un mensaje"
                     className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
                     <MessageCircle className="h-4 w-4" />
+                    <span className="absolute right-3.5 top-1.5 size-2 rounded-full bg-green-500" />
                     <span className="sr-only">Enviar un mensaje</span>
                 </DrawerTrigger>
                 <DrawerContent>

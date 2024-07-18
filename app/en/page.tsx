@@ -1,5 +1,4 @@
 import { Link } from "@/navigation";
-import prisma from "@/prisma";
 import {
     Drawer,
     DrawerContent,
@@ -13,6 +12,7 @@ import { PageShell } from "@components/page-shell";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import { slugify } from "@lib/slugify";
+import { getPageViewCount, UpdateServerCounter } from "@lib/views";
 import {
     ArrowUpRight,
     Asterisk,
@@ -32,7 +32,7 @@ import Image from "next/image";
 import * as React from "react";
 
 export const metadata: Metadata = {
-    title: "Gilberto",
+    title: "Gilbert",
 };
 
 const projects = [
@@ -45,36 +45,13 @@ const projects = [
     },
 ];
 
-async function updateCount() {
-    try {
-        await prisma.counter.upsert({
-            where: { id: 1 },
-            update: { visitCount: { increment: 1 } },
-            create: { id: 1, visitCount: 1 },
-        });
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-async function UpdateServerCounter() {
-    await updateCount();
-    return null;
-}
-
-async function getPageViewCount() {
-    const data = await prisma.counter.findUnique({ where: { id: 1 } });
-    return data?.visitCount ?? "?";
-}
-
 async function PageViews() {
     const pageViewCount = await getPageViewCount();
-
     return (
-        <span className="flex items-center text-xs text-muted-foreground/80">
+        <button className="inline-flex items-center text-xs text-muted-foreground/80">
             <Eye className="mr-1 h-4 w-4" aria-hidden focusable="false" />
-            {pageViewCount} page views
-        </span>
+            {pageViewCount} visitas
+        </button>
     );
 }
 
@@ -89,7 +66,7 @@ export default function HomePage() {
                     <LanguageSelector />
                 </header>
                 <section className="container mt-12 flex w-full items-center justify-between">
-                    <span className="text-xs text-muted-foreground/90">
+                    <span className="font-serif text-xs text-muted-foreground/90">
                         <span className="pr-0.5 text-muted-foreground/60">IPA</span>&nbsp;
                         <i>/ˈɡɪlbət/</i> —&nbsp;software developer, maker
                     </span>
@@ -225,12 +202,14 @@ const FloatingNavigation = () => (
             <Drawer>
                 <DrawerTrigger
                     title="Featured projects"
-                    className="inline-flex w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
+                    className="hidden w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
                     Work
                     <span className="sr-only">Expand work drawer</span>
                 </DrawerTrigger>
                 <DrawerContent>
-                    <DrawerTitle>Work</DrawerTitle>
+                    <DrawerTitle>
+                        Work <span className="opacity-60">—&nbsp;I like building things</span>
+                    </DrawerTitle>
                     <DrawerDescription className="max-w-lg px-4">
                         My focus these days is mainly on the web ecosystem, but I have worked with
                         many languages and platforms.{" "}
@@ -262,6 +241,7 @@ const FloatingNavigation = () => (
                     title="Send a Message"
                     className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
                     <MessageCircle className="h-4 w-4" />
+                    <span className="absolute right-3.5 top-1.5 size-2 rounded-full bg-green-500" />
                     <span className="sr-only">Send a Message</span>
                 </DrawerTrigger>
                 <DrawerContent>

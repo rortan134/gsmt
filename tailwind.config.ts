@@ -1,7 +1,7 @@
 import { type Config } from "tailwindcss";
 
 export default {
-    content: ["./app/**/*.{js,jsx,ts,tsx}"],
+    content: ["./app/**/*.tsx"],
     future: { hoverOnlyWhenSupported: true },
     theme: {
         container: {
@@ -10,6 +10,18 @@ export default {
             screens: { "2xl": "640px" },
         },
         extend: {
+            fontFamily: {
+                serif: [
+                    "var(--font-serif)",
+                    "-apple-system",
+                    "BlinkMacSystemFont",
+                    "Segoe UI",
+                    "Helvetica Neue",
+                    "Helvetica",
+                    "Arial",
+                    "sans-serif",
+                ],
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",

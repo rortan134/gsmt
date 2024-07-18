@@ -1,10 +1,9 @@
 import "./globals.css";
-
 import { cn } from "@lib/cn";
 import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 
 // TODO: make static
 export const dynamic = "force-dynamic";
@@ -18,6 +17,13 @@ const inter = Inter({
     preload: true,
 });
 
+const serif = Source_Serif_4({
+    subsets: ["latin"],
+    variable: "--font-serif",
+    display: "swap",
+    preload: true,
+});
+
 export const viewport: Viewport = {
     width: "device-width",
     viewportFit: "cover",
@@ -25,9 +31,7 @@ export const viewport: Viewport = {
     minimumScale: 1,
     colorScheme: "light",
     userScalable: false,
-    themeColor: [
-        { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    ],
+    themeColor: [{ media: "(prefers-color-scheme: light)", color: "#ffffff" }],
 };
 
 export const metadata: Metadata = {
@@ -57,10 +61,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
     return (
         <html lang="en" dir="ltr">
-            <body className={cn("pb-16", inter.className)}>
-                <NextIntlClientProvider messages={messages}>
-                    {children}
-                </NextIntlClientProvider>
+            <body className={cn("pb-16", inter.className, serif.variable)}>
+                <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
             </body>
         </html>
     );
