@@ -36,18 +36,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
     metadataBase: new URL(WEBSITE_URL),
-    title: "@gsmt",
-    description: "GSMT website",
+    title: { default: "@gsmt", template: "%s | @gsmt" },
+    description: "gsmt website",
     category: "technology",
     referrer: "origin",
     alternates: { canonical: "/" },
     robots: { noimageindex: true },
     appleWebApp: { capable: true, statusBarStyle: "default" },
-    twitter: {
-        card: "summary_large_image",
-        site: "@gsmmtt",
-        creator: "@gsmmtt",
-    },
     formatDetection: { address: false, telephone: false },
     other: {
         "msapplication-TileColor": "#000000",
