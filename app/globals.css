@@ -43,7 +43,7 @@
     html,
     body {
         @apply h-full w-full overflow-x-hidden;
-         -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
     }
     html {
         quotes: "“" "”" "‘" "’";
