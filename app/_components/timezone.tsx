@@ -1,10 +1,25 @@
+"use client";
+
 import { dayjs } from "@lib/dayjs";
 import { useLocale } from "next-intl";
+import * as React from "react";
+
+const gTimezone = "Europe/Madrid";
 
 const Timezone = () => {
     dayjs.locale(useLocale());
 
-    return (
+    const [, forceRender] = React.useState(0);
+    React.useEffect(() => {
+        const intervalId = window.setInterval(() => forceRender((prev) => prev + 1), 1000);
+        return () => window.clearInterval(intervalId);
+    }, [forceRender]);
+
+    const isSameTimezone = dayjs().tz(gTimezone).isSame(dayjs().tz(dayjs.tz.guess()));
+
+    return isSameTimezone ? (
+        <span className="text-muted-foreground/75 mt-16">{dayjs().tz(gTimezone).format("ddd, MMM DD, YYYY")}</span>
+    ) : (
         <section className="container mt-16 grid w-full gap-6 md:grid-cols-2">
             <div className="flex w-full flex-col space-y-2">
                 <h4 className="text-sm text-foreground">Your timezone</h4>
@@ -14,15 +29,15 @@ const Timezone = () => {
                             {dayjs.tz.guess()}
                         </span>
                         <span className="text-xs text-muted-foreground/75">
-                            (GMT {dayjs().tz(dayjs.tz.guess()).format("Z")})
+                            (GMT {dayjs().format("Z")})
                         </span>
                     </div>
                     <div className="flex flex-col space-y-0.5">
                         <span className="text-xs font-medium text-muted-foreground/90">
-                            {dayjs().tz(dayjs.tz.guess()).format("h:mm A")}
+                            {dayjs().format("h:mm A")}
                         </span>
                         <span className="text-xs text-muted-foreground/75">
-                            {dayjs().tz(dayjs.tz.guess()).format("ddd, MMM DD, YYYY")}
+                            {dayjs().format("ddd, MMM DD, YYYY")}
                         </span>
                     </div>
                 </div>
@@ -32,18 +47,18 @@ const Timezone = () => {
                 <div className="flex items-center justify-between rounded-xl border p-3">
                     <div className="flex flex-col space-y-1">
                         <span className="text-xs font-medium text-muted-foreground">
-                            Europe/Madrid
+                            {gTimezone}
                         </span>
                         <span className="text-xs text-muted-foreground/75">
-                            (GMT {dayjs().tz("Europe/Madrid").format("Z")})
+                            (GMT {dayjs().tz(gTimezone).format("Z")})
                         </span>
                     </div>
                     <div className="flex flex-col space-y-0.5">
                         <span className="text-xs font-medium text-muted-foreground/90">
-                            {dayjs().tz("Europe/Madrid").format("h:mm A")}
+                            {dayjs().tz(gTimezone).format("h:mm A")}
                         </span>
                         <span className="text-xs text-muted-foreground/75">
-                            {dayjs().tz("Europe/Madrid").format("ddd, MMM DD, YYYY")}
+                            {dayjs().tz(gTimezone).format("ddd, MMM DD, YYYY")}
                         </span>
                     </div>
                 </div>
