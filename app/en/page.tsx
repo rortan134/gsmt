@@ -48,10 +48,10 @@ const projects = [
 async function PageViews() {
     const pageViewCount = await getPageViewCount();
     return (
-        <button className="inline-flex items-center text-xs text-muted-foreground/80">
+        <span className="inline-flex items-center text-xs text-muted-foreground/80">
             <Eye className="mr-1 h-4 w-4" aria-hidden focusable="false" />
             {pageViewCount} visitas
-        </button>
+        </span>
     );
 }
 

@@ -51,10 +51,10 @@ const projects = [
 async function PageViews() {
     const pageViewCount = await getPageViewCount();
     return (
-        <button className="inline-flex items-center text-xs text-muted-foreground/80">
-            <Eye className="mr-1 h-4 w-4" aria-hidden focusable="false" />
+        <span className="inline-flex items-center text-xs text-muted-foreground/80">
+            <Eye className="mr-1 size-4" aria-hidden focusable="false" />
             {pageViewCount} visitas
-        </button>
+        </span>
     );
 }
 
@@ -68,7 +68,7 @@ export default function HomePage() {
                     </Link>
                     <LanguageSelector />
                 </header>
-                <section className="container mt-12 flex w-full items-center justify-between">
+                <section className="container mt-12 flex w-full items-end justify-between">
                     <div className="flex flex-col space-y-2">
                         <h1 className="font-serif text-sm font-medium text-foreground">Gilberto</h1>
                         <span className="font-serif text-xs text-muted-foreground">
@@ -87,14 +87,14 @@ export default function HomePage() {
                         Developer at heart, passionate about building a better web, creating great
                         experiences for end users, and trying to solve real-world{" "}
                         <Globe
-                            className="inline-block h-4 w-4 opacity-50"
+                            className="inline-block size-4 opacity-50"
                             aria-hidden
                             focusable="false"
                         />{" "}
                         problems with an eye for design. I&apos;m also a fan of open-source
                         software, and cool looking watches{" "}
                         <Watch
-                            className="inline-block h-4 w-4 opacity-50"
+                            className="inline-block size-4 opacity-50"
                             aria-hidden
                             focusable="false"
                         />
@@ -105,7 +105,7 @@ export default function HomePage() {
                         over 3 years now. Playing with prototypes and doing everything from data
                         scrapers{" "}
                         <Braces
-                            className="inline-block h-4 w-4 opacity-50"
+                            className="inline-block size-4 opacity-50"
                             aria-hidden
                             focusable="false"
                         />
@@ -118,7 +118,7 @@ export default function HomePage() {
                         positive impact on people and consistently improve through learning. I have
                         been particularly interested in using ML{" "}
                         <BrainCircuit
-                            className="inline-block h-4 w-4 opacity-50"
+                            className="inline-block size-4 opacity-50"
                             aria-hidden
                             focusable="false"
                         />{" "}
@@ -133,16 +133,17 @@ export default function HomePage() {
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
                                 className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-11 text-sm md:w-fit">
-                                <Mail className="mr-3 h-4 w-4" aria-hidden focusable="false" />
+                                <Mail className="mr-3 size-4" aria-hidden focusable="false" />
                                 gsmt.dev@gmail.com
                             </Link>
                             <Copy text="gsmt.dev@gmail.com">
                                 <button
                                     title="Copiar"
                                     aria-label="Copiar correo electrónico"
-                                    className="group right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 *:absolute hover:opacity-60 active:opacity-50">
-                                    <Clipboard className="h-4 w-4 transition-opacity group-data-[copied=true]:opacity-0" />
-                                    <Check className="h-4 w-4 transition-opacity group-data-[copied=false]:opacity-0" />
+                                    className="group absolute right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 hover:opacity-60 active:opacity-50">
+                                    <Clipboard className="size-4 transition-all group-data-[copied=true]:opacity-0" />
+                                    <Check className="absolute size-4 transition-all group-data-[copied=false]:opacity-0" />
+                                    <span className="sr-only">Copiar correo electrónico</span>
                                 </button>
                             </Copy>
                         </div>
@@ -152,7 +153,7 @@ export default function HomePage() {
                             target="_blank"
                             rel="noreferrer noopener"
                             className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Github className="mr-2 h-4 w-4" aria-hidden focusable="false" />
+                            <Github className="mr-2 size-4" aria-hidden focusable="false" />
                             GitHub
                             <ArrowUpRight className="ml-1 size-3" />
                         </Link>
@@ -161,7 +162,7 @@ export default function HomePage() {
                             title="read.cv"
                             target="_blank"
                             className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Asterisk className="mr-1.5 h-4 w-4" aria-hidden focusable="false" />
+                            <Asterisk className="mr-1.5 size-4" aria-hidden focusable="false" />
                             CV
                             <ArrowUpRight className="ml-1 size-3" />
                         </Link>
@@ -227,7 +228,7 @@ const FloatingNavigation = () => (
                 href="/"
                 title="Home"
                 className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/80 px-4 py-1.5">
-                <Home className="h-4 w-4" />
+                <Home className="size-4" />
                 <span className="sr-only">Ir a inicio</span>
             </Link>
             <Drawer>
@@ -265,7 +266,7 @@ const FloatingNavigation = () => (
                 <DrawerTrigger
                     title="Enviar un mensaje"
                     className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
-                    <MessageCircle className="h-4 w-4" />
+                    <MessageCircle className="size-4" />
                     <span className="absolute right-3.5 top-1.5 size-2 rounded-full bg-green-500" />
                     <span className="sr-only">Enviar un mensaje</span>
                 </DrawerTrigger>
