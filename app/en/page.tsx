@@ -1,11 +1,5 @@
 import { Link } from "@/navigation";
 import prisma from "@/prisma";
-import { LanguageSelector } from "@components/language-selector";
-import { PageShell } from "@components/page-shell";
-import { Signature } from "@components/signature";
-import { Timezone } from "@components/timezone";
-import { ArrowUpRight, Asterisk, Braces, BrainCircuit, Eye, Github, Globe, Mail, Twitter, Watch } from "lucide-react";
-import * as React from "react";
 import {
     Drawer,
     DrawerContent,
@@ -13,12 +7,35 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@components/drawer";
+import { LanguageSelector } from "@components/language-selector";
 import { MessageInput } from "@components/message-input";
+import { PageShell } from "@components/page-shell";
+import { Signature } from "@components/signature";
+import { Timezone } from "@components/timezone";
 import { slugify } from "@lib/slugify";
-import { Home, MessageCircle } from "lucide-react";
+import {
+    ArrowUpRight,
+    Asterisk,
+    Braces,
+    BrainCircuit,
+    Eye,
+    Github,
+    Globe,
+    Home,
+    Mail,
+    MessageCircle,
+    Twitter,
+    Watch,
+} from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
+import * as React from "react";
 
-export const projects = [
+export const metadata: Metadata = {
+    title: "Gilberto",
+};
+
+const projects = [
     {
         name: "Project",
         description:
@@ -74,7 +91,7 @@ export default function HomePage() {
                 <section className="container mt-12 flex w-full items-center justify-between">
                     <span className="text-xs text-muted-foreground/90">
                         <span className="pr-0.5 text-muted-foreground/60">IPA</span>&nbsp;
-                        <i>/ˈɡɪlbət/</i> —&nbsp;software developer
+                        <i>/ˈɡɪlbət/</i> —&nbsp;software developer, maker
                     </span>
                     <React.Suspense>
                         <PageViews />
@@ -145,7 +162,7 @@ export default function HomePage() {
                             rel="noreferrer noopener"
                             className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
                             <Github className="mr-2 h-4 w-4" aria-hidden focusable="false" />
-                            Github
+                            GitHub
                             <ArrowUpRight className="ml-1 size-3 text-muted-foreground/80" />
                         </Link>
                         <Link
@@ -234,12 +251,12 @@ const FloatingNavigation = () => (
                     ))}
                 </DrawerContent>
             </Drawer>
-            {/* <Link
+            <Link
                 href="/reads"
                 title="Recommended reads"
                 className="inline-flex w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
                 Reads
-            </Link> */}
+            </Link>
             <Drawer>
                 <DrawerTrigger
                     title="Send a Message"

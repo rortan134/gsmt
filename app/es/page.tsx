@@ -9,21 +9,8 @@ import { PageShell } from "@components/page-shell";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import { slugify } from "@lib/slugify";
-import {
-    ArrowUpRight,
-    Asterisk,
-    Braces,
-    BrainCircuit,
-    Clipboard,
-    Eye,
-    Github,
-    Globe,
-    Home,
-    Mail,
-    MessageCircle,
-    Watch,
-} from "lucide-react";
-import { Metadata } from "next";
+import { ArrowUpRight, Asterisk, Braces, BrainCircuit, Clipboard, Eye, Github, Globe, Home, Mail, MessageCircle, Watch } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import * as React from "react";
 
@@ -86,17 +73,20 @@ export default function HomePage() {
                     <LanguageSelector />
                 </header>
                 <section className="container mt-12 flex w-full items-center justify-between">
-                    <span className="text-xs text-muted-foreground/90">
-                        <span className="pr-0.5 text-muted-foreground/60">IPA</span>&nbsp;
-                        <i>/ˈɡɪlbət/</i> —&nbsp;desarrollador. <span className="opacity-60">creador.</span>
-                    </span>
-                    <h1 className="text-sm font-medium text-foreground">Gilberto</h1>
+                    <div className="flex flex-col space-y-0.5">
+                        <span className="text-xs text-muted-foreground/90">
+                            <span className="pr-0.5 text-muted-foreground/60">IPA</span>&nbsp;
+                            <i>/ˈɡɪlbət/</i> —&nbsp;desarrollador,{" "}
+                            <span className="opacity-60">creador</span>
+                        </span>
+                        <h1 className="text-sm font-medium text-foreground">Gilberto</h1>
+                    </div>
                     <React.Suspense>
                         <PageViews />
                     </React.Suspense>
                 </section>
                 <section className="container mt-6 flex flex-col space-y-4">
-                    <h1 className="text-sm font-semibold text-foreground">Today</h1>
+                    <h1 className="text-sm font-semibold text-foreground">Hoy</h1>
                     <p className="text-sm text-foreground">
                         Developer at heart, passionate about building a better web, creating great
                         experiences for end users, and trying to solve real-world{" "}
@@ -138,10 +128,7 @@ export default function HomePage() {
                         />{" "}
                         to create more personalized and engaging in-app experiences.
                     </p>
-                    <p className="text-sm text-foreground">
-                        Check out my work in the navigation bar below.
-                    </p>
-                    <p className="text-sm text-foreground">Also find me on the links below</p>
+                    <p className="text-sm text-foreground">Encuéntrame también en los enlaces a continuación</p>
                     <div className="flex flex-col items-center gap-2.5 md:flex-row">
                         <Link
                             href="https://github.com/rortan134"
@@ -150,10 +137,10 @@ export default function HomePage() {
                             rel="noreferrer noopener"
                             className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
                             <Github className="mr-2 h-4 w-4" aria-hidden focusable="false" />
-                            Github
+                            GitHub
                             <ArrowUpRight className="ml-1 size-3 text-muted-foreground/80" />
                         </Link>
-                        <div className="flex items-center w-fit h-fit pr-6">
+                        <div className="flex h-fit w-fit items-center pr-6">
                             <Link
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
@@ -162,7 +149,9 @@ export default function HomePage() {
                                 gsmt.dev@gmail.com
                             </Link>
                             <Copy text="gsmt.dev@gmail.com">
-                                <button className="size-5 absolute right-1"><Clipboard className="h-4 w-4" /></button>
+                                <button className="absolute right-1 size-5">
+                                    <Clipboard className="h-4 w-4" />
+                                </button>
                             </Copy>
                         </div>
                         <Link
@@ -198,7 +187,7 @@ export default function HomePage() {
                 <Timezone />
                 <footer className="container mt-16 flex flex-row items-center justify-between">
                     <span className="text-[10px] text-muted-foreground/60">
-                        @ {new Date().getUTCFullYear()} GSMT. All rights reserved.
+                        @ {new Date().getUTCFullYear()} GSMT. Todos los derechos reservados.
                     </span>
                     <div className="inline-flex shrink gap-1 md:gap-2">
                         <div className="inline-flex flex-col">
@@ -209,7 +198,7 @@ export default function HomePage() {
                                 href="https://github.com/rortan134/gsmt"
                                 target="_blank"
                                 className="truncate text-[10px] text-muted-foreground/60 underline underline-offset-4">
-                                view source
+                                ver código fuente
                             </Link>
                         </div>
                         <Signature />
@@ -219,6 +208,7 @@ export default function HomePage() {
                     <UpdateServerCounter />
                 </React.Suspense>
             </PageShell>
+            <FloatingNavigation />
         </>
     );
 }
@@ -231,21 +221,20 @@ const FloatingNavigation = () => (
                 title="Home"
                 className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/80 px-4 py-1.5">
                 <Home className="h-4 w-4" />
-                <span className="sr-only">Go to home page</span>
+                <span className="sr-only">Ir a inicio</span>
             </Link>
-            <Drawer>
+            {/* <Drawer>
                 <DrawerTrigger
                     title="Featured projects"
                     className="inline-flex w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
-                    Work
-                    <span className="sr-only">Expand work drawer</span>
+                    Proyectos
+                    <span className="sr-only">Expandir panel de proyectos</span>
                 </DrawerTrigger>
                 <DrawerContent>
-                    <DrawerTitle>Work</DrawerTitle>
+                    <DrawerTitle>Proyectos</DrawerTitle>
                     <DrawerDescription className="max-w-lg px-4">
-                        My focus these days is mainly on the web ecosystem, but I have worked with
-                        many languages and platforms.{" "}
-                        <span className="opacity-50">—&nbsp;Click on a project to expand</span>
+                        En la actualidad me centro principalmente en el ecosistema web, pero ya trabajé con muchos lenguajes y plataformas.{" "}
+                        <span className="opacity-50">—&nbsp;Haga clic en un proyecto para ampliarlo</span>
                     </DrawerDescription>
                     {projects.map(({ name, description, tech, image }, i) => (
                         <Link
@@ -261,19 +250,13 @@ const FloatingNavigation = () => (
                         </Link>
                     ))}
                 </DrawerContent>
-            </Drawer>
-            {/* <Link
-                href="/reads"
-                title="Recommended reads"
-                className="inline-flex w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
-                Reads
-            </Link> */}
+            </Drawer> */}
             <Drawer>
                 <DrawerTrigger
-                    title="Send a Message"
+                    title="Enviar un mensaje"
                     className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
                     <MessageCircle className="h-4 w-4" />
-                    <span className="sr-only">Send a Message</span>
+                    <span className="sr-only">Enviar un mensaje</span>
                 </DrawerTrigger>
                 <DrawerContent>
                     <MessageInput />
