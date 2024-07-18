@@ -20,6 +20,7 @@ import {
     Asterisk,
     Braces,
     BrainCircuit,
+    Check,
     Clipboard,
     Eye,
     Github,
@@ -127,17 +128,21 @@ export default function HomePage() {
                         Encuéntrame también en los enlaces a continuación
                     </p>
                     <div className="flex flex-col items-center gap-2.5 md:flex-row">
-                        <div className="flex h-fit w-fit items-center">
+                        <div className="relative flex h-fit w-fit items-center">
                             <Link
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
-                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-8 text-sm md:w-fit">
+                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-11 text-sm md:w-fit">
                                 <Mail className="mr-3 h-4 w-4" aria-hidden focusable="false" />
                                 gsmt.dev@gmail.com
                             </Link>
                             <Copy text="gsmt.dev@gmail.com">
-                                <button className="absolute right-1 size-5">
-                                    <Clipboard className="h-4 w-4" />
+                                <button
+                                    title="Copiar"
+                                    aria-label="Copiar correo electrónico"
+                                    className="group right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 *:absolute hover:opacity-60 active:opacity-50">
+                                    <Clipboard className="h-4 w-4 transition-opacity group-data-[copied=true]:opacity-0" />
+                                    <Check className="h-4 w-4 transition-opacity group-data-[copied=false]:opacity-0" />
                                 </button>
                             </Copy>
                         </div>

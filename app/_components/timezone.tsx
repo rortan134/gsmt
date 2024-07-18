@@ -18,11 +18,11 @@ const Timezone = () => {
     const isSameTimezone = dayjs().tz(gTimezone).isSame(dayjs().tz(dayjs.tz.guess()));
 
     return isSameTimezone ? (
-        <span className="mt-16 text-muted-foreground/75">
+        <span className="container mt-20 w-full text-xs text-muted-foreground/75">
             {dayjs().tz(gTimezone).format("ddd, MMM DD, YYYY")}
         </span>
     ) : (
-        <section className="container mt-16 grid w-full gap-6 md:grid-cols-2">
+        <section className="container mt-20 grid w-full gap-6 md:grid-cols-2">
             <div className="flex w-full flex-col space-y-2">
                 <h4 className="text-sm text-foreground">Your timezone</h4>
                 <div className="flex items-center justify-between rounded-xl border p-3">
