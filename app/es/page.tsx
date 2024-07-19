@@ -15,6 +15,7 @@ import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import { slugify } from "@lib/slugify";
 import { getPageViewCount, UpdateServerCounter } from "@lib/views";
+import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import {
     ArrowUpRight,
     Asterisk,
@@ -51,8 +52,10 @@ const projects = [
 async function PageViews() {
     const pageViewCount = await getPageViewCount();
     return (
-        <span className="inline-flex items-center text-xs text-muted-foreground/80">
-            <Eye className="mr-1 size-4" aria-hidden focusable="false" />
+        <span className="inline-flex items-center font-serif text-xs text-muted-foreground/80">
+            <AccessibleIcon.Root label="Visitas">
+                <Eye className="mr-1 size-4" />
+            </AccessibleIcon.Root>
             {pageViewCount} visitas
         </span>
     );
@@ -73,7 +76,7 @@ export default function HomePage() {
                         <h1 className="font-serif text-sm font-medium text-foreground">Gilberto</h1>
                         <span className="font-serif text-xs text-muted-foreground">
                             <span className="mr-0.5 opacity-60">IPA</span>&nbsp;
-                            <i className="mr-0.5">/ˈɡɪlbət/</i> —&nbsp;desarrollador,{" "}
+                            <i className="mr-1">/ˈɡɪlbət/</i> —&nbsp;desarrollador,{" "}
                             <span className="opacity-60">creador.</span>
                         </span>
                     </div>
@@ -88,15 +91,15 @@ export default function HomePage() {
                         experiences for end users, and trying to solve real-world{" "}
                         <Globe
                             className="inline-block size-4 opacity-50"
-                            aria-hidden
                             focusable="false"
+                            aria-hidden
                         />{" "}
                         problems with an eye for design. I&apos;m also a fan of open-source
                         software, and cool looking watches{" "}
                         <Watch
                             className="inline-block size-4 opacity-50"
-                            aria-hidden
                             focusable="false"
+                            aria-hidden
                         />
                         .
                         <br />
@@ -106,8 +109,8 @@ export default function HomePage() {
                         scrapers{" "}
                         <Braces
                             className="inline-block size-4 opacity-50"
-                            aria-hidden
                             focusable="false"
+                            aria-hidden
                         />
                         , dynamic websites and APIs, charmful native applications, fractal
                         simulations, data visualizations and more.
@@ -119,30 +122,32 @@ export default function HomePage() {
                         been particularly interested in using ML{" "}
                         <BrainCircuit
                             className="inline-block size-4 opacity-50"
-                            aria-hidden
                             focusable="false"
+                            aria-hidden
                         />{" "}
                         to create more personalized and engaging in-app experiences.
                     </p>
                     <p className="text-sm text-foreground">
                         Encuéntrame también en los enlaces a continuación
                     </p>
-                    <div className="flex flex-col items-center gap-2.5 md:flex-row">
+                    <div className="group flex flex-col items-center gap-2.5 md:flex-row">
                         <div className="relative flex h-fit w-fit items-center">
                             <Link
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
-                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-11 text-sm md:w-fit">
-                                <Mail className="mr-3 size-4" aria-hidden focusable="false" />
+                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-11 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                                <AccessibleIcon.Root label="Email">
+                                    <Mail className="mr-3 size-4" />
+                                </AccessibleIcon.Root>
                                 gsmt.dev@gmail.com
                             </Link>
                             <Copy text="gsmt.dev@gmail.com">
                                 <button
                                     title="Copiar"
                                     aria-label="Copiar correo electrónico"
-                                    className="group absolute right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 hover:opacity-60 active:opacity-50">
-                                    <Clipboard className="size-4 transition-all group-data-[copied=true]:opacity-0" />
-                                    <Check className="absolute size-4 transition-all group-data-[copied=false]:opacity-0" />
+                                    className="group/btn absolute right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 hover:opacity-100 active:opacity-50 group-hover:opacity-75">
+                                    <Clipboard className="size-4 transition-all group-data-[copied=true]/btn:opacity-0" />
+                                    <Check className="absolute size-4 transition-all group-data-[copied=false]/btn:opacity-0" />
                                     <span className="sr-only">Copiar correo electrónico</span>
                                 </button>
                             </Copy>
@@ -152,19 +157,23 @@ export default function HomePage() {
                             title="GitHub"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Github className="mr-2 size-4" aria-hidden focusable="false" />
+                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                            <AccessibleIcon.Root label="GitHub">
+                                <Github className="mr-2 size-4" />
+                            </AccessibleIcon.Root>
                             GitHub
-                            <ArrowUpRight className="ml-1 size-3" />
+                            <ArrowUpRight className="ml-1.5 size-3" />
                         </Link>
                         <Link
                             href="https://read.cv/gsmt"
                             title="read.cv"
                             target="_blank"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Asterisk className="mr-1.5 size-4" aria-hidden focusable="false" />
+                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                            <AccessibleIcon.Root label="CV">
+                                <Asterisk className="mr-1.5 size-4" />
+                            </AccessibleIcon.Root>
                             CV
-                            <ArrowUpRight className="ml-1 size-3" />
+                            <ArrowUpRight className="ml-1.5 size-3" />
                         </Link>
                     </div>
                 </section>
@@ -191,7 +200,10 @@ export default function HomePage() {
                 <footer className="container mt-16 flex flex-row items-center justify-between">
                     <div className="flex flex-col space-y-1">
                         <span className="text-[10px] text-muted-foreground/60">
-                            <Globe className="mr-1 inline-block size-3" /> España
+                            <AccessibleIcon.Root label="Basado en España">
+                                <Globe className="mr-1 inline-block size-3" />
+                            </AccessibleIcon.Root>{" "}
+                            España
                         </span>
                         <span className="text-[10px] text-muted-foreground/60">
                             @ {new Date().getUTCFullYear()} GSMT. Todos los derechos reservados.
@@ -222,21 +234,23 @@ export default function HomePage() {
 }
 
 const FloatingNavigation = () => (
-    <nav className="fixed inset-x-0 bottom-0 pb-12">
+    <nav className="fixed inset-x-0 bottom-0 z-20 pb-12">
         <div className="absolute bottom-3 left-1/2 flex w-fit -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-200/80 px-1 py-0.5 shadow backdrop-blur-xl">
             <Link
                 href="/"
-                title="Home"
+                title="Inicio"
                 className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/80 px-4 py-1.5">
-                <Home className="size-4" />
-                <span className="sr-only">Ir a inicio</span>
+                <AccessibleIcon.Root label="Ir a inicio">
+                    <Home className="size-4" />
+                </AccessibleIcon.Root>
             </Link>
             <Drawer>
                 <DrawerTrigger
                     title="Featured projects"
                     className="hidden w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
-                    Proyectos
-                    <span className="sr-only">Expandir panel de proyectos</span>
+                    <AccessibleIcon.Root label="Expandir panel de proyectos">
+                        Proyectos
+                    </AccessibleIcon.Root>
                 </DrawerTrigger>
                 <DrawerContent>
                     <DrawerTitle>Proyectos</DrawerTitle>
@@ -266,9 +280,10 @@ const FloatingNavigation = () => (
                 <DrawerTrigger
                     title="Enviar un mensaje"
                     className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
-                    <MessageCircle className="size-4" />
+                    <AccessibleIcon.Root label="Enviar un mensaje">
+                        <MessageCircle className="size-4" />
+                    </AccessibleIcon.Root>
                     <span className="absolute right-3.5 top-1.5 size-2 rounded-full bg-green-500" />
-                    <span className="sr-only">Enviar un mensaje</span>
                 </DrawerTrigger>
                 <DrawerContent>
                     <MessageInput />

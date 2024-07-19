@@ -14,7 +14,7 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
         spaceBetween={16}
         breakpoints={{
             320: {
-                slidesPerView: 1.1,
+                slidesPerView: 1.09,
             },
             768: {
                 slidesPerView: 2.1,
@@ -30,7 +30,9 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
         }}
         className="h-fit w-full !overflow-visible">
         {React.Children.map(children, (child) => (
-            <SwiperSlide className="relative !h-auto max-h-[565px] overflow-hidden rounded-3xl bg-card p-4 md:p-6">
+            <SwiperSlide
+                className="relative !h-auto max-h-[565px] overflow-hidden rounded-3xl bg-card p-4 md:p-6"
+                style={{}}>
                 {child}
             </SwiperSlide>
         ))}

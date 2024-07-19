@@ -11,17 +11,13 @@ const Timezone = () => {
 
     const [, forceRender] = React.useState(0);
     React.useEffect(() => {
-        const intervalId = window.setInterval(() => forceRender((prev) => prev + 1), 1000);
+        const intervalId = window.setInterval(() => forceRender((prev) => prev + 1), 5000);
         return () => window.clearInterval(intervalId);
     }, [forceRender]);
 
     const isSameTimezone = dayjs().tz(gTimezone).isSame(dayjs().tz(dayjs.tz.guess()));
 
-    return isSameTimezone ? (
-        <span className="container mt-20 w-full text-xs text-muted-foreground/75">
-            {dayjs().tz(gTimezone).format("ddd, MMM DD, YYYY")}
-        </span>
-    ) : (
+    return isSameTimezone ? null : (
         <section className="container mt-20 grid w-full gap-6 md:grid-cols-2">
             <div className="flex w-full flex-col space-y-2">
                 <h4 className="text-sm text-foreground">Your timezone</h4>
