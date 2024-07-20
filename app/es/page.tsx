@@ -16,7 +16,7 @@ import { PageShell } from "@components/page-shell";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import { slugify } from "@lib/slugify";
-// import { getPageViewCount, UpdateServerCounter } from "@lib/views";
+import { getPageViewCount, UpdateServerCounter } from "@lib/views";
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import {
     ArrowUpRight,
@@ -52,7 +52,7 @@ const projects = [
 ];
 
 async function PageViews() {
-    const pageViewCount = "?"; // await getPageViewCount();
+    const pageViewCount = await getPageViewCount();
     return (
         <span className="inline-flex select-none items-center whitespace-nowrap font-serif text-xs text-muted-foreground/80">
             <AccessibleIcon.Root label="Visitas">
@@ -232,9 +232,9 @@ export default function HomePage() {
                     <Signature />
                 </div>
             </footer>
-            {/* <React.Suspense>
-                    <UpdateServerCounter />
-                </React.Suspense> */}
+            <React.Suspense>
+                <UpdateServerCounter />
+            </React.Suspense>
             <FloatingNavigation />
         </PageShell>
     );
