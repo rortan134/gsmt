@@ -15,9 +15,7 @@ const Timezone = () => {
         return () => window.clearInterval(intervalId);
     }, [forceRender]);
 
-    const isSameTimezone = dayjs().tz(gTimezone).isSame(dayjs().tz(dayjs.tz.guess()));
-
-    return isSameTimezone ? null : (
+    return (
         <section className="container mt-20 grid w-full gap-6 md:grid-cols-2">
             <div className="flex w-full flex-col space-y-2">
                 <h4 className="text-sm text-foreground">Your timezone</h4>

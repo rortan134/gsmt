@@ -7,6 +7,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@components/drawer";
+import { Header } from "@components/header";
 import { LanguageSelector } from "@components/language-selector";
 import { MessageInput } from "@components/message-input";
 import { PageShell } from "@components/page-shell";
@@ -27,8 +28,8 @@ import {
     Home,
     Mail,
     MessageCircle,
+    Twitter,
     Watch,
-    Twitter
 } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -53,7 +54,7 @@ async function PageViews() {
     return (
         <span className="inline-flex items-center font-serif text-xs text-muted-foreground/80">
             <Eye className="mr-1 h-4 w-4" aria-hidden focusable="false" />
-            {pageViewCount} visitas
+            {pageViewCount} page views
         </span>
     );
 }
@@ -62,12 +63,7 @@ export default function HomePage() {
     return (
         <>
             <PageShell>
-                <header className="container flex w-full items-center justify-between">
-                    <Link href="/" className="underline-offset-1 hover:underline hover:opacity-80">
-                        <h1 className="text-sm font-medium text-foreground md:text-base">@gsmt</h1>
-                    </Link>
-                    <LanguageSelector />
-                </header>
+                <Header />
                 <section className="container mt-12 flex w-full items-center justify-between">
                     <div className="flex flex-col space-y-2">
                         <h1 className="font-serif text-sm font-medium text-foreground">Gilbert</h1>

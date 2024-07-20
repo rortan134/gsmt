@@ -1,4 +1,4 @@
-import * as AccessibleIcon from '@radix-ui/react-accessible-icon';
+import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 
 const Signature = () => (
     <AccessibleIcon.Root label="Signature">
