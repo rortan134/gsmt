@@ -17,7 +17,7 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
             768: { slidesPerView: 2.1 },
         }}
         pagination={{
-            bulletActiveClass: "!text-white dark:!text-white/100 !bg-red-500 !px-2",
+            bulletActiveClass: "!text-white !bg-red-500 !px-2",
             bulletClass:
                 "transition-[padding] select-none text-muted-foreground px-1 py-1 w-9 h-9 flex items-center justify-center rounded-xl bg-card cursor-pointer font-medium",
             clickable: true,

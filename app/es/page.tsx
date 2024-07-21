@@ -70,6 +70,7 @@ export default function HomePage() {
             <section className="container relative mt-9 flex w-full items-end justify-between">
                 <Line variant="vertical" className="left-2" />
                 <Line variant="vertical" className="right-2" />
+                <Line variant="vertical" className="right-8" />
                 <Line variant="vertical" className="right-32" />
                 <div className="flex flex-col gap-y-3">
                     <Line className="-top-1" />
@@ -83,7 +84,7 @@ export default function HomePage() {
                         <span className="opacity-60">creador.</span>
                     </span>
                 </div>
-                <div className="flex items-end justify-end gap-3">
+                <div className="flex items-end justify-end gap-2 md:gap-4">
                     <React.Suspense>
                         <PageViews />
                     </React.Suspense>
