@@ -29,6 +29,6 @@ export const Line = ({
         )}
         initial={{ opacity: 0.4 }}
         animate={{ opacity: 0, ...(variant === "vertical" ? { height: 0 } : { width: 0 }) }}
-        transition={{ delay: 0.5, duration: 1 * random(0.9, 1.2), ease: "easeInOut" }}
+        transition={{ delay: 0.6, duration: 1.2 * random(0.9, 1.2), ease: "easeInOut" }}
     />
 );

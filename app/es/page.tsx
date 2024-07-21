@@ -71,7 +71,7 @@ export default function HomePage() {
                 <Line variant="vertical" className="left-2" />
                 <Line variant="vertical" className="right-2" />
                 <Line variant="vertical" className="right-32" />
-                <div className="flex flex-col gap-y-2">
+                <div className="flex flex-col gap-y-3">
                     <Line className="-top-1" />
                     <h1 className="whitespace-nowrap font-serif text-sm font-medium text-foreground">
                         Gilberto
@@ -83,7 +83,7 @@ export default function HomePage() {
                         <span className="opacity-60">creador.</span>
                     </span>
                 </div>
-                <div className="flex items-end justify-end gap-4">
+                <div className="flex items-end justify-end gap-3">
                     <React.Suspense>
                         <PageViews />
                     </React.Suspense>
@@ -93,7 +93,7 @@ export default function HomePage() {
             <div className="container relative mt-2">
                 <Line />
             </div>
-            <section className="container mt-12 flex flex-col space-y-4">
+            <section className="container mt-10 flex flex-col space-y-4">
                 <h1 className="text-sm font-semibold text-foreground">Hoy</h1>
                 <p className="text-sm text-foreground">
                     Developer at heart, passionate about building a better web, creating great
