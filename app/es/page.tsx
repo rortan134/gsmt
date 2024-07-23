@@ -66,14 +66,14 @@ async function PageViews() {
 export default function HomePage() {
     return (
         <PageShell>
-            <Line />
+            <Line className="-top-2" />
             <Header />
-            <Line />
+            <Line className="top-2" />
             <section className="container relative mt-9 flex w-full items-end justify-between">
-                <Line variant="vertical" className="left-2" />
-                <Line variant="vertical" className="right-2" />
-                <Line variant="vertical" className="right-8" />
-                <Line variant="vertical" className="right-32" />
+                <Line variant="vertical" className="-top-12 left-2" />
+                <Line variant="vertical" className="-top-12 right-2" />
+                <Line variant="vertical" className="right-15" />
+                <Line variant="vertical" className="right-36" />
                 <div className="flex flex-col gap-y-3">
                     <Line className="-top-0.5" />
                     <h1 className="whitespace-nowrap font-serif text-sm font-medium text-foreground">
