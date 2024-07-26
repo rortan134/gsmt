@@ -30,8 +30,7 @@ export const viewport: Viewport = {
     initialScale: 1,
     minimumScale: 1,
     colorScheme: "light",
-    userScalable: false,
-    themeColor: [{ media: "(prefers-color-scheme: light)", color: "#ffffff" }],
+    themeColor: "#ffffff",
 };
 
 export const metadata: Metadata = {
@@ -56,7 +55,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
     return (
         <html lang="en" dir="ltr">
-            <body className={cn("pb-24", inter.className, serif.variable)}>
+            <body
+                className={cn("isolate pb-24", inter.className, serif.variable)}
+                style={{ colorScheme: "light" }}>
                 <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
                 <figure
                     className="pointer-events-none fixed inset-x-0 bottom-0 -z-10 block h-28 flex-none select-none"
