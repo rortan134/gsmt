@@ -9,7 +9,6 @@ const config = {
     tabWidth: 4,
     plugins: [
         "@ianvs/prettier-plugin-sort-imports",
-        "prettier-plugin-packagejson",
         "prettier-plugin-tailwindcss",
     ],
     importOrderTypeScriptVersion: "5.4.5",

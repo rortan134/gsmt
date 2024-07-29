@@ -66,36 +66,35 @@ async function PageViews() {
 export default function HomePage() {
     return (
         <PageShell>
-            <Line className="-top-2" />
             <Header />
-            <Line className="top-2" />
             <section className="container relative mt-9 flex w-full items-end justify-between">
-                <Line variant="vertical" className="-top-12 left-2" />
-                <Line variant="vertical" className="-top-12 right-2" />
-                <Line variant="vertical" className="right-15" />
-                <Line variant="vertical" className="right-36" />
-                <div className="flex flex-col gap-y-3">
-                    <Line className="-top-0.5" />
+                <Line variant="vertical" className="-top-20 left-5" />
+                <Line variant="vertical" className="-top-20 right-6" />
+                <Line variant="vertical" className="-top-20 right-14" />
+                <Line className="-top-16" />
+                <Line className="-top-8" />
+                <Line className="-top-1.5" />
+                <Line className="top-8 w-11/12" />
+                <div className="relative flex flex-col gap-y-3">
                     <h1 className="whitespace-nowrap font-serif text-sm font-medium text-foreground">
                         Gilberto
                     </h1>
-                    <Line className="top-6" />
                     <span className="whitespace-pre-wrap font-serif text-xs text-muted-foreground">
                         <span className="mr-0.5 opacity-60">IPA</span>&nbsp;
                         <i className="mr-0.5">/ˈɡɪlbət/</i> —&nbsp;desarrollador,{" "}
                         <span className="opacity-60">creador.</span>
                     </span>
+                    <Line variant="vertical" className="-right-4 -top-20" />
                 </div>
-                <div className="flex items-end justify-end gap-2 md:gap-4">
+                <div className="relative flex items-end justify-end gap-3 md:gap-4">
+                    <Line variant="vertical" className="-left-2 -top-20" />
                     <React.Suspense>
                         <PageViews />
                     </React.Suspense>
                     <LiveCount />
                 </div>
+                <Line className="-bottom-1.5" />
             </section>
-            <div className="container relative mt-2">
-                <Line />
-            </div>
             <section className="container mt-10 flex flex-col space-y-4">
                 <h1 className="text-sm font-semibold text-foreground">Hoy</h1>
                 <p className="text-sm text-foreground">
