@@ -1,12 +1,12 @@
 /** @type {import('@ianvs/prettier-plugin-sort-imports').PrettierConfig} */
 const config = {
+    arrowParens: "always",
+    bracketSameLine: true,
+    printWidth: 100,
     semi: true,
     singleQuote: false,
-    bracketSameLine: true,
-    trailingComma: "all",
-    arrowParens: "always",
-    printWidth: 100,
     tabWidth: 4,
+    trailingComma: "all",
     plugins: [
         "@ianvs/prettier-plugin-sort-imports",
         "prettier-plugin-tailwindcss",

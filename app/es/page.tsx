@@ -209,11 +209,12 @@ export default function HomePage() {
             <Timezone />
             <footer className="container mt-16 flex flex-row items-center justify-between">
                 <div className="flex flex-col space-y-1">
+                    <span className="text-[10px] text-muted-foreground/60">Tenga un buen día.</span>
                     <span className="text-[10px] text-muted-foreground/60">
                         <AccessibleIcon.Root label="Basado en España">
                             <Globe className="mr-1 inline-block size-3" />
                         </AccessibleIcon.Root>
-                        España
+                        Desde España
                     </span>
                     <span className="text-[10px] text-muted-foreground/60">
                         @ {new Date().getUTCFullYear()} GSMT. Todos los derechos reservados.

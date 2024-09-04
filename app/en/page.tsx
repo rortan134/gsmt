@@ -8,13 +8,13 @@ import {
     DrawerTrigger,
 } from "@components/drawer";
 import { Header } from "@components/header";
-import { LanguageSelector } from "@components/language-selector";
 import { MessageInput } from "@components/message-input";
 import { PageShell } from "@components/page-shell";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import { slugify } from "@lib/slugify";
 import { getPageViewCount, UpdateServerCounter } from "@lib/views";
+import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import {
     ArrowUpRight,
     Asterisk,
@@ -53,7 +53,7 @@ async function PageViews() {
     const pageViewCount = await getPageViewCount();
     return (
         <span className="inline-flex items-center font-serif text-xs text-muted-foreground/80">
-            <Eye className="mr-1 h-4 w-4" aria-hidden focusable="false" />
+            <Eye className="mr-1 size-4" aria-hidden focusable="false" />
             {pageViewCount} page views
         </span>
     );
@@ -83,14 +83,14 @@ export default function HomePage() {
                         Developer at heart, passionate about building a better web, creating great
                         experiences for end users, and trying to solve real-world{" "}
                         <Globe
-                            className="inline-block h-4 w-4 opacity-50"
+                            className="inline-block size-4 opacity-50"
                             aria-hidden
                             focusable="false"
                         />{" "}
                         problems with an eye for design. I&apos;m also a fan of open-source
                         software, and cool looking watches{" "}
                         <Watch
-                            className="inline-block h-4 w-4 opacity-50"
+                            className="inline-block size-4 opacity-50"
                             aria-hidden
                             focusable="false"
                         />
@@ -101,7 +101,7 @@ export default function HomePage() {
                         over 3 years now. Playing with prototypes and doing everything from data
                         scrapers{" "}
                         <Braces
-                            className="inline-block h-4 w-4 opacity-50"
+                            className="inline-block size-4 opacity-50"
                             aria-hidden
                             focusable="false"
                         />
@@ -114,7 +114,7 @@ export default function HomePage() {
                         positive impact on people and consistently improve through learning. I have
                         been particularly interested in using ML{" "}
                         <BrainCircuit
-                            className="inline-block h-4 w-4 opacity-50"
+                            className="inline-block size-4 opacity-50"
                             aria-hidden
                             focusable="false"
                         />{" "}
@@ -127,7 +127,9 @@ export default function HomePage() {
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
                                 className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-11 text-sm md:w-fit">
-                                <Mail className="mr-3 size-4" aria-hidden focusable="false" />
+                                <AccessibleIcon.Root label="Email">
+                                    <Mail className="mr-3 size-4" />
+                                </AccessibleIcon.Root>
                                 gsmt.dev@gmail.com
                             </Link>
                             <Copy text="gsmt.dev@gmail.com">
@@ -147,7 +149,7 @@ export default function HomePage() {
                             target="_blank"
                             rel="noreferrer noopener"
                             className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Twitter className="mr-2 h-4 w-4" aria-hidden focusable="false" />
+                            <Twitter className="mr-2 size-4" aria-hidden focusable="false" />
                             Twitter
                             <ArrowUpRight className="ml-1 size-3 text-muted-foreground/80" />
                         </Link>
@@ -157,26 +159,66 @@ export default function HomePage() {
                             target="_blank"
                             rel="noreferrer noopener"
                             className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Github className="mr-2 h-4 w-4" aria-hidden focusable="false" />
+                            <AccessibleIcon.Root label="GitHub">
+                                <Github className="mr-2 size-4" />
+                            </AccessibleIcon.Root>
                             GitHub
-                            <ArrowUpRight className="ml-1 size-3 text-muted-foreground/80" />
+                            <ArrowUpRight className="ml-1.5 size-3" />
                         </Link>
                         <Link
                             href="https://read.cv/gsmt"
                             title="read.cv"
                             target="_blank"
                             className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Asterisk className="mr-1.5 h-4 w-4" aria-hidden focusable="false" />
+                            <AccessibleIcon.Root label="CV">
+                                <Asterisk className="mr-1.5 size-4" />
+                            </AccessibleIcon.Root>
                             CV
-                            <ArrowUpRight className="ml-1 size-3 text-muted-foreground/80" />
+                            <ArrowUpRight className="ml-1.5 size-3" />
                         </Link>
                     </div>
                 </section>
+                <section className="container mt-24">
+                    <Carousel>
+                        <div className="relative flex aspect-square h-full">
+                            <div className="h-full w-auto object-cover" />
+                        </div>
+                        <div className="relative flex h-full">
+                            <div className="h-full w-auto object-cover" />
+                        </div>
+                        <div className="relative flex aspect-square h-full">
+                            <div className="h-full w-auto object-cover" />
+                        </div>
+                        <div className="relative flex h-full">
+                            <div className="h-full w-auto object-cover" />
+                        </div>
+                        <div className="relative flex aspect-square h-full">
+                            <div className="h-full w-auto object-cover" />
+                        </div>
+                        <Link
+                            href="httsp://x.com/gsmmtt"
+                            target="_blank"
+                            className="relative flex aspect-square h-full">
+                            <div className="h-full w-auto bg-[$4a99e8] object-cover" />
+                        </Link>
+                    </Carousel>
+                </section>
                 <Timezone />
                 <footer className="container mt-16 flex flex-row items-center justify-between">
-                    <span className="text-[10px] text-muted-foreground/60">
-                        @ {new Date().getUTCFullYear()} GSMT. All rights reserved.
-                    </span>
+                    <div className="flex flex-col space-y-1">
+                        <span className="text-[10px] text-muted-foreground/60">
+                            <AccessibleIcon.Root label="Based in España">
+                                <Globe className="mr-1 inline-block size-3" />
+                            </AccessibleIcon.Root>
+                            Spain
+                        </span>
+                        <span className="text-[10px] text-muted-foreground/60">
+                            @ {new Date().getUTCFullYear()} GSMT. All rights reserved.
+                        </span>
+                        <span className="text-[10px] text-muted-foreground/60">
+                            Have a great day!
+                        </span>
+                    </div>
                     <div className="inline-flex shrink gap-1 md:gap-2">
                         <div className="inline-flex flex-col">
                             <span className="truncate text-[10px] text-muted-foreground/60">
@@ -208,7 +250,7 @@ const FloatingNavigation = () => (
                 href="/"
                 title="Home"
                 className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/80 px-4 py-1.5">
-                <Home className="h-4 w-4" />
+                <Home className="size-4" />
                 <span className="sr-only">Go to home page</span>
             </Link>
             <Drawer>
@@ -252,7 +294,7 @@ const FloatingNavigation = () => (
                 <DrawerTrigger
                     title="Send a Message"
                     className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
-                    <MessageCircle className="h-4 w-4" />
+                    <MessageCircle className="size-4" />
                     <span className="absolute right-3.5 top-1.5 size-2 rounded-full bg-green-500" />
                     <span className="sr-only">Send a Message</span>
                 </DrawerTrigger>
