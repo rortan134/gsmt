@@ -205,7 +205,7 @@ export default function HomePage() {
                         <span className="text-[10px] text-muted-foreground/60">
                             <AccessibleIcon.Root label="Based in España">
                                 <Globe className="mr-1 inline-block size-3" />
-                            </AccessibleIcon.Root3
+                            </AccessibleIcon.Root>
                             Spain
                         </span>
                         <span className="text-[10px] text-muted-foreground/60">
