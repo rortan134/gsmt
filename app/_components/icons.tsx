@@ -1,4 +1,3 @@
-
 export const S1 = () => (
     <svg
         width="36"
