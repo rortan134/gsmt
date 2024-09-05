@@ -1,5 +1,6 @@
 "use client";
 
+import { Clock } from "@components/clock";
 import { dayjs } from "@lib/dayjs";
 import { useLocale } from "next-intl";
 import * as React from "react";
@@ -11,7 +12,10 @@ const Timezone = () => {
 
     const [, forceRender] = React.useState(0);
     React.useEffect(() => {
-        const intervalId = window.setInterval(() => forceRender((prev) => prev + 1), 5000);
+        const intervalId = window.setInterval(
+            () => React.startTransition(() => forceRender((prev) => prev + 1)),
+            5000,
+        );
         return () => window.clearInterval(intervalId);
     }, [forceRender]);
 
@@ -21,6 +25,7 @@ const Timezone = () => {
                 <h4 className="text-sm text-foreground">Your timezone</h4>
                 <div className="flex items-center justify-between rounded-xl border p-3">
                     <div className="flex flex-col space-y-1">
+                        <Clock timezone={dayjs.tz.guess()} />
                         <span className="text-xs font-medium text-muted-foreground">
                             {dayjs.tz.guess()}
                         </span>
@@ -41,13 +46,16 @@ const Timezone = () => {
             <div className="flex w-full flex-col space-y-2">
                 <h4 className="text-sm text-foreground">My timezone</h4>
                 <div className="flex items-center justify-between rounded-xl border p-3">
-                    <div className="flex flex-col space-y-1">
-                        <span className="text-xs font-medium text-muted-foreground">
-                            {gTimezone}
-                        </span>
-                        <span className="text-xs text-muted-foreground/75">
-                            (GMT {dayjs().tz(gTimezone).format("Z")})
-                        </span>
+                    <div className="flex items-center space-x-1">
+                        <Clock timezone={gTimezone} />
+                        <div className="flex flex-col space-y-1">
+                            <span className="text-xs font-medium text-muted-foreground">
+                                {gTimezone}
+                            </span>
+                            <span className="text-xs text-muted-foreground/75">
+                                (GMT {dayjs().tz(gTimezone).format("Z")})
+                            </span>
+                        </div>
                     </div>
                     <div className="flex flex-col space-y-0.5">
                         <span className="text-xs font-medium text-muted-foreground/90">
