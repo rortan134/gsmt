@@ -153,7 +153,7 @@ export default function HomePage() {
                         rel="noreferrer noopener"
                         className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                         <AccessibleIcon.Root label="GitHub">
-                            <Github className="mr-2 size-4" />
+                            <Github className="mr-3 size-4" />
                         </AccessibleIcon.Root>
                         GitHub
                         <ArrowUpRight className="ml-1.5 size-3" />
