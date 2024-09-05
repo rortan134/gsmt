@@ -1,8 +1,8 @@
 "use client";
 
+import * as React from "react";
 import "swiper/css";
 import "swiper/css/pagination";
-import * as React from "react";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,7 +10,7 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
     <Swiper
         grabCursor
         modules={[Pagination]}
-        slidesPerView={1}
+        slidesPerView={1.0001}
         spaceBetween={16}
         breakpoints={{
             320: { slidesPerView: 1.09 },
@@ -26,7 +26,7 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
         }}
         className="h-fit w-full !overflow-visible">
         {React.Children.map(children, (child) => (
-            <SwiperSlide className="relative !h-auto max-h-[565px] overflow-hidden rounded-3xl bg-card">
+            <SwiperSlide className="relative !h-auto max-h-[565px] overflow-hidden rounded-3xl bg-card first:!w-full">
                 {child}
             </SwiperSlide>
         ))}

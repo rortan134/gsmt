@@ -138,7 +138,7 @@ export default function HomePage() {
                             <Link
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
-                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-11 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                                className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent pl-4 pr-11 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                                 <AccessibleIcon.Root label="Email">
                                     <Mail className="mr-3 size-4" />
                                 </AccessibleIcon.Root>
@@ -160,11 +160,11 @@ export default function HomePage() {
                             title="Twitter"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                            className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                             <AccessibleIcon.Root label="X (formerly Twitter)">
                                 <Twitter className="mr-3 size-4" />
                             </AccessibleIcon.Root>
-                            Twitter / X
+                            Twitter
                             <ArrowUpRight className="ml-1.5 size-3" />
                         </Link>
                         <Link
@@ -172,7 +172,7 @@ export default function HomePage() {
                             title="GitHub"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                            className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                             <AccessibleIcon.Root label="GitHub">
                                 <Github className="mr-3 size-4" />
                             </AccessibleIcon.Root>
@@ -183,7 +183,7 @@ export default function HomePage() {
                             href="https://read.cv/gsmt"
                             title="read.cv"
                             target="_blank"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                            className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                             <AccessibleIcon.Root label="CV">
                                 <Asterisk className="mr-1.5 size-4" />
                             </AccessibleIcon.Root>

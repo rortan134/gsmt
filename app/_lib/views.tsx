@@ -24,4 +24,4 @@ async function getPageViewCount() {
     return data?.visitCount ?? "?";
 }
 
-export { getPageViewCount, UpdateServerCounter };
+export { UpdateServerCounter, getPageViewCount };
