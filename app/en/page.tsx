@@ -2,12 +2,14 @@ import { Link } from "@/navigation";
 import { Carousel } from "@components/carousel";
 import { Copy } from "@components/copy";
 import { Header } from "@components/header";
+import { S1, S2 } from "@components/icons";
 import { Line } from "@components/line";
 import { LiveCount } from "@components/live-count";
 import { Navigation } from "@components/navigation";
 import { PageShell } from "@components/page-shell";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
+import { dayjs } from "@lib/dayjs";
 import { getPageViewCount, UpdateServerCounter } from "@lib/views";
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import {
@@ -62,7 +64,7 @@ export default function HomePage() {
                         </h1>
                         <span className="whitespace-pre-wrap font-serif text-xs text-muted-foreground">
                             <span className="mr-0.5 opacity-60">IPA</span>&nbsp;
-                            <i className="mr-1">/ˈɡɪlbət/</i> —&nbsp;software developer,{" "}
+                            <i className="mr-0.5">/ˈɡɪlbət/</i> —&nbsp;software developer,{" "}
                             <span className="opacity-60">maker.</span>
                         </span>
                         <Line variant="vertical" className="-right-4 -top-20" />
@@ -77,12 +79,18 @@ export default function HomePage() {
                     <Line className="-bottom-1.5" />
                 </section>
                 <section className="container mt-8 flex flex-col space-y-4">
-                    <h1 className="w-full flex-1 truncate text-sm font-semibold text-foreground">
-                        Today
-                        <span className="ml-3 inline-block font-serif opacity-50">
-                            {dayjs().format("DD")}
-                        </span>
-                    </h1>
+                    <div className="flex items-center justify-between">
+                        <h1 className="w-full flex-1 truncate text-sm font-semibold text-foreground">
+                            Today
+                            <span className="ml-3 inline-block font-serif opacity-50">
+                                {dayjs().format("DD")}
+                            </span>
+                        </h1>
+                        <div className="flex items-center justify-end space-x-2">
+                            <S1 />
+                            <S2 />
+                        </div>
+                    </div>
                     <p className="text-sm text-foreground">
                         Developer at heart, passionate about building a better web, creating great
                         experiences for end users, and trying to solve real-world{" "}
