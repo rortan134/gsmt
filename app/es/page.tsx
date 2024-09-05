@@ -1,11 +1,10 @@
 import { Link } from "@/navigation";
 import { Carousel } from "@components/carousel";
 import { Copy } from "@components/copy";
-import { Drawer, DrawerContent, DrawerTrigger } from "@components/drawer";
 import { Header } from "@components/header";
 import { Line } from "@components/line";
 import { LiveCount } from "@components/live-count";
-import { MessageInput } from "@components/message-input";
+import { Navigation } from "@components/navigation";
 import { PageShell } from "@components/page-shell";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
@@ -21,9 +20,7 @@ import {
     Eye,
     Github,
     Globe,
-    Home,
     Mail,
-    MessageCircle,
     Watch,
 } from "lucide-react";
 import type { Metadata } from "next";
@@ -36,7 +33,7 @@ export const metadata: Metadata = {
 async function PageViews() {
     const pageViewCount = await getPageViewCount();
     return (
-        <span className="inline-flex select-none items-center whitespace-nowrap font-serif text-xs text-muted-foreground/80">
+        <span className="inline-flex items-center whitespace-nowrap font-serif text-xs text-muted-foreground/80">
             <AccessibleIcon.Root label="Visitas">
                 <Eye className="mr-1 size-4" />
             </AccessibleIcon.Root>
@@ -79,7 +76,7 @@ export default function HomePage() {
             </section>
             <section className="container mt-10 flex flex-col space-y-4">
                 <div className="flex items-center justify-between">
-                    <h1 className="w-full flex-1 text-sm font-semibold text-foreground">
+                    <h1 className="w-full flex-1 text-sm font-semibold text-foreground truncate">
                         Hoy
                         <span className="ml-3 inline-block font-serif opacity-50">
                             {dayjs().format("DD")}
@@ -195,10 +192,7 @@ export default function HomePage() {
                 </Carousel>
                 <p className="mt-4 text-sm text-muted-foreground">
                     En la actualidad me centro principalmente en el ecosistema web, pero ya trabajé
-                    con muchos lenguajes y plataformas.{" "}
-                    <span className="opacity-50">
-                        —&nbsp;Haga clic en un proyecto para ampliarlo
-                    </span>
+                    con muchos lenguajes y plataformas.
                 </p>
             </section>
             <Timezone />
@@ -233,43 +227,15 @@ export default function HomePage() {
             <React.Suspense>
                 <UpdateServerCounter />
             </React.Suspense>
-            <FloatingNavigation />
+            <Navigation />
         </PageShell>
     );
 }
 
-const FloatingNavigation = () => (
-    <nav className="fixed inset-x-0 bottom-0 z-20 pb-12">
-        <div className="absolute bottom-3 left-1/2 flex w-fit -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-200/80 px-1 py-0.5 shadow backdrop-blur-xl">
-            <Link
-                href="/"
-                title="Inicio"
-                className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/80 px-4 py-1.5">
-                <AccessibleIcon.Root label="Ir a inicio">
-                    <Home className="size-4" />
-                </AccessibleIcon.Root>
-            </Link>
-            <Drawer>
-                <DrawerTrigger
-                    title="Enviar un mensaje"
-                    className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
-                    <AccessibleIcon.Root label="Enviar un mensaje">
-                        <MessageCircle className="size-4" />
-                    </AccessibleIcon.Root>
-                    <span className="absolute right-3.5 top-1.5 size-2 rounded-full bg-green-500" />
-                </DrawerTrigger>
-                <DrawerContent>
-                    <MessageInput />
-                </DrawerContent>
-            </Drawer>
-        </div>
-    </nav>
-);
-
 const S1 = () => (
     <svg
-        width="107"
-        height="54"
+        width="36"
+        height="20"
         viewBox="0 0 107 54"
         className="opacity-50"
         fill="none"
@@ -365,8 +331,8 @@ const S2 = () => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         className="opacity-50"
-        width="26"
-        height="27"
+        width="20"
+        height="20"
         viewBox="0 0 26 27"
         fill="none">
         <g clip-path="url(#clip0_88_118)">

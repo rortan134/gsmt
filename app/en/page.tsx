@@ -1,19 +1,13 @@
 import { Link } from "@/navigation";
 import { Carousel } from "@components/carousel";
 import { Copy } from "@components/copy";
-import {
-    Drawer,
-    DrawerContent,
-    DrawerDescription,
-    DrawerTitle,
-    DrawerTrigger,
-} from "@components/drawer";
 import { Header } from "@components/header";
-import { MessageInput } from "@components/message-input";
+import { Line } from "@components/line";
+import { LiveCount } from "@components/live-count";
+import { Navigation } from "@components/navigation";
 import { PageShell } from "@components/page-shell";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
-import { slugify } from "@lib/slugify";
 import { getPageViewCount, UpdateServerCounter } from "@lib/views";
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import {
@@ -26,35 +20,24 @@ import {
     Eye,
     Github,
     Globe,
-    Home,
     Mail,
-    MessageCircle,
     Twitter,
     Watch,
 } from "lucide-react";
 import type { Metadata } from "next";
-import Image from "next/image";
 import * as React from "react";
 
 export const metadata: Metadata = {
     title: "Gilbert",
 };
 
-const projects = [
-    {
-        name: "Project",
-        description:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo laborum veniam at nostrum.",
-        tech: ["TypeScript", "Next.js", "Tailwind CSS", "Vercel"],
-        image: "/",
-    },
-];
-
 async function PageViews() {
     const pageViewCount = await getPageViewCount();
     return (
-        <span className="inline-flex items-center font-serif text-xs text-muted-foreground/80">
-            <Eye className="mr-1 size-4" aria-hidden focusable="false" />
+        <span className="inline-flex items-center whitespace-nowrap font-serif text-xs text-muted-foreground/80">
+            <AccessibleIcon.Root label="Views">
+                <Eye className="mr-1 size-4" />
+            </AccessibleIcon.Root>
             {pageViewCount} page views
         </span>
     );
@@ -65,21 +48,41 @@ export default function HomePage() {
         <>
             <PageShell>
                 <Header />
-                <section className="container mt-12 flex w-full items-center justify-between">
-                    <div className="flex flex-col space-y-2">
-                        <h1 className="font-serif text-sm font-medium text-foreground">Gilbert</h1>
-                        <span className="font-serif text-xs text-muted-foreground">
+                <section className="container relative mt-16 flex w-full items-center justify-between">
+                    <Line variant="vertical" className="-top-20 left-5" />
+                    <Line variant="vertical" className="-top-20 right-6" />
+                    <Line variant="vertical" className="-top-20 right-14" />
+                    <Line className="-top-16" />
+                    <Line className="-top-8" />
+                    <Line className="-top-1.5" />
+                    <Line className="top-8 w-11/12" />
+                    <div className="flex flex-col gap-y-3">
+                        <h1 className="whitespace-nowrap font-serif text-sm font-medium text-foreground">
+                            Gilbert
+                        </h1>
+                        <span className="whitespace-pre-wrap font-serif text-xs text-muted-foreground">
                             <span className="mr-0.5 opacity-60">IPA</span>&nbsp;
                             <i className="mr-1">/ˈɡɪlbət/</i> —&nbsp;software developer,{" "}
                             <span className="opacity-60">maker.</span>
                         </span>
+                        <Line variant="vertical" className="-right-4 -top-20" />
                     </div>
-                    <React.Suspense>
-                        <PageViews />
-                    </React.Suspense>
+                    <div className="relative flex items-end justify-end gap-3 md:gap-4">
+                        <Line variant="vertical" className="-left-2 -top-20" />
+                        <React.Suspense>
+                            <PageViews />
+                        </React.Suspense>
+                        <LiveCount />
+                    </div>
+                    <Line className="-bottom-1.5" />
                 </section>
                 <section className="container mt-8 flex flex-col space-y-4">
-                    <h1 className="text-sm font-semibold text-foreground">Today</h1>
+                    <h1 className="w-full flex-1 truncate text-sm font-semibold text-foreground">
+                        Today
+                        <span className="ml-3 inline-block font-serif opacity-50">
+                            {dayjs().format("DD")}
+                        </span>
+                    </h1>
                     <p className="text-sm text-foreground">
                         Developer at heart, passionate about building a better web, creating great
                         experiences for end users, and trying to solve real-world{" "}
@@ -209,6 +212,10 @@ export default function HomePage() {
                             <ArrowUpRight className="absolute bottom-4 right-4 size-6" />
                         </Link>
                     </Carousel>
+                    <p className="mt-4 text-sm text-muted-foreground">
+                        My focus these days is mainly on the web ecosystem, but I have worked with
+                        many languages and platforms.
+                    </p>
                 </section>
                 <Timezone />
                 <footer className="container mt-16 flex flex-row items-center justify-between">
@@ -245,70 +252,7 @@ export default function HomePage() {
                     <UpdateServerCounter />
                 </React.Suspense>
             </PageShell>
-            <FloatingNavigation />
+            <Navigation />
         </>
     );
 }
-
-const FloatingNavigation = () => (
-    <nav className="fixed inset-x-0 bottom-0 z-20 pb-12">
-        <div className="absolute bottom-3 left-1/2 flex w-fit -translate-x-1/2 items-center justify-between overflow-hidden rounded-3xl border bg-neutral-200/80 px-1 py-0.5 shadow backdrop-blur-xl">
-            <Link
-                href="/"
-                title="Home"
-                className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/80 px-4 py-1.5">
-                <Home className="size-4" />
-                <span className="sr-only">Go to home page</span>
-            </Link>
-            <Drawer>
-                <DrawerTrigger
-                    title="Featured projects"
-                    className="hidden w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
-                    Work
-                    <span className="sr-only">Expand work drawer</span>
-                </DrawerTrigger>
-                <DrawerContent>
-                    <DrawerTitle>
-                        Work <span className="opacity-60">—&nbsp;I like building things</span>
-                    </DrawerTitle>
-                    <DrawerDescription className="max-w-lg px-4">
-                        My focus these days is mainly on the web ecosystem, but I have worked with
-                        many languages and platforms.{" "}
-                        <span className="opacity-50">—&nbsp;Click on a project to expand</span>
-                    </DrawerDescription>
-                    {projects.map(({ name, description, tech, image }, i) => (
-                        <Link
-                            key={i}
-                            href={`/projects/${slugify(name)}`}
-                            className="mt-6 flex w-full flex-col space-y-0.5 pr-4 md:pl-4">
-                            <h3 className="text-sm font-medium text-foreground">{name}</h3>
-                            <p className="text-xs text-muted-foreground">{description}</p>
-                            <span className="truncate text-xs text-muted-foreground">
-                                {tech.join(" • ")}
-                            </span>
-                            <Image src={image} alt="" />
-                        </Link>
-                    ))}
-                </DrawerContent>
-            </Drawer>
-            <Link
-                href="/reads"
-                title="Recommended reads"
-                className="inline-flex w-full items-center justify-center rounded-2xl px-5 py-1.5 text-sm font-medium">
-                Reads
-            </Link>
-            <Drawer>
-                <DrawerTrigger
-                    title="Send a Message"
-                    className="inline-flex w-full items-center justify-center rounded-2xl px-4 py-1.5">
-                    <MessageCircle className="size-4" />
-                    <span className="absolute right-3.5 top-1.5 size-2 rounded-full bg-green-500" />
-                    <span className="sr-only">Send a Message</span>
-                </DrawerTrigger>
-                <DrawerContent>
-                    <MessageInput />
-                </DrawerContent>
-            </Drawer>
-        </div>
-    </nav>
-);
