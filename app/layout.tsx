@@ -10,8 +10,8 @@ export const dynamic = "force-dynamic";
 
 const WEBSITE_URL = "https://gsmt.link";
 
-const inter = Inter({subsets: ["latin"],variable: "--font-inter"});
-const serif = Source_Serif_4({subsets: ["latin"],variable: "--font-serif"});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const serif = Source_Serif_4({ subsets: ["latin"], variable: "--font-serif" });
 
 export const viewport: Viewport = {
     width: "device-width",
