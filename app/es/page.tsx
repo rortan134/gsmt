@@ -83,7 +83,7 @@ export default function HomePage() {
                             {dayjs().format("DD")}
                         </span>
                     </h1>
-                    <div className="flex items-center justify-end space-x-2">
+                    <div className="flex items-center justify-end space-x-3">
                         <S1 />
                         <S2 />
                     </div>
@@ -123,9 +123,7 @@ export default function HomePage() {
                     tecnología pueda tener un impacto positivo en las personas y mejorar
                     constantemente a través del aprendizaje.
                 </p>
-                <p className="text-sm text-foreground">
-                    Encuéntrame también en los enlaces a continuación
-                </p>
+                <p className="text-sm text-foreground">Encuéntrame en los enlaces a continuación</p>
                 <div className="group flex flex-col items-center gap-3 md:flex-row">
                     <div className="relative flex h-fit w-full items-center md:w-fit">
                         <Link

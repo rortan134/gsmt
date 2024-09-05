@@ -86,7 +86,7 @@ export default function HomePage() {
                                 {dayjs().format("DD")}
                             </span>
                         </h1>
-                        <div className="flex items-center justify-end space-x-2">
+                        <div className="flex items-center justify-end space-x-3">
                             <S1 />
                             <S2 />
                         </div>
@@ -133,12 +133,12 @@ export default function HomePage() {
                         to create more personalized and engaging in-app experiences.
                     </p>
                     <p className="text-sm text-foreground">Find me on the links below</p>
-                    <div className="flex flex-col items-center gap-2.5 md:flex-row">
-                        <div className="relative flex h-fit w-fit items-center">
+                    <div className="group flex flex-col items-center gap-3 md:flex-row">
+                        <div className="relative flex h-fit w-full items-center md:w-fit">
                             <Link
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
-                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-11 text-sm md:w-fit">
+                                className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent pl-4 pr-11 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                                 <AccessibleIcon.Root label="Email">
                                     <Mail className="mr-3 size-4" />
                                 </AccessibleIcon.Root>
@@ -148,9 +148,9 @@ export default function HomePage() {
                                 <button
                                     title="Copy"
                                     aria-label="Copy email"
-                                    className="group absolute right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 hover:opacity-60 active:opacity-50">
-                                    <Clipboard className="size-4 transition-all group-data-[copied=true]:opacity-0" />
-                                    <Check className="absolute size-4 transition-all group-data-[copied=false]:opacity-0" />
+                                    className="group/btn absolute right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 hover:opacity-100 active:opacity-50 group-hover:opacity-75">
+                                    <Clipboard className="size-4 transition-all group-data-[copied=true]/btn:opacity-0" />
+                                    <Check className="absolute size-4 transition-all group-data-[copied=false]/btn:opacity-0" />
                                     <span className="sr-only">Copy email</span>
                                 </button>
                             </Copy>
@@ -160,9 +160,11 @@ export default function HomePage() {
                             title="Twitter"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
-                            <Twitter className="mr-2 size-4" aria-hidden focusable="false" />
-                            Twitter
+                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                            <AccessibleIcon.Root label="X (formerly Twitter)">
+                                <Twitter className="mr-2 size-4" aria-hidden focusable="false" />
+                            </AccessibleIcon.Root>
+                            Twitter / X
                             <ArrowUpRight className="ml-1 size-3 text-muted-foreground/80" />
                         </Link>
                         <Link
@@ -170,7 +172,7 @@ export default function HomePage() {
                             title="GitHub"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
+                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                             <AccessibleIcon.Root label="GitHub">
                                 <Github className="mr-2 size-4" />
                             </AccessibleIcon.Root>
@@ -181,7 +183,7 @@ export default function HomePage() {
                             href="https://read.cv/gsmt"
                             title="read.cv"
                             target="_blank"
-                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm md:w-fit">
+                            className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                             <AccessibleIcon.Root label="CV">
                                 <Asterisk className="mr-1.5 size-4" />
                             </AccessibleIcon.Root>
@@ -203,7 +205,7 @@ export default function HomePage() {
                         <span className="text-[10px] text-muted-foreground/60">
                             <AccessibleIcon.Root label="Based in España">
                                 <Globe className="mr-1 inline-block size-3" />
-                            </AccessibleIcon.Root>
+                            </AccessibleIcon.Root3
                             Spain
                         </span>
                         <span className="text-[10px] text-muted-foreground/60">

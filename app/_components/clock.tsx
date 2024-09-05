@@ -18,7 +18,7 @@ export const Clock = ({ timezone }: { timezone: string }) => {
     const secondDegrees = time.second() * 6;
 
     return (
-        <div className="relative size-6 rounded-full border-2 border-dotted border-gray-700 bg-gray-100 opacity-50">
+        <div className="relative size-6 rounded-full border-2 border-dotted border-gray-600 bg-gray-100 opacity-50">
             <div
                 className="absolute bottom-1/2 left-1/2 z-30 h-1.5 w-px origin-bottom bg-gray-800"
                 style={{ transform: `translateX(-50%) rotate(${hourDegrees}deg)` }}
