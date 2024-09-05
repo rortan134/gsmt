@@ -26,7 +26,7 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
         }}
         className="h-fit w-full !overflow-visible">
         {React.Children.map(children, (child) => (
-            <SwiperSlide className="relative !h-auto max-h-[565px] overflow-hidden rounded-3xl bg-card p-4 md:p-6">
+            <SwiperSlide className="relative !h-auto max-h-[565px] overflow-hidden rounded-3xl bg-card">
                 {child}
             </SwiperSlide>
         ))}
