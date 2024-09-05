@@ -66,8 +66,6 @@
     },
     "packageManager": "pnpm@9.4.0",
     "engines": {
-        "node": ">=20.x",
-        "pnpm": ">=8.x"
-    },
-    "engineStrict": true
+        "node": ">=20.x"
+    }
 }
