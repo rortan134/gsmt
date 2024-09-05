@@ -50,7 +50,7 @@ const Timezone = () => {
                 <div className="flex items-center justify-between rounded-xl border p-3">
                     <div className="flex items-center space-x-1">
                         <div className="flex items-center space-x-1">
-                        <Clock timezone={gTimezone} />
+                            <Clock timezone={gTimezone} />
                             <div className="flex flex-col space-y-1">
                                 <span className="text-xs font-medium text-muted-foreground">
                                     {gTimezone}
