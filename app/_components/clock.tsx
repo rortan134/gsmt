@@ -18,15 +18,15 @@ export const Clock = ({ timezone }: { timezone: string }) => {
     const secondDegrees = time.second() * 6;
 
     return (
-        <div className="relative m-1 size-5 rounded-full border-2 border-dotted border-gray-700 bg-gray-100">
+        <div className="relative m-1 size-6 rounded-full border-2 border-dotted border-gray-700 bg-gray-100">
             <div
-                className="absolute bottom-1/2 left-1/2 z-30 h-2 w-px origin-bottom bg-gray-800"
+                className="absolute bottom-1/2 left-1/2 z-30 h-1.5 w-px origin-bottom bg-gray-800"
                 style={{ transform: `translateX(-50%) rotate(${hourDegrees}deg)` }}></div>
             <div
-                className="absolute bottom-1/2 left-1/2 z-20 h-3 w-px origin-bottom bg-gray-800"
+                className="absolute bottom-1/2 left-1/2 z-20 h-2.5 w-px origin-bottom bg-gray-800"
                 style={{ transform: `translateX(-50%) rotate(${minuteDegrees}deg)` }}></div>
             <div
-                className="absolute bottom-1/2 left-1/2 z-10 h-3 w-px origin-bottom bg-red-500"
+                className="absolute bottom-1/2 left-1/2 z-10 h-2.5 w-px origin-bottom bg-red-500"
                 style={{ transform: `translateX(-50%) rotate(${secondDegrees}deg)` }}></div>
         </div>
     );
