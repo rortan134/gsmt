@@ -96,8 +96,8 @@ export default function HomePage() {
                         focusable="false"
                         aria-hidden
                     />{" "}
-                    del mundo real con un ojo para el diseño. También soy fan del software de código
-                    abierto y de los relojes{" "}
+                    reales con un ojo para el diseño. Soy fan del software de código abierto y los
+                    relojes{" "}
                     <Watch
                         className="inline-block size-4 opacity-50"
                         focusable="false"
