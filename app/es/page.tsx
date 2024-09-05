@@ -1,5 +1,4 @@
 import { Link } from "@/navigation";
-import { Carousel } from "@components/carousel";
 import { Copy } from "@components/copy";
 import { Header } from "@components/header";
 import { S1, S2 } from "@components/icons";
@@ -7,6 +6,7 @@ import { Line } from "@components/line";
 import { LiveCount } from "@components/live-count";
 import { Navigation } from "@components/navigation";
 import { PageShell } from "@components/page-shell";
+import { Projects } from "@components/projects";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import { dayjs } from "@lib/dayjs";
@@ -174,23 +174,7 @@ export default function HomePage() {
                 </div>
             </section>
             <section className="container mt-24">
-                <Carousel>
-                    <div className="relative flex aspect-square h-full">
-                        <div className="h-full w-auto object-cover" />
-                    </div>
-                    <div className="relative flex h-full">
-                        <div className="h-full w-auto object-cover" />
-                    </div>
-                    <div className="relative flex aspect-square h-full">
-                        <div className="h-full w-auto object-cover" />
-                    </div>
-                    <div className="relative flex h-full">
-                        <div className="h-full w-auto object-cover" />
-                    </div>
-                    <div className="relative flex aspect-square h-full">
-                        <div className="h-full w-auto object-cover" />
-                    </div>
-                </Carousel>
+                <Projects />
                 <p className="mt-4 text-sm text-muted-foreground">
                     En la actualidad me centro principalmente en el ecosistema web, pero ya trabajé
                     con muchos lenguajes y plataformas.
