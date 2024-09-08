@@ -44,7 +44,7 @@ export const Projects = () => (
             <Image
                 draggable={false}
                 src={Img1}
-                className="pointer-events-none absolute h-full w-auto object-cover object-[position:63%]"
+                className="pointer-events-none absolute h-full w-auto object-cover object-[63%]"
                 alt=""
             />
         </Card>
@@ -52,7 +52,7 @@ export const Projects = () => (
             <Image
                 draggable={false}
                 src={Setup}
-                className="pointer-events-none absolute h-full w-auto object-cover object-[position:63%]"
+                className="pointer-events-none absolute h-full w-auto object-cover object-[63%]"
                 alt=""
             />
             <span className="px-5 py-4 text-white opacity-90">setup</span>
