@@ -13,7 +13,6 @@ function random(min: number, max: number) {
 export const Line = ({
     variant = "horizontal",
     className,
-    initial,
     ...props
 }: React.ComponentPropsWithoutRef<typeof motion.div> & { variant?: "vertical" | "horizontal" }) => (
     <motion.div

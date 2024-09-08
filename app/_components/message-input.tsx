@@ -76,6 +76,7 @@ const MessageInput = () => {
         form.reset();
         setMessages((prevMessages) => [...prevMessages, values.message]);
 
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const id = new DeviceUUID().get() as string;
         startTransition(async () => {
             await registerMessage(id, values.message);
@@ -108,6 +109,7 @@ const MessageInput = () => {
             </div>
             <Form {...form}>
                 <form
+                    // eslint-disable-next-line @typescript-eslint/no-misused-promises
                     onSubmit={form.handleSubmit(onSubmit)}
                     className="mt-3 inline-flex w-full justify-between space-x-4">
                     <FormField
