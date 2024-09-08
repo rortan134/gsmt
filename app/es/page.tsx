@@ -75,7 +75,7 @@ export default function HomePage() {
                 </div>
                 <Line className="-bottom-1.5" />
             </section>
-            <section className="container mt-10 flex flex-col space-y-4">
+            <section className="container mt-12 flex flex-col space-y-4">
                 <div className="flex items-center justify-between">
                     <h1 className="w-full flex-1 truncate text-sm font-semibold text-foreground">
                         Hoy
