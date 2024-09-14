@@ -3,7 +3,7 @@
 import { cn } from "@lib/cn";
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import { X } from "lucide-react";
-import * as React from "react";
+import type * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 
 const Drawer = DrawerPrimitive.Root;
@@ -34,7 +34,7 @@ const DrawerTitle = ({
     ...props
 }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>) => (
     <div className="flex items-center justify-between">
-        <DrawerPrimitive.Title {...props} className={cn("text-base font-medium", className)} />
+        <DrawerPrimitive.Title {...props} className={cn("font-medium text-base", className)} />
         <DrawerPrimitive.Close
             title="Close"
             className="ml-auto flex size-6 items-center justify-center rounded-full bg-neutral-200 text-foreground">
@@ -51,7 +51,7 @@ const DrawerDescription = ({
 }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>) => (
     <DrawerPrimitive.Description
         {...props}
-        className={cn("mt-3 text-sm text-muted-foreground", className)}
+        className={cn("mt-3 text-muted-foreground text-sm", className)}
     />
 );
 

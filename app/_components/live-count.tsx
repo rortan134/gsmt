@@ -18,7 +18,7 @@ export const LiveCount = () => {
     return (
         <span
             aria-hidden
-            className="select-all font-mono text-xs font-light tracking-wide text-muted-foreground opacity-40 mix-blend-soft-light [text-orientation:mixed] [writing-mode:vertical-rl]">
+            className="select-all font-light font-mono text-muted-foreground text-xs tracking-wide opacity-40 mix-blend-soft-light [text-orientation:mixed] [writing-mode:vertical-rl]">
             {time}
         </span>
     );

@@ -5,7 +5,7 @@ import { Carousel } from "@components/carousel";
 import { cn } from "@lib/cn";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import * as React from "react";
+import type * as React from "react";
 
 const Card = ({ className, children }: React.ComponentPropsWithoutRef<"div">) => (
     <div

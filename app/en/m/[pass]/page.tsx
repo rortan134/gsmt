@@ -16,12 +16,12 @@ export default async function MessagesPage({ params }: { params: { pass: string 
 
     return (
         <div className="container flex flex-col space-y-12 py-6">
-            {userMessages.map((userMessage, i) => (
-                <div key={i} className="flex flex-col space-y-0.5">
-                    <span className="text-sm font-medium">{userMessage.id}</span>
+            {userMessages.map(userMessage => (
+                <div key={userMessage.id} className="flex flex-col space-y-0.5">
+                    <span className="font-medium text-sm">{userMessage.id}</span>
                     <div className="flex flex-col pl-6">
-                        {userMessage.messages.map((message, j) => (
-                            <div key={j} className="flex flex-col">
+                        {userMessage.messages.map(message => (
+                            <div key={message.id} className="flex flex-col">
                                 <span className="text-xs">
                                     {dayjs(message.createdAt).fromNow()}
                                 </span>

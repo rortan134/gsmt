@@ -14,6 +14,7 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerMessage } from "@lib/message";
 // @ts-expect-error no type declaration
+import { slugify } from "@lib/slugify";
 import { DeviceUUID } from "device-uuid";
 import { AnimatePresence, motion } from "framer-motion";
 import * as React from "react";
@@ -29,11 +30,11 @@ interface MessageStoreProps {
 
 const useMessageStore = create<MessageStoreProps>()(
     persist(
-        (set) => ({
+        set => ({
             messages: [],
-            setMessages: (messages) =>
+            setMessages: messages =>
                 messages instanceof Function
-                    ? set((prevValues) => ({
+                    ? set(prevValues => ({
                           messages: messages(prevValues.messages),
                       }))
                     : set({ messages }),
@@ -74,13 +75,12 @@ const MessageInput = () => {
     function onSubmit(values: z.infer<typeof formSchema>) {
         form.clearErrors();
         form.reset();
-        setMessages((prevMessages) => [...prevMessages, values.message]);
+        setMessages(prevMessages => [...prevMessages, values.message]);
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const id = new DeviceUUID().get() as string;
         startTransition(async () => {
             await registerMessage(id, values.message);
-            return;
         });
 
         setSubmitted(true);
@@ -97,11 +97,11 @@ const MessageInput = () => {
             <div
                 ref={parentContainer}
                 className="flex w-full flex-col items-end justify-end space-y-2">
-                {messages.map((message, i) => (
+                {messages.map(message => (
                     <div
-                        key={i}
-                        className="max-w-1/2 flex h-fit w-fit items-center justify-end rounded-3xl bg-blue-600 px-3 py-1">
-                        <span className="text-right text-sm text-primary-foreground">
+                        key={slugify(message)}
+                        className="flex h-fit w-fit max-w-1/2 items-center justify-end rounded-3xl bg-blue-600 px-3 py-1">
+                        <span className="text-right text-primary-foreground text-sm">
                             {message}
                         </span>
                     </div>
@@ -136,7 +136,7 @@ const MessageInput = () => {
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0, top: -100 }}
-                                                className="relative inline-block text-xs font-medium text-green-600">
+                                                className="relative inline-block font-medium text-green-600 text-xs">
                                                 Message sent
                                             </motion.span>
                                         ) : null}
@@ -171,7 +171,7 @@ const MessageInput = () => {
                     />
                     <button
                         type="submit"
-                        className="relative top-[1.9rem] flex h-11 w-fit items-center justify-center px-2 text-sm font-medium text-foreground">
+                        className="relative top-[1.9rem] flex h-11 w-fit items-center justify-center px-2 font-medium text-foreground text-sm">
                         Send
                     </button>
                 </form>

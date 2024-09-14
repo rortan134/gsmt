@@ -2,7 +2,7 @@
 
 import { cn } from "@lib/cn";
 import { motion } from "framer-motion";
-import * as React from "react";
+import type * as React from "react";
 
 function random(min: number, max: number) {
     const minCeiled = Math.ceil(min);

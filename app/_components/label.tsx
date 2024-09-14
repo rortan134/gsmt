@@ -2,7 +2,7 @@
 
 import { cn } from "@lib/cn";
 import * as LabelPrimitive from "@radix-ui/react-label";
-import * as React from "react";
+import type * as React from "react";
 
 const Label = ({
     className,
@@ -11,7 +11,7 @@ const Label = ({
     <LabelPrimitive.Root
         {...props}
         className={cn(
-            "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+            "font-medium text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
             className,
         )}
     />

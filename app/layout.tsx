@@ -49,7 +49,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 style={{ colorScheme: "light" }}>
                 <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
                 <figure
-                    className="pointer-events-none fixed inset-x-0 bottom-0 -z-10 block h-28 flex-none select-none"
+                    className="-z-10 pointer-events-none fixed inset-x-0 bottom-0 block h-28 flex-none select-none"
                     aria-hidden>
                     {/* <div style="display: block; flex: 0 0 auto; pointer-events: none; position: relative; border-radius: 0px; overflow: visible; height: 100%; width: 100%; transform: none;">
                         <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(0px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%); z-index: 1; border-radius: 0px;" />

@@ -10,7 +10,7 @@ import { Projects } from "@components/projects";
 import { Signature } from "@components/signature";
 import { Timezone } from "@components/timezone";
 import { dayjs } from "@lib/dayjs";
-import { getPageViewCount, UpdateServerCounter } from "@lib/views";
+import { UpdateServerCounter, getPageViewCount } from "@lib/views";
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import {
     ArrowUpRight,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 async function PageViews() {
     const pageViewCount = await getPageViewCount();
     return (
-        <span className="inline-flex items-center whitespace-nowrap font-serif text-xs text-muted-foreground/80">
+        <span className="inline-flex items-center whitespace-nowrap font-serif text-muted-foreground/80 text-xs">
             <AccessibleIcon.Root label="Views">
                 <Eye className="mr-1 size-4" />
             </AccessibleIcon.Root>
@@ -59,10 +59,10 @@ export default function HomePage() {
                     <Line className="-top-1.5" />
                     <Line className="top-8 w-11/12" />
                     <div className="flex flex-col gap-y-3">
-                        <h1 className="whitespace-nowrap font-serif text-sm font-medium text-foreground">
+                        <h1 className="whitespace-nowrap font-medium font-serif text-foreground text-sm">
                             Gilbert
                         </h1>
-                        <span className="whitespace-pre-wrap font-serif text-xs text-muted-foreground">
+                        <span className="whitespace-pre-wrap font-serif text-muted-foreground text-xs">
                             <span className="mr-0.5 opacity-60">IPA</span>&nbsp;
                             <i className="mr-0.5">/ˈɡɪlbət/</i> —&nbsp;software developer,{" "}
                             <span className="opacity-60">maker.</span>
@@ -80,7 +80,7 @@ export default function HomePage() {
                 </section>
                 <section className="container mt-12 flex flex-col space-y-4">
                     <div className="flex items-center justify-between">
-                        <h1 className="w-full flex-1 truncate text-sm font-semibold text-foreground">
+                        <h1 className="w-full flex-1 truncate font-semibold text-foreground text-sm">
                             Today
                             <span className="ml-3 inline-block font-serif opacity-50">
                                 {dayjs().format("DD")}
@@ -91,7 +91,7 @@ export default function HomePage() {
                             <S2 />
                         </div>
                     </div>
-                    <p className="text-sm text-foreground">
+                    <p className="text-foreground text-sm">
                         Developer at heart, passionate about building a better web, creating great
                         experiences for end users, and trying to solve real-world{" "}
                         <Globe
@@ -132,13 +132,13 @@ export default function HomePage() {
                         />{" "}
                         to create more personalized and engaging in-app experiences.
                     </p>
-                    <p className="text-sm text-foreground">Find me on the links below</p>
+                    <p className="text-foreground text-sm">Find me on the links below</p>
                     <div className="group flex flex-col items-center gap-3 md:flex-row">
                         <div className="relative flex h-fit w-full items-center md:w-fit">
                             <Link
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
-                                className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent pl-4 pr-11 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
+                                className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent pr-11 pl-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit">
                                 <AccessibleIcon.Root label="Email">
                                     <Mail className="mr-3 size-4" />
                                 </AccessibleIcon.Root>
@@ -146,6 +146,7 @@ export default function HomePage() {
                             </Link>
                             <Copy text="gsmt.dev@gmail.com">
                                 <button
+                                    type="button"
                                     title="Copy"
                                     aria-label="Copy email"
                                     className="group/btn absolute right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 hover:opacity-100 active:opacity-50 group-hover:opacity-75">
@@ -194,7 +195,7 @@ export default function HomePage() {
                 </section>
                 <section className="container mt-24">
                     <Projects />
-                    <p className="mt-4 text-sm text-muted-foreground">
+                    <p className="mt-4 text-muted-foreground text-sm">
                         My focus these days is mainly on the web ecosystem, but I have worked with
                         many languages and platforms.
                     </p>

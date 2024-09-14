@@ -57,9 +57,7 @@
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
         font-synthesis-weight: none;
-        font-feature-settings:
-            "liga" 1,
-            "calt" 1;
+        font-feature-settings: "liga" 1, "calt" 1;
     }
 
     body {
@@ -139,14 +137,14 @@
     .overflow-fade-x {
         @apply overflow-hidden;
         mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
-        -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+        mask-image: linear-gradient(in oklch to right, transparent, #000 10%, #000 90%, transparent);
     }
 
     .overflow-fade-y {
         @apply overflow-hidden;
         mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 90%, transparent);
-        -webkit-mask-image: linear-gradient(
-            to bottom,
+        mask-image: linear-gradient(
+            in oklch to bottom,
             transparent,
             #000 10%,
             #000 90%,
