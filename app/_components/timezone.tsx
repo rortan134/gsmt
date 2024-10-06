@@ -13,8 +13,8 @@ const Timezone = () => {
     const [, forceRender] = React.useState(0);
     React.useEffect(() => {
         const intervalId = window.setInterval(
-            () => React.startTransition(() => forceRender(prev => prev + 1)),
-            5000,
+            () => React.startTransition(() => forceRender((prev) => prev + 1)),
+            5000
         );
         return () => window.clearInterval(intervalId);
     }, []);
