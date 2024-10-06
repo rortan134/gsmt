@@ -4,7 +4,7 @@ import { dayjs } from "@lib/dayjs";
 import * as React from "react";
 
 export const Clock = ({ timezone }: { timezone: string }) => {
-    const [time, setTime] = React.useState(dayjs().tz(timezone));
+    const [time, setTime] = React.useState(() => dayjs().tz(timezone));
 
     React.useEffect(() => {
         const timer = window.setInterval(() => {
