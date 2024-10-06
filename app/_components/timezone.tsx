@@ -31,7 +31,7 @@ const Timezone = () => {
                                 {dayjs.tz.guess()}
                             </span>
                             <span className="text-muted-foreground/75 text-xs">
-                                (GMT {dayjs().format("Z")})
+                                ({dayjs().format("z")})
                             </span>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ const Timezone = () => {
                                 {gTimezone}
                             </span>
                             <span className="text-muted-foreground/75 text-xs">
-                                (GMT {dayjs().tz(gTimezone).format("Z")})
+                                ({dayjs().tz(gTimezone).format("z")})
                             </span>
                         </div>
                     </div>
