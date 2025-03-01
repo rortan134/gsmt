@@ -158,8 +158,9 @@ const MessageInput = () => {
                                                 exit={{ opacity: 0, top: -100 }}
                                                 className="relative inline-block text-xs"
                                             >
-                                                You will be contacted soon. Please make sure you
-                                                have included your contact.
+                                                You will be contacted soon.
+                                                Please make sure you have
+                                                included your contact.
                                             </motion.span>
                                         ) : null}
                                         {!submitted && !showNote ? (
@@ -176,7 +177,8 @@ const MessageInput = () => {
                                                 className="relative w-full"
                                             >
                                                 <FormDescription className="text-xs">
-                                                    Please provide a way to contact you (Email,
+                                                    Please provide a way to
+                                                    contact you (Email,
                                                     LinkedIn, Twitter...)
                                                 </FormDescription>
                                             </motion.div>

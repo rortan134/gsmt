@@ -82,7 +82,8 @@ export default function HomePage() {
                     </h1>
                     <span className="whitespace-pre-wrap font-serif text-muted-foreground text-xs">
                         <span className="mr-0.5 opacity-60">IPA</span>&nbsp;
-                        <i className="mr-0.5">/ˈɡɪlbət/</i> —&nbsp;desarrollador,{" "}
+                        <i className="mr-0.5">/ˈɡɪlbət/</i>{" "}
+                        —&nbsp;desarrollador,{" "}
                         <span className="opacity-60">creador.</span>
                     </span>
                     <Line variant="vertical" className="-right-4 -top-20" />
@@ -110,15 +111,16 @@ export default function HomePage() {
                     </div>
                 </div>
                 <p className="text-foreground text-sm">
-                    Desarrollador de corazón, apasionado por construir una mejor web, crear grandes
-                    experiencias para los usuarios finales y tratar de resolver problemas{" "}
+                    Desarrollador de corazón, apasionado por construir una mejor
+                    web, crear grandes experiencias para los usuarios finales y
+                    tratar de resolver problemas{" "}
                     <Globe
                         className="inline-block size-4 opacity-50"
                         focusable="false"
                         aria-hidden
                     />{" "}
-                    reales con un ojo para el diseño. Soy fan del software de código abierto y los
-                    relojes{" "}
+                    reales con un ojo para el diseño. Soy fan del software de
+                    código abierto y los relojes{" "}
                     <Watch
                         className="inline-block size-4 opacity-50"
                         focusable="false"
@@ -127,24 +129,28 @@ export default function HomePage() {
                     .
                     <br />
                     <br />
-                    Introducido a la tecnología desde una edad temprana, llevo más de 3 años
-                    construyendo software. Juego con prototipos y hago de todo, desde scrapers de
-                    datos{" "}
+                    Introducido a la tecnología desde una edad temprana, llevo
+                    más de 3 años construyendo software. Juego con prototipos y
+                    hago de todo, desde scrapers de datos{" "}
                     <Braces
                         className="inline-block size-4 opacity-50"
                         focusable="false"
                         aria-hidden
                     />
-                    , sitios web dinámicos y APIs, encantadoras aplicaciones nativas, simulaciones
-                    fractales, visualizaciones de datos y más.
+                    , sitios web dinámicos y APIs, encantadoras aplicaciones
+                    nativas, simulaciones fractales, visualizaciones de datos y
+                    más.
                     <br />
                     <br />
-                    Fuera de la programación, disfruto de la fotografía y los viajes. Actualmente
-                    estudio ciencias de la computación y siempre busco nuevas formas en que la
-                    tecnología pueda tener un impacto positivo en las personas y mejorar
-                    constantemente a través del aprendizaje.
+                    Fuera de la programación, disfruto de la fotografía y los
+                    viajes. Actualmente estudio ciencias de la computación y
+                    siempre busco nuevas formas en que la tecnología pueda tener
+                    un impacto positivo en las personas y mejorar constantemente
+                    a través del aprendizaje.
                 </p>
-                <p className="text-foreground text-sm">Encuéntrame en los enlaces a continuación</p>
+                <p className="text-foreground text-sm">
+                    Encuéntrame en los enlaces a continuación
+                </p>
                 <div className="group flex flex-col items-center gap-3 md:flex-row">
                     <div className="relative flex h-fit w-full items-center md:w-fit">
                         <Link
@@ -166,7 +172,9 @@ export default function HomePage() {
                             >
                                 <Clipboard className="size-4 transition-all group-data-[copied=true]/btn:opacity-0" />
                                 <Check className="absolute size-4 transition-all group-data-[copied=false]/btn:opacity-0" />
-                                <span className="sr-only">Copiar correo electrónico</span>
+                                <span className="sr-only">
+                                    Copiar correo electrónico
+                                </span>
                             </button>
                         </Copy>
                     </div>
@@ -200,14 +208,16 @@ export default function HomePage() {
             <section className="container mt-24">
                 <Projects />
                 <p className="mt-4 text-muted-foreground text-sm">
-                    En la actualidad me centro principalmente en el ecosistema web, pero ya trabajé
-                    con muchos lenguajes y plataformas.
+                    En la actualidad me centro principalmente en el ecosistema
+                    web, pero ya trabajé con muchos lenguajes y plataformas.
                 </p>
             </section>
             <Timezone />
             <footer className="container mt-16 flex flex-row items-center justify-between">
                 <div className="flex flex-col space-y-1">
-                    <span className="text-[10px] text-muted-foreground/60">Tenga un buen día.</span>
+                    <span className="text-[10px] text-muted-foreground/60">
+                        Tenga un buen día.
+                    </span>
                     <span className="text-[10px] text-muted-foreground/60">
                         <AccessibleIcon.Root label="Basado en España">
                             <Globe className="mr-1 inline-block size-3" />
@@ -215,7 +225,8 @@ export default function HomePage() {
                         Desde España
                     </span>
                     <span className="text-[10px] text-muted-foreground/60">
-                        @ {new Date().getUTCFullYear()} GSMT. Todos los derechos reservados.
+                        @ {new Date().getUTCFullYear()} GSMT. Todos los derechos
+                        reservados.
                     </span>
                 </div>
                 <div className="inline-flex shrink gap-1 md:gap-2">

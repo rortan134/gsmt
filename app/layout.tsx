@@ -40,7 +40,9 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function RootLayout({ children }: React.PropsWithChildren) {
+export default async function RootLayout({
+    children,
+}: React.PropsWithChildren) {
     const messages = await getMessages();
 
     return (
@@ -49,7 +51,9 @@ export default async function RootLayout({ children }: React.PropsWithChildren) 
                 className={cn("isolate pb-24", inter.className, serif.variable)}
                 style={{ colorScheme: "light" }}
             >
-                <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+                <NextIntlClientProvider messages={messages}>
+                    {children}
+                </NextIntlClientProvider>
                 <figure
                     className="-z-10 pointer-events-none fixed inset-x-0 bottom-0 block h-28 flex-none select-none"
                     aria-hidden
@@ -74,7 +78,8 @@ export default async function RootLayout({ children }: React.PropsWithChildren) 
                                 height: "100%",
                                 width: "100%",
                                 backdropFilter: "blur(0px)",
-                                maskImage: "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%)",
                                 zIndex: 1,
                                 borderRadius: "0px",
                             }}
