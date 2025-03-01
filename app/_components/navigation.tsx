@@ -6,7 +6,7 @@ import { Home, MessageCircle } from "lucide-react";
 
 export const Navigation = () => (
     <nav className="fixed inset-x-0 bottom-0 z-20 pb-12">
-        <div className="-translate-x-1/2 absolute bottom-3 left-1/2 flex w-fit items-center justify-between overflow-hidden rounded-3xl border bg-neutral-200/80 px-1 py-0.5 shadow backdrop-blur-xl">
+        <div className="-translate-x-1/2 absolute bottom-3 left-1/2 flex w-fit items-center justify-between overflow-hidden rounded-3xl border bg-neutral-200/80 px-1 py-0.5 shadow-sm backdrop-blur-xl">
             <Link
                 href="/"
                 className="inline-flex w-full items-center justify-center rounded-2xl bg-neutral-300/80 px-4 py-1.5">

@@ -17,16 +17,16 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
             768: { slidesPerView: 2.1 },
         }}
         pagination={{
-            bulletActiveClass: "!text-white !bg-red-500 !px-2",
+            bulletActiveClass: "text-white! bg-red-500! px-2!",
             bulletClass:
                 "transition-[padding] select-none text-muted-foreground px-1 py-1 w-9 h-9 flex items-center justify-center rounded-xl bg-card cursor-pointer font-medium",
             clickable: true,
             el: ".swiper-pagination-container",
             renderBullet: (index, className) => `<span class="${className}">${index + 1}</span>`,
         }}
-        className="!overflow-visible h-fit w-full">
+        className="overflow-visible! h-fit w-full">
         {React.Children.map(children, child => (
-            <SwiperSlide className="!h-auto first:!w-full relative max-h-[565px] overflow-hidden rounded-3xl bg-card">
+            <SwiperSlide className="h-auto! first:w-full! relative max-h-[565px] overflow-hidden rounded-3xl bg-card">
                 {child}
             </SwiperSlide>
         ))}
