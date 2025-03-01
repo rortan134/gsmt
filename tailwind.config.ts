@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 export default {
     content: ["./app/**/*.tsx"],
-    future: { hoverOnlyWhenSupported: true },
     theme: {
         container: {
             center: true,

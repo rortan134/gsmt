@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { Inter, Source_Serif_4 } from "next/font/google";
+import type * as React from "react";
 import "./globals.css";
 
 // TODO: make static
@@ -39,9 +40,7 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function RootLayout({
-    children,
-}: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: React.PropsWithChildren) {
     const messages = await getMessages();
 
     return (
@@ -50,25 +49,154 @@ export default async function RootLayout({
                 className={cn("isolate pb-24", inter.className, serif.variable)}
                 style={{ colorScheme: "light" }}
             >
-                <NextIntlClientProvider messages={messages}>
-                    {children}
-                </NextIntlClientProvider>
+                <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
                 <figure
                     className="-z-10 pointer-events-none fixed inset-x-0 bottom-0 block h-28 flex-none select-none"
                     aria-hidden
                 >
-                    {/* <div style="display: block; flex: 0 0 auto; pointer-events: none; position: relative; border-radius: 0px; overflow: visible; height: 100%; width: 100%; transform: none;">
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(0px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%); z-index: 1; border-radius: 0px;" />
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(0.205761px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 30%); z-index: 2; border-radius: 0px;" />
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(0.823045px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 20%, rgb(0, 0, 0) 40%); z-index: 3; border-radius: 0px;" />
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(1.85185px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0) 50%); z-index: 4; border-radius: 0px;" />
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(3.29218px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 40%, rgb(0, 0, 0) 60%); z-index: 5; border-radius: 0px;" />
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(5.14403px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 70%); z-index: 6; border-radius: 0px;" />
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(7.40741px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 60%, rgb(0, 0, 0) 80%); z-index: 7; border-radius: 0px;" />
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(10.0823px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 90%); z-index: 8; border-radius: 0px;" />
-                        <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(13.1687px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 80%, rgb(0, 0, 0) 100%); z-index: 9; border-radius: 0px;" />
-                        <div style="position: absolute;inset: 0px;height: 100%;width: 100%;backdrop-filter: blur(16.6667px);mask-image: linear-gradient(rgba(0, 0, 0, 0) 90%, rgb(0, 0, 0) 100%);z-index: 10;border-radius: 0px;" />
-                    </div> */}
+                    <div
+                        style={{
+                            display: "block",
+                            flex: "0 0 auto",
+                            pointerEvents: "none",
+                            position: "relative",
+                            borderRadius: "0px",
+                            overflow: "visible",
+                            height: "100%",
+                            width: "100%",
+                            transform: "none",
+                        }}
+                    >
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(0px)",
+                                maskImage: "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%)",
+                                zIndex: 1,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(0.205761px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 30%)",
+                                zIndex: 2,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(0.823045px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 20%, rgb(0, 0, 0) 40%)",
+                                zIndex: 3,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(1.85185px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0) 50%)",
+                                zIndex: 4,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(3.29218px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 40%, rgb(0, 0, 0) 60%)",
+                                zIndex: 5,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(5.14403px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 70%)",
+                                zIndex: 6,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(7.40741px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 60%, rgb(0, 0, 0) 80%)",
+                                zIndex: 7,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(10.0823px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 90%)",
+                                zIndex: 8,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(13.1687px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 80%, rgb(0, 0, 0) 100%)",
+                                zIndex: 9,
+                                borderRadius: "0px",
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                inset: "0px",
+                                height: "100%",
+                                width: "100%",
+                                backdropFilter: "blur(16.6667px)",
+                                maskImage:
+                                    "linear-gradient(rgba(0, 0, 0, 0) 90%, rgb(0, 0, 0) 100%)",
+                                zIndex: 10,
+                                borderRadius: "0px",
+                            }}
+                        />
+                    </div>
                 </figure>
             </body>
         </html>

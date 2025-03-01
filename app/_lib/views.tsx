@@ -2,7 +2,7 @@
 
 import prisma from "@/prisma";
 
-async function updateCount() {
+async function updateViewCount() {
     try {
         await prisma.counter.upsert({
             where: { id: 1 },
@@ -10,18 +10,28 @@ async function updateCount() {
             create: { id: 1, visitCount: 1 },
         });
     } catch (error) {
-        console.error(error);
+        console.error("Failed to update view count:", error);
     }
 }
 
-async function UpdateServerCounter() {
-    await updateCount();
+/**
+ * Server component that updates the view counter
+ */
+export async function UpdateServerViewCounter() {
+    await updateViewCount();
     return null;
 }
 
-async function getPageViewCount() {
-    const data = await prisma.counter.findUnique({ where: { id: 1 } });
-    return data?.visitCount ?? "?";
+/**
+ * Get the page view count
+ * @returns The view count or 0 if not found
+ */
+export async function getPageViewCount() {
+    try {
+        const data = await prisma.counter.findUnique({ where: { id: 1 } });
+        return data?.visitCount ?? 0;
+    } catch (error) {
+        console.error("Failed to get page view count:", error);
+        return 0;
+    }
 }
-
-export { UpdateServerCounter, getPageViewCount };
