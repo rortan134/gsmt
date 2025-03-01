@@ -1,4 +1,4 @@
-import { Link } from "@/navigation";
+import { Link } from "@/i18n/routing";
 import { Drawer, DrawerContent, DrawerTrigger } from "@components/drawer";
 import { MessageInput } from "@components/message-input";
 import * as AccessibleIcon from "@radix-ui/react-accessible-icon";

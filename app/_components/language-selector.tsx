@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/navigation";
+import { Link } from "@/i18n/routing";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -32,10 +32,7 @@ const SpanishFlag = () => (
                 style={{ isolation: "isolate" }}
                 d="M294 70a2 2 0 01-2-2v-.5h2z"
             />
-            <path
-                fill="#e25950"
-                d="M294 70v-2.5h2v.5a2 2 0 01-2 2zm-2-5h2v2.5h-2z"
-            />
+            <path fill="#e25950" d="M294 70v-2.5h2v.5a2 2 0 01-2 2zm-2-5h2v2.5h-2z" />
         </svg>
     </AccessibleIcon.Root>
 );

@@ -1,4 +1,4 @@
-import { Link } from "@/navigation";
+import { Link } from "@/i18n/routing";
 import { Copy } from "@components/copy";
 import { Header } from "@components/header";
 import { S1, S2 } from "@components/icons";
