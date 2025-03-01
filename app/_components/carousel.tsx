@@ -22,11 +22,13 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
                 "transition-[padding] select-none text-muted-foreground px-1 py-1 w-9 h-9 flex items-center justify-center rounded-xl bg-card cursor-pointer font-medium",
             clickable: true,
             el: ".swiper-pagination-container",
-            renderBullet: (index, className) => `<span class="${className}">${index + 1}</span>`,
+            renderBullet: (index, className) =>
+                `<span class="${className}">${index + 1}</span>`,
         }}
-        className="overflow-visible! h-fit w-full">
-        {React.Children.map(children, child => (
-            <SwiperSlide className="h-auto! first:w-full! relative max-h-[565px] overflow-hidden rounded-3xl bg-card">
+        className="overflow-visible! h-fit w-full"
+    >
+        {React.Children.map(children, (child) => (
+            <SwiperSlide className="relative h-auto! max-h-[565px] overflow-hidden rounded-3xl bg-card first:w-full!">
                 {child}
             </SwiperSlide>
         ))}

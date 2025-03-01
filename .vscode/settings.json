@@ -1,11 +1,11 @@
 {
-    "typescript.tsdk": "node_modules\\typescript\\lib",
-    "editor.codeActionsOnSave": {
-        "source.organizeImports.biome": "explicit"
-    },
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#0C3510",
-        "titleBar.activeBackground": "#114B16",
-        "titleBar.activeForeground": "#F3FCF4"
-    }
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#0C3510",
+    "titleBar.activeBackground": "#114B16",
+    "titleBar.activeForeground": "#F3FCF4"
+  }
 }

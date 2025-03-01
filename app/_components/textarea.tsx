@@ -11,7 +11,7 @@ const Textarea = ({
         {...props}
         className={cn(
             "flex max-h-[50vh] min-h-[80px] w-full resize-none appearance-none rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background [scroll-padding-block:6px] placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-            className,
+            className
         )}
         tabIndex={0}
         placeholder={placeholder}

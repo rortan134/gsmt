@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @config '../tailwind.config.ts';
 
@@ -91,147 +91,147 @@
 }
 
 @layer base {
-    :root {
-        --background: 0 0% 100%;
-        --foreground: 20 14.3% 4.1%;
-        --card: 0 14.3% 90%;
-        --card-foreground: 20 14.3% 4.1%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 20 14.3% 4.1%;
-        --primary: 24 9.8% 10%;
-        --primary-foreground: 60 9.1% 97.8%;
-        --secondary: 60 4.8% 95.9%;
-        --secondary-foreground: 24 9.8% 10%;
-        --muted: 60 4.8% 95.9%;
-        --muted-foreground: 25 5.3% 44.7%;
-        --accent: 60 4.8% 95.9%;
-        --accent-foreground: 24 9.8% 10%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 60 9.1% 97.8%;
-        --border: 20 5.9% 90%;
-        --input: 20 5.9% 90%;
-        --ring: 20 14.3% 4.1%;
-        --radius: 0.55rem;
-    }
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 14.3% 90%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 24 9.8% 10%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 60 4.8% 95.9%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 60 4.8% 95.9%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 60 4.8% 95.9%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 20 5.9% 90%;
+    --input: 20 5.9% 90%;
+    --ring: 20 14.3% 4.1%;
+    --radius: 0.55rem;
+  }
 
-    * {
-        @apply border-border motion-safe:scroll-smooth;
-        touch-action: pan-x pan-y;
-        word-wrap: break-word;
-    }
+  * {
+    @apply border-border motion-safe:scroll-smooth;
+    touch-action: pan-x pan-y;
+    word-wrap: break-word;
+  }
 
-    html,
-    body,
-    button,
-    input {
-        @apply antialiased;
-        direction: ltr;
-    }
+  html,
+  body,
+  button,
+  input {
+    @apply antialiased;
+    direction: ltr;
+  }
 
-    html,
-    body {
-        @apply h-full w-full overflow-x-hidden;
-        overscroll-behavior: none;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        font-synthesis-weight: none;
-    }
+  html,
+  body {
+    @apply h-full w-full overflow-x-hidden;
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    font-synthesis-weight: none;
+  }
 
-    html {
-        quotes: "“" "”" "‘" "’";
-        text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-        font-synthesis-weight: none;
-        font-feature-settings: "liga" 1, "calt" 1;
-    }
+  html {
+    quotes: "“" "”" "‘" "’";
+    text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-synthesis-weight: none;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
 
-    body {
-        @apply relative min-h-screen max-w-full break-words bg-background text-left text-foreground;
-        text-rendering: optimizeLegibility;
-        font-synthesis: none;
-    }
+  body {
+    @apply relative min-h-screen max-w-full break-words bg-background text-left text-foreground;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
 
-    svg {
-        @apply shrink-0;
-        text-rendering: optimizeLegibility;
-        vertical-align: center;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-    }
+  svg {
+    @apply shrink-0;
+    text-rendering: optimizeLegibility;
+    vertical-align: center;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
 
-    svg path {
-        shape-rendering: geometricPrecision;
-    }
+  svg path {
+    shape-rendering: geometricPrecision;
+  }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply text-balance;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-balance;
+  }
 
-    span,
-    p {
-        @apply text-pretty;
-    }
+  span,
+  p {
+    @apply text-pretty;
+  }
 
-    /* Override default browser behavior */
-    a,
-    button,
-    select,
-    header,
-    img,
-    video,
-    [type="button"],
-    [type="image"],
-    [type="reset"],
-    [type="submit"],
-    [type="checkbox"],
-    [type="color"],
-    [type="radio"],
-    [type="range"],
-    [draggable] {
-        -webkit-touch-callout: none;
-        touch-action: manipulation;
-        -ms-touch-action: manipulation;
-        user-select: none;
-        -moz-user-select: none;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        text-indent: 0;
-    }
+  /* Override default browser behavior */
+  a,
+  button,
+  select,
+  header,
+  img,
+  video,
+  [type="button"],
+  [type="image"],
+  [type="reset"],
+  [type="submit"],
+  [type="checkbox"],
+  [type="color"],
+  [type="radio"],
+  [type="range"],
+  [draggable] {
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
+    -ms-touch-action: manipulation;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    text-indent: 0;
+  }
 
-    button,
-    select {
-        text-transform: none;
-        text-decoration: none;
-    }
+  button,
+  select {
+    text-transform: none;
+    text-decoration: none;
+  }
 
-    button,
-    input,
-    select,
-    textarea {
-        -webkit-app-region: no-drag;
-    }
+  button,
+  input,
+  select,
+  textarea {
+    -webkit-app-region: no-drag;
+  }
 }
 
 @keyframes ShimmerWave {
-    0% {
-        transform: translateX(-200px) skewX(-15deg);
-    }
+  0% {
+    transform: translateX(-200px) skewX(-15deg);
+  }
 
-    20%,
-    100% {
-        transform: translateX(500px) skewX(-15deg);
-    }
+  20%,
+  100% {
+    transform: translateX(500px) skewX(-15deg);
+  }
 }
 
 ::selection,
 ::-moz-selection {
-    color: hsl(180 48% 48%);
-    background-color: #bdffe8;
+  color: hsl(180 48% 48%);
+  background-color: #bdffe8;
 }

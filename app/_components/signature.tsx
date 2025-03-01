@@ -8,7 +8,8 @@ const Signature = () => (
             height="52"
             viewBox="0 0 1102 977"
             fill="none"
-            className="-mt-2.5 opacity-90">
+            className="-mt-2.5 opacity-90"
+        >
             <path
                 fill="#000"
                 strokeLinecap="round"

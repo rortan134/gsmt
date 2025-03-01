@@ -21,7 +21,9 @@ interface FormFieldContextValue<
     name: TName;
 }
 
-const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue);
+const FormFieldContext = React.createContext<FormFieldContextValue>(
+    {} as FormFieldContextValue
+);
 
 const FormField = <
     TFieldValues extends FieldValues = FieldValues,
@@ -60,9 +62,14 @@ interface FormItemContextValue {
     id: string;
 }
 
-const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
+const FormItemContext = React.createContext<FormItemContextValue>(
+    {} as FormItemContextValue
+);
 
-const FormItem = ({ className, ...props }: React.ComponentPropsWithoutRef<"div">) => {
+const FormItem = ({
+    className,
+    ...props
+}: React.ComponentPropsWithoutRef<"div">) => {
     const id = React.useId();
     return (
         <FormItemContext.Provider value={{ id }}>
@@ -86,12 +93,15 @@ const FormLabel = ({
 };
 
 const FormControl = (props: React.ComponentPropsWithoutRef<typeof Slot>) => {
-    const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
+    const { error, formItemId, formDescriptionId, formMessageId } =
+        useFormField();
     return (
         <Slot
             id={formItemId}
             aria-describedby={
-                !error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`
+                error
+                    ? `${formDescriptionId} ${formMessageId}`
+                    : `${formDescriptionId}`
             }
             aria-invalid={!!error}
             {...props}
@@ -99,7 +109,10 @@ const FormControl = (props: React.ComponentPropsWithoutRef<typeof Slot>) => {
     );
 };
 
-const FormDescription = ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => {
+const FormDescription = ({
+    className,
+    ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => {
     const { formDescriptionId } = useFormField();
     return (
         <p
@@ -124,7 +137,8 @@ const FormMessage = ({
         <p
             id={formMessageId}
             className={cn("font-medium text-destructive text-sm", className)}
-            {...props}>
+            {...props}
+        >
             {body}
         </p>
     );

@@ -18,7 +18,8 @@ const SpanishFlag = () => (
             height="15"
             width="21"
             viewBox="289 60 21 15"
-            className="mr-2 inline-block">
+            className="mr-2 inline-block"
+        >
             <path fill="#fcd669" d="M289 63h21v9h-21v-9z" />
             <path
                 fill="#e25950"
@@ -31,7 +32,10 @@ const SpanishFlag = () => (
                 style={{ isolation: "isolate" }}
                 d="M294 70a2 2 0 01-2-2v-.5h2z"
             />
-            <path fill="#e25950" d="M294 70v-2.5h2v.5a2 2 0 01-2 2zm-2-5h2v2.5h-2z" />
+            <path
+                fill="#e25950"
+                d="M294 70v-2.5h2v.5a2 2 0 01-2 2zm-2-5h2v2.5h-2z"
+            />
         </svg>
     </AccessibleIcon.Root>
 );
@@ -43,7 +47,8 @@ const EnglishFlag = () => (
             height="15"
             width="21"
             viewBox="41 235 21 15"
-            className="mr-2 inline-block">
+            className="mr-2 inline-block"
+        >
             <path
                 fill="#e25950"
                 d="M60 250H43a2 2 0 01-2-2v-7h8v-6h11a2 2 0 012 2v11a2 2 0 01-2 2z"
@@ -77,7 +82,8 @@ const LanguageSelector = () => (
     <DropdownMenu modal={false}>
         <DropdownMenuTrigger
             title="Change language"
-            className="inline-flex size-5 items-center justify-center text-blue-600">
+            className="inline-flex size-5 items-center justify-center text-blue-600"
+        >
             <AccessibleIcon.Root label="Change language">
                 <Languages className="h-4 w-4" />
             </AccessibleIcon.Root>

@@ -21,15 +21,21 @@ export const Clock = ({ timezone }: { timezone: string }) => {
         <div className="relative size-6 rounded-full border-2 border-gray-600 border-dotted bg-gray-100 opacity-50">
             <div
                 className="absolute bottom-1/2 left-1/2 z-30 h-1.5 w-px origin-bottom bg-gray-800"
-                style={{ transform: `translateX(-50%) rotate(${hourDegrees}deg)` }}
+                style={{
+                    transform: `translateX(-50%) rotate(${hourDegrees}deg)`,
+                }}
             />
             <div
                 className="absolute bottom-1/2 left-1/2 z-20 h-2 w-px origin-bottom bg-gray-800"
-                style={{ transform: `translateX(-50%) rotate(${minuteDegrees}deg)` }}
+                style={{
+                    transform: `translateX(-50%) rotate(${minuteDegrees}deg)`,
+                }}
             />
             <div
                 className="absolute bottom-1/2 left-1/2 z-10 h-2 w-px origin-bottom bg-red-500"
-                style={{ transform: `translateX(-50%) rotate(${secondDegrees}deg)` }}
+                style={{
+                    transform: `translateX(-50%) rotate(${secondDegrees}deg)`,
+                }}
             />
         </div>
     );

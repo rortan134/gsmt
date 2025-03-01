@@ -21,8 +21,9 @@ const DrawerContent = ({
             {...props}
             className={cn(
                 "fixed inset-x-0 bottom-0 mt-20 rounded-t-lg bg-zinc-100 px-4 py-3",
-                className,
-            )}>
+                className
+            )}
+        >
             <DrawerPrimitive.Handle className="rounded-full bg-neutral-300" />
             {children}
         </DrawerPrimitive.Content>
@@ -34,10 +35,14 @@ const DrawerTitle = ({
     ...props
 }: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>) => (
     <div className="flex items-center justify-between">
-        <DrawerPrimitive.Title {...props} className={cn("font-medium text-base", className)} />
+        <DrawerPrimitive.Title
+            {...props}
+            className={cn("font-medium text-base", className)}
+        />
         <DrawerPrimitive.Close
             title="Close"
-            className="ml-auto flex size-6 items-center justify-center rounded-full bg-neutral-200 text-foreground">
+            className="ml-auto flex size-6 items-center justify-center rounded-full bg-neutral-200 text-foreground"
+        >
             <AccessibleIcon.Root label="Close drawer">
                 <X className="size-4" />
             </AccessibleIcon.Root>

@@ -14,7 +14,9 @@ export const Line = ({
     variant = "horizontal",
     className,
     ...props
-}: React.ComponentPropsWithoutRef<typeof motion.div> & { variant?: "vertical" | "horizontal" }) => (
+}: React.ComponentPropsWithoutRef<typeof motion.div> & {
+    variant?: "vertical" | "horizontal";
+}) => (
     <motion.div
         {...props}
         aria-hidden
@@ -24,10 +26,17 @@ export const Line = ({
                 "overflow-fade-x -inset-x-11 h-px": variant === "horizontal",
                 "overflow-fade-y -bottom-8 -top-6 w-px": variant === "vertical",
             },
-            className,
+            className
         )}
         initial={{ opacity: 0.4 }}
-        animate={{ opacity: 0, ...(variant === "vertical" ? { height: 0 } : { width: 0 }) }}
-        transition={{ delay: 0.6, duration: 1.2 * random(0.9, 1.2), ease: "easeInOut" }}
+        animate={{
+            opacity: 0,
+            ...(variant === "vertical" ? { height: 0 } : { width: 0 }),
+        }}
+        transition={{
+            delay: 0.6,
+            duration: 1.2 * random(0.9, 1.2),
+            ease: "easeInOut",
+        }}
     />
 );

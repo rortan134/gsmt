@@ -30,17 +30,17 @@ interface MessageStoreProps {
 
 const useMessageStore = create<MessageStoreProps>()(
     persist(
-        set => ({
+        (set) => ({
             messages: [],
-            setMessages: messages =>
+            setMessages: (messages) =>
                 messages instanceof Function
-                    ? set(prevValues => ({
+                    ? set((prevValues) => ({
                           messages: messages(prevValues.messages),
                       }))
                     : set({ messages }),
         }),
-        { name: "gsmt-app-storage" },
-    ),
+        { name: "gsmt-app-storage" }
+    )
 );
 
 const formSchema = z.object({
@@ -75,7 +75,7 @@ const MessageInput = () => {
     function onSubmit(values: z.infer<typeof formSchema>) {
         form.clearErrors();
         form.reset();
-        setMessages(prevMessages => [...prevMessages, values.message]);
+        setMessages((prevMessages) => [...prevMessages, values.message]);
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
         const id = new DeviceUUID().get() as string;
@@ -96,11 +96,13 @@ const MessageInput = () => {
         <div className="flex w-full flex-col">
             <div
                 ref={parentContainer}
-                className="flex w-full flex-col items-end justify-end space-y-2">
-                {messages.map(message => (
+                className="flex w-full flex-col items-end justify-end space-y-2"
+            >
+                {messages.map((message) => (
                     <div
                         key={slugify(message)}
-                        className="flex h-fit w-fit max-w-1/2 items-center justify-end rounded-3xl bg-blue-600 px-3 py-1">
+                        className="flex h-fit w-fit max-w-1/2 items-center justify-end rounded-3xl bg-blue-600 px-3 py-1"
+                    >
                         <span className="text-right text-primary-foreground text-sm">
                             {message}
                         </span>
@@ -111,7 +113,8 @@ const MessageInput = () => {
                 <form
                     // eslint-disable-next-line @typescript-eslint/no-misused-promises
                     onSubmit={form.handleSubmit(onSubmit)}
-                    className="mt-3 inline-flex w-full justify-between space-x-4">
+                    className="mt-3 inline-flex w-full justify-between space-x-4"
+                >
                     <FormField
                         control={form.control}
                         name="message"
@@ -136,29 +139,46 @@ const MessageInput = () => {
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0, top: -100 }}
-                                                className="relative inline-block font-medium text-green-600 text-xs">
+                                                className="relative inline-block font-medium text-green-600 text-xs"
+                                            >
                                                 Message sent
                                             </motion.span>
                                         ) : null}
                                         {showNote ? (
                                             <motion.span
                                                 key="note"
-                                                initial={{ opacity: 0, top: 100 }}
-                                                animate={{ opacity: 1, top: "auto" }}
+                                                initial={{
+                                                    opacity: 0,
+                                                    top: 100,
+                                                }}
+                                                animate={{
+                                                    opacity: 1,
+                                                    top: "auto",
+                                                }}
                                                 exit={{ opacity: 0, top: -100 }}
-                                                className="relative inline-block text-xs">
-                                                You will be contacted soon. Please make sure you
-                                                have included your contact.
+                                                className="relative inline-block text-xs"
+                                            >
+                                                You will be contacted soon.
+                                                Please make sure you have
+                                                included your contact.
                                             </motion.span>
                                         ) : null}
                                         {!submitted && !showNote ? (
                                             <motion.div
-                                                initial={{ opacity: 0, top: 100 }}
-                                                animate={{ opacity: 1, top: "auto" }}
+                                                initial={{
+                                                    opacity: 0,
+                                                    top: 100,
+                                                }}
+                                                animate={{
+                                                    opacity: 1,
+                                                    top: "auto",
+                                                }}
                                                 exit={{ opacity: 0, top: -100 }}
-                                                className="relative w-full">
+                                                className="relative w-full"
+                                            >
                                                 <FormDescription className="text-xs">
-                                                    Please provide a way to contact you (Email,
+                                                    Please provide a way to
+                                                    contact you (Email,
                                                     LinkedIn, Twitter...)
                                                 </FormDescription>
                                             </motion.div>
@@ -171,7 +191,8 @@ const MessageInput = () => {
                     />
                     <button
                         type="submit"
-                        className="relative top-[1.9rem] flex h-11 w-fit items-center justify-center px-2 font-medium text-foreground text-sm">
+                        className="relative top-[1.9rem] flex h-11 w-fit items-center justify-center px-2 font-medium text-foreground text-sm"
+                    >
                         Send
                     </button>
                 </form>

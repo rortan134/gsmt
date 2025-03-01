@@ -39,18 +39,24 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+    children,
+}: { children: React.ReactNode }) {
     const messages = await getMessages();
 
     return (
         <html lang="en" dir="ltr">
             <body
                 className={cn("isolate pb-24", inter.className, serif.variable)}
-                style={{ colorScheme: "light" }}>
-                <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+                style={{ colorScheme: "light" }}
+            >
+                <NextIntlClientProvider messages={messages}>
+                    {children}
+                </NextIntlClientProvider>
                 <figure
                     className="-z-10 pointer-events-none fixed inset-x-0 bottom-0 block h-28 flex-none select-none"
-                    aria-hidden>
+                    aria-hidden
+                >
                     {/* <div style="display: block; flex: 0 0 auto; pointer-events: none; position: relative; border-radius: 0px; overflow: visible; height: 100%; width: 100%; transform: none;">
                         <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(0px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 20%); z-index: 1; border-radius: 0px;" />
                         <div style="position: absolute; inset: 0px; height: 100%; width: 100%; backdrop-filter: blur(0.205761px); mask-image: linear-gradient(rgba(0, 0, 0, 0) 10%, rgb(0, 0, 0) 30%); z-index: 2; border-radius: 0px;" />

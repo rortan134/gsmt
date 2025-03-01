@@ -4,12 +4,13 @@
   "type": "module",
   "scripts": {
     "build": "next build",
+    "format": "ultracite format",
     "clean": "rm -rf node_modules && rm -rf .next",
     "db-deploy": "bunx prisma migrate deploy",
     "db-migrate": "bunx prisma migrate dev",
     "dev": "next dev --turbo",
     "postinstall": "bunx prisma generate && prisma format",
-    "lint": "biome check --write --unsafe .",
+    "lint": "ultracite lint",
     "start": "next start"
   },
   "dependencies": {
@@ -21,7 +22,7 @@
     "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/postcss": "^4.0.9",
-    "axios": "^1.7.9",
+    "axios": "^1.8.1",
     "clsx": "^2.1.1",
     "copy-to-clipboard": "^3.3.3",
     "csv-writer": "^1.6.0",
@@ -42,10 +43,11 @@
     "react-textarea-autosize": "^8.5.7",
     "sharp": "^0.33.5",
     "swiper": "^11.2.4",
-    "tailwind-merge": "^2.5.2",
+    "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.9",
     "tailwindcss-animate": "^1.0.7",
     "ts-node": "^10.9.2",
+    "ultracite": "^4.1.20",
     "vaul": "^1.1.2",
     "zod": "^3.24.2",
     "zustand": "^5.0.3"
@@ -58,9 +60,5 @@
     "postcss": "8.5.3",
     "typescript": "5.8.2"
   },
-  "trustedDependencies": [
-    "@biomejs/biome",
-    "@prisma/client",
-    "prisma"
-  ]
+  "trustedDependencies": ["@biomejs/biome", "@prisma/client", "prisma"]
 }
