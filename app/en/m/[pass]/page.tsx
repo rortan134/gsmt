@@ -3,8 +3,11 @@ import { dayjs } from "@lib/dayjs";
 import { redirect } from "next/navigation";
 
 export default async function MessagesPage({
-    params,
-}: { params: { pass: string } }) {
+    searchParams,
+}: {
+    searchParams: Promise<{ pass: string }>;
+}) {
+    const params = await searchParams;
     if (params.pass !== process.env.ACCESS_PASS) {
         redirect("/");
     }

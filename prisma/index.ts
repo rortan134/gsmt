@@ -7,8 +7,9 @@ declare global {
 // biome-ignore lint: type
 const prismaOptions: any = {};
 
-if (process.env.NEXT_PUBLIC_DEBUG)
+if (process.env.NEXT_PUBLIC_DEBUG) {
     prismaOptions.log = ["query", "error", "warn"];
+}
 
 const customPrismaClient = new CustomPrismaClient(prismaOptions);
 

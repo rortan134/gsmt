@@ -67,7 +67,9 @@ const MessageInput = () => {
 
     React.useEffect(function focusInputOnMount() {
         window.setTimeout(() => {
-            if (!textAreaRef.current) return;
+            if (!textAreaRef.current) {
+                return;
+            }
             textAreaRef.current.focus();
         }, 400);
     }, []);

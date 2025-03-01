@@ -9,6 +9,10 @@
         "rules": {
             "a11y": {
                 "noSvgWithoutTitle": "off"
+            },
+            "suspicious": {
+                "noConsole": "off",
+                "noConsoleLog": "off"
             }
         }
     },
