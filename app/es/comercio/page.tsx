@@ -53,29 +53,42 @@ export default function ComercioPage() {
                     encargo de toda la arquitectura.
                 </p>
                 <ul className="list-disc space-y-1 pl-5 text-sm text-foreground/90">
-                    <li className="flex items-start gap-2">
-                        <Check className="mt-0.5 shrink-0 size-4 text-green-600" />
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
                         Carrito de compras flexible y UX optimizada
                     </li>
-                    <li className="flex items-start gap-2">
-                        <Check className="mt-0.5 shrink-0 size-4 text-green-600" />
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
                         Integración con Stripe, PayPal, Redsys, Adyen...
                     </li>
-                    <li className="flex items-start gap-2">
-                        <Check className="mt-0.5 shrink-0 size-4 text-green-600" />
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
                         Pagos y conciliación automática en volumen
                     </li>
-                    <li className="flex items-start gap-2">
-                        <Check className="mt-0.5 shrink-0 size-4 text-green-600" />
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
                         Inventario y catálogo en tiempo real
                     </li>
-                    <li className="flex items-start gap-2">
-                        <Check className="mt-0.5 shrink-0 size-4 text-green-600" />
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
                         SEO y Core Web Vitals por encima del 90%
                     </li>
-                    <li className="flex items-start gap-2">
-                        <Check className="mt-0.5 shrink-0 size-4 text-green-600" />
-                        Análisis, A/B testing y growth continuo
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
+                        Multiples canales: marketplace, redes sociales y TPV
+                        físico
+                    </li>
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
+                        Panel de administración a medida
+                    </li>
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
+                        Email marketing y notificaciones transaccionales
+                    </li>
+                    <li className="flex gap-2 items-start">
+                        <Check className="mt-0.5 size-4 shrink-0 text-green-600" />
+                        Integraciones logísticas y automatización de envíos
                     </li>
                 </ul>
                 <p className="text-foreground text-sm">
