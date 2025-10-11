@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@lib/cn";
-import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
 import { X } from "lucide-react";
 import type * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
@@ -14,7 +13,7 @@ const DrawerContent = ({
     className,
     children,
     ...props
-}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>) => (
+}: React.ComponentProps<typeof DrawerPrimitive.Content>) => (
     <DrawerPrimitive.Portal>
         <DrawerPrimitive.Overlay className="fixed inset-0 bg-black/40" />
         <DrawerPrimitive.Content
@@ -33,19 +32,18 @@ const DrawerContent = ({
 const DrawerTitle = ({
     className,
     ...props
-}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>) => (
+}: React.ComponentProps<typeof DrawerPrimitive.Title>) => (
     <div className="flex items-center justify-between">
         <DrawerPrimitive.Title
             {...props}
             className={cn("font-medium text-base", className)}
         />
         <DrawerPrimitive.Close
-            title="Close"
             className="ml-auto flex size-6 items-center justify-center rounded-full bg-neutral-200 text-foreground"
+            title="Close drawer"
         >
-            <AccessibleIcon.Root label="Close drawer">
-                <X className="size-4" />
-            </AccessibleIcon.Root>
+            <X aria-hidden className="size-4" focusable="false" />
+            <span className="sr-only">Close drawer</span>
         </DrawerPrimitive.Close>
     </div>
 );
@@ -53,7 +51,7 @@ const DrawerTitle = ({
 const DrawerDescription = ({
     className,
     ...props
-}: React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>) => (
+}: React.ComponentProps<typeof DrawerPrimitive.Description>) => (
     <DrawerPrimitive.Description
         {...props}
         className={cn("mt-3 text-muted-foreground text-sm", className)}

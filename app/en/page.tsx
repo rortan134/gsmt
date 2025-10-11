@@ -12,11 +12,9 @@ import { Timezone } from "@components/timezone";
 import { cn } from "@lib/cn";
 import { dayjs } from "@lib/dayjs";
 import { formatCompactNumber } from "@lib/format";
-import { UpdateServerViewCounter, getPageViewCount } from "@lib/views";
-import * as AccessibleIcon from "@radix-ui/react-accessible-icon";
+import { getPageViewCount, UpdateServerViewCounter } from "@lib/views";
 import {
     ArrowUpRight,
-    Asterisk,
     Braces,
     BrainCircuit,
     Check,
@@ -44,9 +42,8 @@ async function PageViews() {
                 "inline-flex items-center whitespace-nowrap font-serif text-muted-foreground/80 text-xs"
             )}
         >
-            <AccessibleIcon.Root label="Views">
-                <Eye className="mr-1 size-4" />
-            </AccessibleIcon.Root>
+            <Eye aria-hidden className="mr-1 size-4" focusable="false" />
+            <span className="sr-only">Views</span>
             {formatCompactNumber(pageViewCount)} page views
         </span>
     );
@@ -59,9 +56,8 @@ function PageViewsFallback() {
                 "inline-flex items-center whitespace-nowrap font-serif text-muted-foreground/80 text-xs"
             )}
         >
-            <AccessibleIcon.Root label="Views">
-                <Eye className="mr-1 size-4" />
-            </AccessibleIcon.Root>
+            <Eye aria-hidden className="mr-1 size-4" focusable="false" />
+            <span className="sr-only">Views</span>
             Loading...
         </span>
     );
@@ -73,9 +69,9 @@ export default function HomePage() {
             <PageShell>
                 <Header />
                 <section className="container relative mt-16 flex w-full items-center justify-between">
-                    <Line variant="vertical" className="-top-20 left-5" />
-                    <Line variant="vertical" className="-top-20 right-6" />
-                    <Line variant="vertical" className="-top-20 right-14" />
+                    <Line className="-top-20 left-5" variant="vertical" />
+                    <Line className="-top-20 right-6" variant="vertical" />
+                    <Line className="-top-20 right-14" variant="vertical" />
                     <Line className="-top-16" />
                     <Line className="-top-8" />
                     <Line className="-top-1.5" />
@@ -90,10 +86,10 @@ export default function HomePage() {
                             developer,{" "}
                             <span className="opacity-60">maker.</span>
                         </span>
-                        <Line variant="vertical" className="-right-4 -top-20" />
+                        <Line className="-right-4 -top-20" variant="vertical" />
                     </div>
                     <div className="relative flex items-end justify-end gap-3 md:gap-4">
-                        <Line variant="vertical" className="-left-2 -top-20" />
+                        <Line className="-left-2 -top-20" variant="vertical" />
                         <React.Suspense fallback={<PageViewsFallback />}>
                             <PageViews />
                         </React.Suspense>
@@ -119,15 +115,15 @@ export default function HomePage() {
                         web, creating great experiences for end users, and
                         trying to solve real-world{" "}
                         <Globe
-                            className="inline-block size-4 opacity-50"
                             aria-hidden
+                            className="inline-block size-4 opacity-50"
                             focusable="false"
                         />{" "}
                         problems with an eye for design. I&apos;m also a fan of
                         open-source software, and cool looking watches{" "}
                         <Watch
-                            className="inline-block size-4 opacity-50"
                             aria-hidden
+                            className="inline-block size-4 opacity-50"
                             focusable="false"
                         />
                         .
@@ -137,8 +133,8 @@ export default function HomePage() {
                         building software for over 3 years now. Playing with
                         prototypes and doing everything from data scrapers{" "}
                         <Braces
-                            className="inline-block size-4 opacity-50"
                             aria-hidden
+                            className="inline-block size-4 opacity-50"
                             focusable="false"
                         />
                         , dynamic websites and APIs, charmful native
@@ -153,8 +149,8 @@ export default function HomePage() {
                         learning. I have been particularly interested in using
                         ML{" "}
                         <BrainCircuit
-                            className="inline-block size-4 opacity-50"
                             aria-hidden
+                            className="inline-block size-4 opacity-50"
                             focusable="false"
                         />{" "}
                         to create more personalized and engaging in-app
@@ -166,21 +162,24 @@ export default function HomePage() {
                     <div className="group flex flex-col items-center gap-3 md:flex-row">
                         <div className="relative flex h-fit w-full items-center md:w-fit">
                             <Link
+                                className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent pr-11 pl-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit"
                                 href="mailto:gsmt.dev@gmail.com"
                                 title="Email"
-                                className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent pr-11 pl-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit"
                             >
-                                <AccessibleIcon.Root label="Email">
-                                    <Mail className="mr-3 size-4" />
-                                </AccessibleIcon.Root>
+                                <Mail
+                                    aria-hidden
+                                    className="mr-3 size-4"
+                                    focusable="false"
+                                />
+                                <span className="sr-only">Email</span>
                                 gsmt.dev@gmail.com
                             </Link>
                             <Copy text="gsmt.dev@gmail.com">
                                 <button
-                                    type="button"
-                                    title="Copy"
                                     aria-label="Copy email"
                                     className="group/btn absolute right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 hover:opacity-100 active:opacity-50 group-hover:opacity-75"
+                                    title="Copy"
+                                    type="button"
                                 >
                                     <Clipboard className="size-4 transition-all group-data-[copied=true]/btn:opacity-0" />
                                     <Check className="absolute size-4 transition-all group-data-[copied=false]/btn:opacity-0" />
@@ -189,41 +188,37 @@ export default function HomePage() {
                             </Copy>
                         </div>
                         <Link
-                            href="https://twitter.com/meetgilberto"
-                            title="Twitter"
-                            target="_blank"
-                            rel="noreferrer noopener"
                             className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit"
+                            href="https://twitter.com/gsmmtt"
+                            rel="noreferrer noopener"
+                            target="_blank"
+                            title="Twitter"
                         >
-                            <AccessibleIcon.Root label="X (formerly Twitter)">
-                                <Twitter className="mr-3 size-4" />
-                            </AccessibleIcon.Root>
+                            <Twitter
+                                aria-hidden
+                                className="mr-3 size-4"
+                                focusable="false"
+                            />
+                            <span className="sr-only">
+                                X (formerly Twitter)
+                            </span>
                             Twitter
                             <ArrowUpRight className="ml-1.5 size-3" />
                         </Link>
                         <Link
+                            className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit"
                             href="https://github.com/rortan134"
-                            title="GitHub"
-                            target="_blank"
                             rel="noreferrer noopener"
-                            className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit"
-                        >
-                            <AccessibleIcon.Root label="GitHub">
-                                <Github className="mr-3 size-4" />
-                            </AccessibleIcon.Root>
-                            GitHub
-                            <ArrowUpRight className="ml-1.5 size-3" />
-                        </Link>
-                        <Link
-                            href="https://read.cv/gsmt"
-                            title="read.cv"
                             target="_blank"
-                            className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit"
+                            title="GitHub"
                         >
-                            <AccessibleIcon.Root label="CV">
-                                <Asterisk className="mr-1.5 size-4" />
-                            </AccessibleIcon.Root>
-                            CV
+                            <Github
+                                aria-hidden
+                                className="mr-3 size-4"
+                                focusable="false"
+                            />
+                            <span className="sr-only">GitHub</span>
+                            GitHub
                             <ArrowUpRight className="ml-1.5 size-3" />
                         </Link>
                     </div>
@@ -239,9 +234,12 @@ export default function HomePage() {
                 <footer className="container mt-16 flex flex-row items-center justify-between">
                     <div className="flex flex-col space-y-1">
                         <span className="text-[10px] text-muted-foreground/60">
-                            <AccessibleIcon.Root label="Based in España">
-                                <Globe className="mr-1 inline-block size-3" />
-                            </AccessibleIcon.Root>
+                            <Globe
+                                aria-hidden
+                                className="mr-1 inline-block size-3"
+                                focusable="false"
+                            />
+                            <span className="sr-only">Based in Spain</span>
                             Spain
                         </span>
                         <span className="text-[10px] text-muted-foreground/60">
@@ -258,9 +256,9 @@ export default function HomePage() {
                                 gsmt.link
                             </span>
                             <Link
+                                className="truncate text-[10px] text-muted-foreground/60 underline underline-offset-4"
                                 href="https://github.com/rortan134/gsmt"
                                 target="_blank"
-                                className="truncate text-[10px] text-muted-foreground/60 underline underline-offset-4"
                             >
                                 view source
                             </Link>

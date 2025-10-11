@@ -1,6 +1,5 @@
 import { Label } from "@components/label";
 import { cn } from "@lib/cn";
-import type * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
 import * as React from "react";
 import {
@@ -66,10 +65,7 @@ const FormItemContext = React.createContext<FormItemContextValue>(
     {} as FormItemContextValue
 );
 
-const FormItem = ({
-    className,
-    ...props
-}: React.ComponentPropsWithoutRef<"div">) => {
+const FormItem = ({ className, ...props }: React.ComponentProps<"div">) => {
     const id = React.useId();
     return (
         <FormItemContext.Provider value={{ id }}>
@@ -78,10 +74,7 @@ const FormItem = ({
     );
 };
 
-const FormLabel = ({
-    className,
-    ...props
-}: React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>) => {
+const FormLabel = ({ className, ...props }: React.ComponentProps<"label">) => {
     const { error, formItemId } = useFormField();
     return (
         <Label
@@ -92,18 +85,18 @@ const FormLabel = ({
     );
 };
 
-const FormControl = (props: React.ComponentPropsWithoutRef<typeof Slot>) => {
+const FormControl = (props: React.ComponentProps<typeof Slot>) => {
     const { error, formItemId, formDescriptionId, formMessageId } =
         useFormField();
     return (
         <Slot
-            id={formItemId}
             aria-describedby={
                 error
                     ? `${formDescriptionId} ${formMessageId}`
                     : `${formDescriptionId}`
             }
             aria-invalid={!!error}
+            id={formItemId}
             {...props}
         />
     );
@@ -116,8 +109,8 @@ const FormDescription = ({
     const { formDescriptionId } = useFormField();
     return (
         <p
-            id={formDescriptionId}
             className={cn("text-muted-foreground text-sm", className)}
+            id={formDescriptionId}
             {...props}
         />
     );
@@ -135,8 +128,8 @@ const FormMessage = ({
     }
     return (
         <p
-            id={formMessageId}
             className={cn("font-medium text-destructive text-sm", className)}
+            id={formMessageId}
             {...props}
         >
             {body}

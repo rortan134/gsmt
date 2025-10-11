@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@lib/cn";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import type * as React from "react";
 
 function random(min: number, max: number) {
@@ -14,11 +14,15 @@ export const Line = ({
     variant = "horizontal",
     className,
     ...props
-}: React.ComponentPropsWithoutRef<typeof motion.div> & {
+}: React.ComponentProps<typeof motion.div> & {
     variant?: "vertical" | "horizontal";
 }) => (
     <motion.div
         {...props}
+        animate={{
+            opacity: 0,
+            ...(variant === "vertical" ? { height: 0 } : { width: 0 }),
+        }}
         aria-hidden
         className={cn(
             "pointer-events-none absolute origin-center select-none bg-muted-foreground opacity-40 mix-blend-soft-light",
@@ -29,10 +33,6 @@ export const Line = ({
             className
         )}
         initial={{ opacity: 0.4 }}
-        animate={{
-            opacity: 0,
-            ...(variant === "vertical" ? { height: 0 } : { width: 0 }),
-        }}
         transition={{
             delay: 0.6,
             duration: 1.2 * random(0.9, 1.2),

@@ -8,14 +8,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Carousel = ({ children }: React.PropsWithChildren) => (
     <Swiper
-        grabCursor
-        modules={[Pagination]}
-        slidesPerView={1.0001}
-        spaceBetween={16}
         breakpoints={{
             320: { slidesPerView: 1.09 },
             768: { slidesPerView: 2.1 },
         }}
+        className="overflow-visible! h-fit w-full"
+        grabCursor
+        modules={[Pagination]}
         pagination={{
             bulletActiveClass: "text-white! bg-red-500! px-2!",
             bulletClass:
@@ -25,7 +24,8 @@ const Carousel = ({ children }: React.PropsWithChildren) => (
             renderBullet: (index, className) =>
                 `<span class="${className}">${index + 1}</span>`,
         }}
-        className="overflow-visible! h-fit w-full"
+        slidesPerView={1.0001}
+        spaceBetween={16}
     >
         {React.Children.map(children, (child) => (
             <SwiperSlide className="relative h-auto! max-h-[565px] overflow-hidden rounded-3xl bg-card first:w-full!">

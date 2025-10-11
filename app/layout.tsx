@@ -1,8 +1,8 @@
 import { cn } from "@lib/cn";
 import type { Metadata, Viewport } from "next";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import { Inter, Source_Serif_4 } from "next/font/google";
 import type * as React from "react";
 import "./globals.css";
 
@@ -46,7 +46,7 @@ export default async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang="en" dir="ltr">
+        <html dir="ltr" lang="en">
             <body
                 className={cn("isolate pb-24", inter.className, serif.variable)}
                 style={{ colorScheme: "light" }}
@@ -55,8 +55,8 @@ export default async function RootLayout({
                     {children}
                 </NextIntlClientProvider>
                 <figure
-                    className="-z-10 pointer-events-none fixed inset-x-0 bottom-0 block h-28 flex-none select-none"
                     aria-hidden
+                    className="-z-10 pointer-events-none fixed inset-x-0 bottom-0 block h-28 flex-none select-none"
                 >
                     <div
                         style={{

@@ -1,10 +1,12 @@
 export const S1 = () => (
     <svg
-        width="36"
-        height="20"
-        viewBox="0 0 107 54"
+        aria-hidden
         className="opacity-50"
         fill="none"
+        focusable="false"
+        height="20"
+        viewBox="0 0 107 54"
+        width="36"
         xmlns="http://www.w3.org/2000/svg"
     >
         <path
@@ -92,22 +94,22 @@ export const S1 = () => (
             fill="#000"
         />
         <path
-            fillRule="evenodd"
             clipRule="evenodd"
             d="M77 54V4.37114e-08L78 0V54H77Z"
             fill="#000"
+            fillRule="evenodd"
         />
     </svg>
 );
 
 export const S2 = () => (
     <svg
-        xmlns="http://www.w3.org/2000/svg"
         className="opacity-50"
-        width="20"
+        fill="none"
         height="20"
         viewBox="0 0 26 27"
-        fill="none"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
     >
         <g clipPath="url(#clip0_88_118)">
             <path
@@ -125,7 +127,7 @@ export const S2 = () => (
         </g>
         <defs>
             <clipPath id="clip0_88_118">
-                <rect width="26" height="27" fill="white" />
+                <rect fill="white" height="27" width="26" />
             </clipPath>
         </defs>
     </svg>

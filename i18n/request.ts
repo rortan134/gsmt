@@ -7,7 +7,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
     // Ensure that the incoming locale is valid
     const validLocale = z.string().array().parse(routing.locales);
-    if (!locale || !validLocale.includes(locale)) {
+    if (!(locale && validLocale.includes(locale))) {
         locale = routing.defaultLocale;
     }
 

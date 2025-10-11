@@ -7,7 +7,7 @@ import * as React from "react";
 const Copy = ({
     text,
     ...props
-}: React.ComponentPropsWithoutRef<typeof Slot> & { text: string }) => {
+}: React.ComponentProps<typeof Slot> & { text: string }) => {
     const [copied, setCopied] = React.useState(false);
 
     const copyHandler = React.useCallback(() => {
@@ -16,7 +16,7 @@ const Copy = ({
         window.setTimeout(() => setCopied(false), 2000);
     }, [text]);
 
-    return <Slot onClick={copyHandler} data-copied={copied} {...props} />;
+    return <Slot data-copied={copied} onClick={copyHandler} {...props} />;
 };
 
 export { Copy };

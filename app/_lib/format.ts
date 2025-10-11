@@ -32,8 +32,8 @@ export function formatCompactNumber(num: number | string): string {
         formattedValue = `${(absValue / 1_000_000_000).toFixed(1).replace(REG_PATTERN, "")}B`;
     } else if (absValue >= 1_000_000) {
         formattedValue = `${(absValue / 1_000_000).toFixed(1).replace(REG_PATTERN, "")}M`;
-    } else if (absValue >= 1_000) {
-        formattedValue = `${(absValue / 1_000).toFixed(1).replace(REG_PATTERN, "")}k`;
+    } else if (absValue >= 1000) {
+        formattedValue = `${(absValue / 1000).toFixed(1).replace(REG_PATTERN, "")}k`;
     } else {
         formattedValue = absValue.toString();
     }

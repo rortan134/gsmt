@@ -1,6 +1,6 @@
-import prisma from "@/prisma";
 import { dayjs } from "@lib/dayjs";
 import { redirect } from "next/navigation";
+import prisma from "@/prisma";
 
 export default async function MessagesPage({
     searchParams,
@@ -22,13 +22,13 @@ export default async function MessagesPage({
     return (
         <div className="container flex flex-col space-y-12 py-6">
             {userMessages.map((userMessage) => (
-                <div key={userMessage.id} className="flex flex-col space-y-0.5">
+                <div className="flex flex-col space-y-0.5" key={userMessage.id}>
                     <span className="font-medium text-sm">
                         {userMessage.id}
                     </span>
                     <div className="flex flex-col pl-6">
                         {userMessage.messages.map((message) => (
-                            <div key={message.id} className="flex flex-col">
+                            <div className="flex flex-col" key={message.id}>
                                 <span className="text-xs">
                                     {dayjs(message.createdAt).fromNow()}
                                 </span>

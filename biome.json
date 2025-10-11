@@ -1,19 +1,13 @@
 {
-    "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
     "extends": ["ultracite"],
-    "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": true },
     "formatter": {
         "indentWidth": 4
     },
-    "linter": {
-        "rules": {
-            "a11y": {
-                "noSvgWithoutTitle": "off"
-            },
-            "suspicious": {
-                "noConsole": "off",
-                "noConsoleLog": "off"
-            }
+    "javascript": {
+        "formatter": {
+            "indentWidth": 4,
+            "quoteStyle": "double"
         }
     },
     "json": {
@@ -21,10 +15,28 @@
             "indentWidth": 4
         }
     },
-    "javascript": {
-        "formatter": {
-            "indentWidth": 4,
-            "quoteStyle": "double"
+    "linter": {
+        "rules": {
+            "suspicious": {
+                "noConsole": "off",
+                "noUnknownAtRules": "off"
+            },
+            "a11y": {
+                "noSvgWithoutTitle": "off"
+            },
+            "style": {
+                "noEnum": "off",
+                "noNestedTernary": "off",
+                "noMagicNumbers": "off",
+                "useNamingConvention": "off"
+            },
+            "performance": {
+                "noNamespaceImport": "off"
+            },
+            "nursery": {
+                "useConsistentTypeDefinitions": "off",
+                "noUnnecessaryConditions": "off"
+            }
         }
     }
 }
