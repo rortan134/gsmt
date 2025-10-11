@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/routing";
 import { Copy } from "@components/copy";
 import { Header } from "@components/header";
-import { S1, S2 } from "@components/icons";
+import { S2 } from "@components/icons";
 import { Line } from "@components/line";
 import { LiveCount } from "@components/live-count";
 import { Navigation } from "@components/navigation";
@@ -106,7 +106,6 @@ export default function HomePage() {
                             </span>
                         </h1>
                         <div className="flex items-center justify-end space-x-3">
-                            <S1 />
                             <S2 />
                         </div>
                     </div>
