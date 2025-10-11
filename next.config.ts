@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
-const config: NextConfig = {
-    typedRoutes: true,
-};
+const config: NextConfig = {};
 
 const withNextIntl = createNextIntlPlugin();
 
