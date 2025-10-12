@@ -14,6 +14,7 @@
 
 # production
 /build
+prisma/client
 
 # misc
 .DS_Store
@@ -36,5 +37,3 @@ yarn-error.log*
 next-env.d.ts
 d.ts
 
-result
-*.pdf

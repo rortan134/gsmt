@@ -1,4 +1,3 @@
-import { Link } from "@/i18n/routing";
 import { Copy } from "@components/copy";
 import { Header } from "@components/header";
 import { S2 } from "@components/icons";
@@ -28,6 +27,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import * as React from "react";
+import { Link } from "@/i18n/routing";
 
 export const metadata: Metadata = {
     title: "Gilbert",
