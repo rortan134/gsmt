@@ -1,6 +1,7 @@
-/* biome-ignore lint/style/noExportedImports: re-export is intentional for app-wide configured dayjs */
+// biome-ignore lint/style/noExportedImports: Intentional
 import dayjs from "dayjs";
 import "dayjs/locale/es";
+import "dayjs/locale/es-mx";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import isBetween from "dayjs/plugin/isBetween";

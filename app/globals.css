@@ -218,3 +218,7 @@
     color: hsl(180 48% 48%);
     background-color: #bdffe8;
 }
+
+@view-transition {
+    navigation: auto;
+}

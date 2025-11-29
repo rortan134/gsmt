@@ -1,7 +1,7 @@
 "use client";
 
-import { Clock } from "@components/clock";
-import { dayjs } from "@lib/dayjs";
+import { Clock } from "@/app/components/clock";
+import { dayjs } from "@/app/lib/dayjs";
 import { useLocale } from "next-intl";
 import * as React from "react";
 

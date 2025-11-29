@@ -3,6 +3,8 @@
  */
 const REG_PATTERN = /\.0$/;
 
+// TODO: Use next-intl formatter instead
+
 /**
  * Format a number with a suffix (k, M, B) for better readability
  * @param num The number to format
@@ -29,11 +31,17 @@ export function formatCompactNumber(num: number | string): string {
 
     // Format with appropriate suffix
     if (absValue >= 1_000_000_000) {
-        formattedValue = `${(absValue / 1_000_000_000).toFixed(1).replace(REG_PATTERN, "")}B`;
+        formattedValue = `${(absValue / 1_000_000_000)
+            .toFixed(1)
+            .replace(REG_PATTERN, "")}B`;
     } else if (absValue >= 1_000_000) {
-        formattedValue = `${(absValue / 1_000_000).toFixed(1).replace(REG_PATTERN, "")}M`;
+        formattedValue = `${(absValue / 1_000_000)
+            .toFixed(1)
+            .replace(REG_PATTERN, "")}M`;
     } else if (absValue >= 1000) {
-        formattedValue = `${(absValue / 1000).toFixed(1).replace(REG_PATTERN, "")}k`;
+        formattedValue = `${(absValue / 1000)
+            .toFixed(1)
+            .replace(REG_PATTERN, "")}k`;
     } else {
         formattedValue = absValue.toString();
     }

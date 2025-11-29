@@ -6,9 +6,9 @@ import {
     DropdownMenuGroup,
     DropdownMenuItem,
     DropdownMenuTrigger,
-} from "@components/dropdown-menu";
-import { Languages } from "lucide-react";
+} from "@/app/components/dropdown-menu";
 import { Link } from "@/i18n/routing";
+import { Languages } from "lucide-react";
 
 const SpanishFlag = () => (
     <svg
@@ -18,6 +18,7 @@ const SpanishFlag = () => (
         width="21"
         xmlns="http://www.w3.org/2000/svg"
     >
+        <title>Spanish Flag</title>
         <path d="M289 63h21v9h-21v-9z" fill="#fcd669" />
         <path
             d="M289 64v-2a2 2 0 012-2h17a2 2 0 012 2v2zm19 11h-17a2 2 0 01-2-2v-2h21v2a2 2 0 01-2 2z"
@@ -45,6 +46,7 @@ const EnglishFlag = () => (
         width="21"
         xmlns="http://www.w3.org/2000/svg"
     >
+        <title>English Flag</title>
         <path
             d="M60 250H43a2 2 0 01-2-2v-7h8v-6h11a2 2 0 012 2v11a2 2 0 01-2 2z"
             fill="#e25950"
@@ -73,7 +75,7 @@ const EnglishFlag = () => (
     </svg>
 );
 
-const LanguageSelector = () => (
+const LanguageSelectMenu = () => (
     <DropdownMenu modal={false}>
         <DropdownMenuTrigger
             className="inline-flex size-5 items-center justify-center text-blue-600"
@@ -84,21 +86,25 @@ const LanguageSelector = () => (
         </DropdownMenuTrigger>
         <DropdownMenuContent>
             <DropdownMenuGroup>
-                <DropdownMenuItem asChild>
-                    <Link href="/" locale="es">
-                        <SpanishFlag />
-                        Español
-                    </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                    <Link href="/" locale="en">
-                        <EnglishFlag />
-                        English
-                    </Link>
-                </DropdownMenuItem>
+                <DropdownMenuItem
+                    render={
+                        <Link href="/" locale="es">
+                            <SpanishFlag />
+                            Español
+                        </Link>
+                    }
+                />
+                <DropdownMenuItem
+                    render={
+                        <Link href="/" locale="en">
+                            <EnglishFlag />
+                            English
+                        </Link>
+                    }
+                />
             </DropdownMenuGroup>
         </DropdownMenuContent>
     </DropdownMenu>
 );
 
-export { LanguageSelector };
+export { LanguageSelectMenu };

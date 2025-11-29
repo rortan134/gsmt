@@ -1,8 +1,8 @@
-import { cn } from "@lib/cn";
+import { cn } from "@/app/lib/cn";
 import type { Metadata, Viewport } from "next";
-import { Inter, Source_Serif_4 } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import type * as React from "react";
 import "./globals.css";
 

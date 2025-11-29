@@ -1,4 +1,4 @@
-import { LanguageSelector } from "@components/language-selector";
+import { LanguageSelectMenu } from "@/app/components/language-select";
 import { Link } from "@/i18n/routing";
 
 export const Header = () => (
@@ -11,6 +11,6 @@ export const Header = () => (
                 @gsmt
             </h1>
         </Link>
-        <LanguageSelector />
+        <LanguageSelectMenu />
     </header>
 );

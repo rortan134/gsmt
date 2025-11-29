@@ -1,4 +1,4 @@
-import { cn } from "@lib/cn";
+import { cn } from "@/app/lib/cn";
 import type * as React from "react";
 
 const Label = ({ className, ...props }: React.ComponentProps<"label">) => (

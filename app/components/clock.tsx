@@ -1,6 +1,6 @@
 "use client";
 
-import { dayjs } from "@lib/dayjs";
+import { dayjs } from "@/app/lib/dayjs";
 import * as React from "react";
 
 export const Clock = ({ timezone }: { timezone: string }) => {

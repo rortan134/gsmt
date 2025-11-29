@@ -1,6 +1,9 @@
 {
-    "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
-    "extends": ["ultracite"],
+    "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+    "extends": ["ultracite/core", "ultracite/react", "ultracite/next"],
+    "files": {
+        "includes": ["!**/public", "!**/messages", "!**/prisma/client"]
+    },
     "formatter": {
         "indentWidth": 4
     },
@@ -15,27 +18,25 @@
             "indentWidth": 4
         }
     },
+    "assist": {
+        "actions": {
+            "source": {
+                "organizeImports": "off",
+                "useSortedAttributes": "on",
+                "useSortedKeys": "off"
+            }
+        }
+    },
+    "css": {
+        "parser": {
+            "tailwindDirectives": true
+        }
+    },
     "linter": {
         "rules": {
-            "suspicious": {
-                "noConsole": "off",
-                "noUnknownAtRules": "off"
-            },
-            "a11y": {
-                "noSvgWithoutTitle": "off"
-            },
-            "style": {
-                "noEnum": "off",
-                "noNestedTernary": "off",
-                "noMagicNumbers": "off",
-                "useNamingConvention": "off"
-            },
             "performance": {
-                "noNamespaceImport": "off"
-            },
-            "nursery": {
-                "useConsistentTypeDefinitions": "off",
-                "noUnnecessaryConditions": "off"
+                "noNamespaceImport": "off",
+                "noBarrelFile": "off"
             }
         }
     }

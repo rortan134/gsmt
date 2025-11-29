@@ -1,8 +1,8 @@
 "use client";
 
+import { cn } from "@/app/lib/cn";
 import { Menu } from "@base-ui-components/react/menu";
-import { cn } from "@lib/cn";
-import * as React from "react";
+import type * as React from "react";
 
 const DropdownMenu = Menu.Root;
 
@@ -36,30 +36,18 @@ const DropdownMenuContent = ({
     </Menu.Portal>
 );
 
-interface DropdownMenuItemProps extends React.ComponentProps<typeof Menu.Item> {
-    asChild?: boolean;
-}
-
 const DropdownMenuItem = ({
-    asChild,
     className,
     children,
-    ...itemProps
-}: DropdownMenuItemProps) => (
+    ...props
+}: React.ComponentProps<typeof Menu.Item>) => (
     <Menu.Item
-        {...itemProps}
+        {...props}
         className={cn(
             "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
             className
         )}
-        render={
-            asChild && React.isValidElement(children)
-                ? (props) => React.cloneElement(children, props)
-                : undefined
-        }
-    >
-        {asChild ? null : children}
-    </Menu.Item>
+    />
 );
 
 export {

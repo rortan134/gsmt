@@ -4,7 +4,7 @@ import { Slot } from "@radix-ui/react-slot";
 import copy from "copy-to-clipboard";
 import * as React from "react";
 
-const Copy = ({
+const CopyToClipboard = ({
     text,
     ...props
 }: React.ComponentProps<typeof Slot> & { text: string }) => {
@@ -19,4 +19,4 @@ const Copy = ({
     return <Slot data-copied={copied} onClick={copyHandler} {...props} />;
 };
 
-export { Copy };
+export { CopyToClipboard };

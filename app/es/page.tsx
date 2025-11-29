@@ -1,17 +1,17 @@
-import { Copy } from "@components/copy";
-import { Header } from "@components/header";
-import { S2 } from "@components/icons";
-import { Line } from "@components/line";
-import { LiveCount } from "@components/live-count";
-import { Navigation } from "@components/navigation";
-import { PageShell } from "@components/page-shell";
-import { Projects } from "@components/projects";
-import { Signature } from "@components/signature";
-import { Timezone } from "@components/timezone";
-import { cn } from "@lib/cn";
-import { dayjs } from "@lib/dayjs";
-import { formatCompactNumber } from "@lib/format";
-import { getPageViewCount, UpdateServerViewCounter } from "@lib/views";
+import { CopyToClipboard } from "@/app/components/copy-to-clipboard";
+import { Header } from "@/app/components/header";
+import { S2 } from "@/app/components/icons";
+import { Line } from "@/app/components/line";
+import { LiveCount } from "@/app/components/live-count";
+import { PageShell } from "@/app/components/page-shell";
+import { Projects } from "@/app/components/projects";
+import { Signature } from "@/app/components/signature";
+import { Timezone } from "@/app/components/timezone";
+import { cn } from "@/app/lib/cn";
+import { dayjs } from "@/app/lib/dayjs";
+import { formatCompactNumber } from "@/app/lib/format";
+import { getPageViewCount, UpdateServerViewCounter } from "@/app/lib/views";
+import { Link } from "@/i18n/routing";
 import {
     ArrowUpRight,
     Braces,
@@ -25,7 +25,6 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import * as React from "react";
-import { Link } from "@/i18n/routing";
 
 export const metadata: Metadata = {
     title: "Gilberto",
@@ -161,7 +160,7 @@ export default function HomePage() {
                             <span className="sr-only">Correo electrónico</span>
                             gsmt.dev@gmail.com
                         </Link>
-                        <Copy text="gsmt.dev@gmail.com">
+                        <CopyToClipboard text="gsmt.dev@gmail.com">
                             <button
                                 aria-label="Copiar correo electrónico"
                                 className="group/btn absolute right-2 z-10 inline-flex size-5 items-center justify-center rounded-[40%] bg-card p-3 hover:opacity-100 active:opacity-50 group-hover:opacity-75"
@@ -174,7 +173,7 @@ export default function HomePage() {
                                     Copiar correo electrónico
                                 </span>
                             </button>
-                        </Copy>
+                        </CopyToClipboard>
                     </div>
                     <Link
                         className="flex h-9 w-full items-center justify-center rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit"
@@ -240,7 +239,6 @@ export default function HomePage() {
             <React.Suspense fallback={null}>
                 <UpdateServerViewCounter />
             </React.Suspense>
-            <Navigation />
         </PageShell>
     );
 }
