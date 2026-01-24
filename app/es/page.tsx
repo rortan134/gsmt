@@ -81,10 +81,10 @@ export default function HomePage() {
                         —&nbsp;desarrollador,{" "}
                         <span className="opacity-60">creador.</span>
                     </span>
-                    <Line className="-right-4 -top-20" variant="vertical" />
+                    <Line className="-top-20 -right-4" variant="vertical" />
                 </div>
                 <div className="relative flex items-end justify-end gap-3 md:gap-4">
-                    <Line className="-left-2 -top-20" variant="vertical" />
+                    <Line className="-top-20 -left-2" variant="vertical" />
                     <React.Suspense fallback={<PageViewsFallback />}>
                         <PageViews />
                     </React.Suspense>

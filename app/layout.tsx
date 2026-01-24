@@ -56,7 +56,7 @@ export default async function RootLayout({
                 </NextIntlClientProvider>
                 <figure
                     aria-hidden
-                    className="-z-10 pointer-events-none fixed inset-x-0 bottom-0 block h-28 flex-none select-none"
+                    className="pointer-events-none fixed inset-x-0 bottom-0 -z-10 block h-28 flex-none select-none"
                 >
                     <div
                         style={{

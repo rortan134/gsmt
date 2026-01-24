@@ -39,7 +39,7 @@ async function PageViews() {
         <span
             className={cn(
                 "relative inline-flex items-center whitespace-nowrap font-serif text-muted-foreground/80 text-xs",
-                "after:-top-8 after:-translate-x-1/2 after:pointer-events-none after:absolute after:left-1/2 after:z-10 after:whitespace-nowrap after:rounded-md after:border after:border-border after:bg-background after:px-2.5 after:py-1 after:font-medium after:text-[11px] after:text-foreground after:opacity-0 after:shadow-sm after:transition-opacity after:duration-150 after:content-[attr(data-full-count)] hover:after:opacity-100 focus-visible:after:opacity-100"
+                "after:pointer-events-none after:absolute after:-top-8 after:left-1/2 after:z-10 after:-translate-x-1/2 after:whitespace-nowrap after:rounded-md after:border after:border-border after:bg-background after:px-2.5 after:py-1 after:font-medium after:text-[11px] after:text-foreground after:opacity-0 after:shadow-sm after:transition-opacity after:duration-150 after:content-[attr(data-full-count)] hover:after:opacity-100 focus-visible:after:opacity-100"
             )}
             data-full-count={pageViewCount.toString()}
         >
@@ -85,10 +85,10 @@ export default function HomePage() {
                         <i className="mr-0.5">/ˈɡɪlbət/</i> —&nbsp;software
                         developer, <span className="opacity-60">maker.</span>
                     </span>
-                    <Line className="-right-4 -top-20" variant="vertical" />
+                    <Line className="-top-20 -right-4" variant="vertical" />
                 </div>
                 <div className="relative flex items-end justify-end gap-3 md:gap-4">
-                    <Line className="-left-2 -top-20" variant="vertical" />
+                    <Line className="-top-20 -left-2" variant="vertical" />
                     <React.Suspense fallback={<PageViewsFallback />}>
                         <PageViews />
                     </React.Suspense>

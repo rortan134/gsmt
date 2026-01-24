@@ -28,7 +28,7 @@ export const Line = ({
             "pointer-events-none absolute origin-center select-none bg-muted-foreground opacity-40 mix-blend-soft-light",
             {
                 "overflow-fade-x -inset-x-11 h-px": variant === "horizontal",
-                "overflow-fade-y -bottom-8 -top-6 w-px": variant === "vertical",
+                "overflow-fade-y -top-6 -bottom-8 w-px": variant === "vertical",
             },
             className
         )}
