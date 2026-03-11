@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/style/noNestedTernary: <explanation> */
 "use client";
 
 import { cn } from "@/app/lib/cn";
@@ -26,20 +25,10 @@ interface TextHighlighterProps extends React.ComponentProps<"div"> {
     as?: ElementType;
 
     /**
-     * How to trigger the animation
-     * @default "inView"
+     * Direction of the highlight animation
+     * @default "ltr" (left to right)
      */
-    triggerType?: "hover" | "ref" | "inView" | "auto";
-
-    /**
-     * Animation transition configuration
-     */
-    transition?: Transition;
-
-    /**
-     * Options for useInView hook when triggerType is "inView"
-     */
-    useInViewOptions?: UseInViewOptions;
+    direction?: HighlightDirection;
 
     /**
      * Highlight color (CSS color string). Also can be a function that returns a color string, eg:
@@ -48,10 +37,20 @@ interface TextHighlighterProps extends React.ComponentProps<"div"> {
     highlightColor?: string;
 
     /**
-     * Direction of the highlight animation
-     * @default "ltr" (left to right)
+     * Animation transition configuration
      */
-    direction?: HighlightDirection;
+    transition?: Transition;
+
+    /**
+     * How to trigger the animation
+     * @default "inView"
+     */
+    triggerType?: "hover" | "ref" | "inView" | "auto";
+
+    /**
+     * Options for useInView hook when triggerType is "inView"
+     */
+    useInViewOptions?: UseInViewOptions;
 }
 
 const TextHighlighter = ({
@@ -94,20 +93,23 @@ const TextHighlighter = ({
         reset: () => setIsAnimating(false),
     }));
 
-    const shouldAnimate =
-        triggerType === "hover"
-            ? isHovered
-            : triggerType === "inView"
-              ? triggerType === "inView"
-                  ? isInView
-                  : false
-              : triggerType === "ref"
-                ? isAnimating
-                : triggerType === "auto";
+    const shouldAnimate = (() => {
+        switch (triggerType) {
+            case "hover":
+                return isHovered;
+            case "inView":
+                return isInView;
+            case "ref":
+                return isAnimating;
+            case "auto":
+                return true;
+            default:
+                return false;
+        }
+    })();
 
     const ElementTag = as || "span";
 
-    // biome-ignore lint/complexity/noExcessiveCognitiveComplexity: <explanation>
     const getBackgroundSize = (animated: boolean) => {
         switch (currentDirection) {
             case "ltr":
