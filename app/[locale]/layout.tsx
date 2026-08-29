@@ -23,11 +23,6 @@ export const metadata: Metadata = {
         type: "website",
         url: "/",
     },
-    other: {
-        "applicable-device": "pc,mobile",
-        "msapplication-starturl": "/",
-        "msapplication-TileColor": "#000000",
-    },
     referrer: "origin",
     robots: { noimageindex: true },
     title: {
