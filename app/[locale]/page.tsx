@@ -51,7 +51,7 @@ export default async function HomePage({
                 <Line className="-top-20 right-5" variant="vertical" />
                 <Line className="-top-14" />
                 <Line className="-top-1.5" />
-                <Line className="top-10 w-10/11" />
+                <Line className="top-7 w-10/11 sm:top-11" />
                 <Line className="-bottom-2" />
                 <div className="flex w-full items-end justify-between">
                     <div className="flex flex-col gap-2">
@@ -66,7 +66,7 @@ export default async function HomePage({
                                 &nbsp;full-stack
                             </T>
                             <Line
-                                className="-top-24 -right-2"
+                                className="-top-24 -right-2 md:-right-25"
                                 variant="vertical"
                             />
                         </span>
