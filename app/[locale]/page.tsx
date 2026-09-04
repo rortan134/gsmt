@@ -116,7 +116,7 @@ export default async function HomePage({
                     </div>
                     <Link
                         className="flex h-9 w-full items-center justify-center whitespace-nowrap rounded-3xl border bg-transparent px-4 text-sm hover:opacity-100 active:opacity-50 group-hover:opacity-75 md:w-fit"
-                        href="https://github.com/rortan134"
+                        href="https://github.com/gilsmt"
                         rel="noreferrer"
                         target="_blank"
                         title="GitHub"
@@ -159,7 +159,7 @@ export default async function HomePage({
                         I&apos;m also a{" "}
                         <a
                             className="underline"
-                            href="https://github.com/rortan134?tab=stars"
+                            href="https://github.com/gilsmt?tab=stars"
                             rel="noreferrer"
                             target="_blank"
                         >
@@ -270,7 +270,7 @@ export default async function HomePage({
                                 <ExternalLink href="https://www.cachd.app">
                                     <T>Visit</T>
                                 </ExternalLink>
-                                <ExternalLink href="https://github.com/rortan134/cache-app">
+                                <ExternalLink href="https://github.com/gilsmt/cache-app">
                                     <T>View source</T>
                                 </ExternalLink>
                             </div>
@@ -297,7 +297,7 @@ export default async function HomePage({
                                 <ExternalLink href="https://minutedebate.com">
                                     <T>Visit</T>
                                 </ExternalLink>
-                                <ExternalLink href="https://github.com/rortan134/minutedebate">
+                                <ExternalLink href="https://github.com/gilsmt/minutedebate">
                                     <T>View source</T>
                                 </ExternalLink>
                             </div>
@@ -323,7 +323,7 @@ export default async function HomePage({
                                 <ExternalLink href="https://gsmt.link">
                                     <T>Visit</T>
                                 </ExternalLink>
-                                <ExternalLink href="https://github.com/rortan134/gsmt">
+                                <ExternalLink href="https://github.com/gilsmt/gsmt">
                                     <T>View source</T>
                                 </ExternalLink>
                             </div>
@@ -347,16 +347,16 @@ export default async function HomePage({
                                 </h2>
                             </T>
                             <div className="flex flex-wrap gap-x-4 gap-y-2">
-                                <ExternalLink href="https://github.com/rortan134/cleaning-mode">
+                                <ExternalLink href="https://github.com/gilsmt/cleaning-mode">
                                     cleaning-mode
                                 </ExternalLink>
                                 <ExternalLink href="https://useselectify.js.org/">
                                     use-selectify
                                 </ExternalLink>
-                                <ExternalLink href="https://github.com/rortan134/use-gif">
+                                <ExternalLink href="https://github.com/gilsmt/use-gif">
                                     use-gif
                                 </ExternalLink>
-                                <ExternalLink href="https://github.com/rortan134/react-bypass">
+                                <ExternalLink href="https://github.com/gilsmt/react-bypass">
                                     react-bypass
                                 </ExternalLink>
                             </div>
@@ -382,13 +382,13 @@ export default async function HomePage({
                                 </h2>
                             </T>
                             <div className="flex flex-wrap gap-x-4 gap-y-2">
-                                <ExternalLink href="https://github.com/rortan134/mandelbrot">
+                                <ExternalLink href="https://github.com/gilsmt/mandelbrot">
                                     mandelbrot
                                 </ExternalLink>
-                                <ExternalLink href="https://github.com/rortan134/chaos-equations">
+                                <ExternalLink href="https://github.com/gilsmt/chaos-equations">
                                     chaos-equations
                                 </ExternalLink>
-                                <ExternalLink href="https://github.com/rortan134/fractals">
+                                <ExternalLink href="https://github.com/gilsmt/fractals">
                                     fractals
                                 </ExternalLink>
                             </div>
@@ -441,7 +441,7 @@ export default async function HomePage({
                         </span>
                         <Link
                             className="truncate text-[10px] text-muted-foreground/60 underline underline-offset-4"
-                            href="https://github.com/rortan134/gsmt"
+                            href="https://github.com/gilsmt/gsmt.link"
                             rel="noreferrer"
                             target="_blank"
                         >
