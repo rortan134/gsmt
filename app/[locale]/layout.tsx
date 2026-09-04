@@ -1,4 +1,4 @@
-import { cn } from "@/app/lib/cn";
+import { cn } from "cn";
 import { GTProvider } from "gt-next";
 import type { Metadata, Viewport } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
@@ -19,21 +19,21 @@ export const metadata: Metadata = {
         description: "",
         locale: "en_US",
         siteName: "gsmt",
-        title: "Gilberto — Full-stack product developer",
+        title: "Gilberto | Full-stack product developer",
         type: "website",
         url: "/",
     },
     referrer: "origin",
     robots: { noimageindex: true },
     title: {
-        default: "Gilberto — Full-stack product developer",
+        default: "Gilberto | Full-stack product developer",
         template: "%s | @gsmt",
     },
     twitter: {
         card: "summary",
         creator: "@gsmmtt",
         description: "",
-        title: "Gilberto — Full-stack product developer",
+        title: "Gilberto | Full-stack product developer",
     },
 };
 

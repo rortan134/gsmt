@@ -17,7 +17,7 @@ const ExternalLink = ({
         target="_blank"
     >
         {children}
-        <ArrowUpRight className="mt-px inline-block size-3 opacity-80" />
+        <ArrowUpRight className="mt-px inline-block size-3" />
         <span
             aria-hidden
             className="absolute inset-0 top-1/2 left-1/2 h-11 w-[calc(100%+24px)] -translate-x-1/2 -translate-y-1/2"

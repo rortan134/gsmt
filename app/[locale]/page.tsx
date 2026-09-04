@@ -13,10 +13,10 @@ import { Carousel } from "@components/carousel";
 import { getLocales, T } from "gt-next";
 import {
     Braces,
+    Bug,
     Check,
     Clipboard,
     Github,
-    Globe,
     Mail,
     MapPin,
     TicketsPlane,
@@ -62,8 +62,8 @@ export default async function HomePage({
                             <T>
                                 <span className="mr-0.5 opacity-60">IPA</span>
                                 &nbsp;
-                                <i className="mr-0.5">/ˈɡɪl.bə.to/</i>{" "}
-                                —&nbsp;full-stack
+                                <i className="mr-0.5">/ˈɡɪl.bə.to/,</i>
+                                &nbsp;full-stack
                             </T>
                             <Line
                                 className="-top-24 -right-2"
@@ -152,11 +152,10 @@ export default async function HomePage({
                 </div>
                 <T>
                     <p className="text-foreground text-sm">
-                        Developer at heart, passionate about creating great
-                        experiences, and trying to solve real-world{" "}
-                        <Globe className="inline-block size-4 opacity-50" />{" "}
-                        problems through software with an eye for design.
-                        I&apos;m also a{" "}
+                        I&apos;m a programmer with an eye for design. I like
+                        solving problems{" "}
+                        <Bug className="inline-block size-4 opacity-50" /> with
+                        software. I&apos;m also a{" "}
                         <a
                             className="underline"
                             href="https://github.com/gilsmt?tab=stars"
@@ -172,13 +171,13 @@ export default async function HomePage({
                 </T>
                 <T>
                     <p className="text-foreground text-sm">
-                        I've built software across data pipelines{" "}
+                        I&apos;ve built data pipelines{" "}
                         <Braces className="inline-block size-4 opacity-50" />,
-                        dynamic web apps and APIs, charming native applications,
+                        web apps and APIs, charming native applications,
                         shaders, fractal simulations, data visualizations, and
-                        engaging in-app interactions. I take pride in often
-                        owning critical parts of a product and pushing things
-                        forward. I believe that a strong focus on{" "}
+                        in-app interactions. I take pride in often owning
+                        critical parts of a product and pushing things forward.
+                        I believe that a strong focus on{" "}
                         <Link
                             className="underline"
                             href="/fundamentals"
@@ -192,8 +191,8 @@ export default async function HomePage({
                 </T>
                 <T>
                     <p className="text-foreground text-sm">
-                        Outside of work, I continue to be a high-energy person.
-                        I&apos;m a swimming athlete who enjoys traveling{" "}
+                        Outside of work, I&apos;m just as energetic. I&apos;m a
+                        swimming athlete who enjoys traveling{" "}
                         <TicketsPlane className="inline-block size-4 opacity-50" />
                         , the gym, and cool looking watches
                         <Watch className="inline-block size-4 opacity-50" />.
@@ -206,8 +205,8 @@ export default async function HomePage({
                         Experience
                     </h2>
                     <p className="mb-4 text-foreground text-sm">
-                        Over the past years, I’ve been super lucky to work with
-                        some amazing people, on a variety of great projects,
+                        Over the past years, I&apos;ve been super lucky to work
+                        with some amazing people on a variety of great projects,
                         ranging from open-source libraries to large-scale
                         applications that are both challenging and rewarding.
                     </p>
@@ -223,18 +222,19 @@ export default async function HomePage({
                             </ExternalLink>
                             <T>
                                 <p className="text-foreground text-xs">
-                                    Built the platform foundations for Amazon
-                                    FBA and FBM sellers, replacing
+                                    Built the foundations of a platform for
+                                    Amazon FBA and FBM sellers, replacing
                                     spreadsheet-heavy catalog workflows with
                                     automated profit analysis, opportunity
-                                    detection, and smart restocking. I designed
-                                    and implemented core backend and data
-                                    pipelines across Python and TypeScript for
-                                    ASIN ingestion, SP-API integration, fee and
-                                    margin computation, and issue detection,
-                                    helping sellers monitor thousands of ASINs,
-                                    catch suppressed Buy Boxes or miscategorized
-                                    listings, and save money.
+                                    detection, and restocking suggestions. I
+                                    designed and implemented core backend and
+                                    data pipelines in Python and TypeScript,
+                                    covering ASIN ingestion, SP-API integration,
+                                    fee and margin computation, and issue
+                                    detection. Sellers use it to monitor
+                                    thousands of ASINs, catch suppressed Buy
+                                    Boxes and miscategorized listings, and save
+                                    money.
                                 </p>
                             </T>
                         </div>
@@ -247,18 +247,16 @@ export default async function HomePage({
                             </ExternalLink>
                             <T>
                                 <p className="text-foreground text-xs">
-                                    Core development of Infactura, an online
-                                    invoicing platform for freelancers and SMEs
-                                    in Spain focused on compliant electronic
-                                    invoicing, faster payments, and alignment
-                                    with AEAT, VeriFactu, and EU requirements.
-                                    Built the multi-tenant app with TypeScript,
-                                    React, Next.js, Prisma, and Postgres,
-                                    including invoice templating, recurring
-                                    billing, payment links, tax logic, automated
-                                    dunning flows, and a strong emphasis on
-                                    polished UX, typography, and branded
-                                    documents.
+                                    Core development team of Infactura, an
+                                    online invoicing platform for freelancers
+                                    and SMEs in Spain. The focus is compliant
+                                    electronic invoicing and faster online
+                                    payments. I helped build the multi-tenant
+                                    app with TypeScript, React, Next.js, Prisma,
+                                    and Postgres, including invoice templating,
+                                    recurring billing, payment links, and tax
+                                    logic. I put real care into the UX,
+                                    typography, and branded documents.
                                 </p>
                             </T>
                         </div>
@@ -276,16 +274,28 @@ export default async function HomePage({
                             </div>
                             <T>
                                 <p className="text-foreground text-xs">
-                                    Created Cache, a browser-first app that
-                                    brings bookmarks and saved content from
+                                    Created the Cache App, a browser-first app
+                                    that pulls bookmarks and saved content from
                                     different platforms into one searchable
-                                    workspace. I focused on dependable ingestion
-                                    pipelines, metadata normalization across
-                                    sources, and fast client-side search and
-                                    filtering, using modern React patterns, and
-                                    a Postgres-backed sync layer to keep
-                                    high-volume personal knowledge management
-                                    responsive.
+                                    workspace. I built the ingestion pipelines,
+                                    normalized metadata across sources, and made
+                                    search and filtering fast on the client. A
+                                    Postgres-backed sync layer keeps it
+                                    responsive even with a lot of saved content.
+                                </p>
+                            </T>
+                        </div>
+                        <div className="flex h-max min-h-full flex-1 flex-col gap-y-4 p-4">
+                            <h2 className="font-medium text-muted-foreground text-xs">
+                                Accenture summer internship
+                            </h2>
+                            <T>
+                                <p className="text-foreground text-xs">
+                                    Prototyped an agentic CV-parsing and
+                                    job-matching system with a team. A short
+                                    stint, but a hands-on one: LLM
+                                    orchestration, structured extraction, and
+                                    explainable recommendations.
                                 </p>
                             </T>
                         </div>
@@ -303,15 +313,15 @@ export default async function HomePage({
                             </div>
                             <T>
                                 <p className="text-foreground text-xs">
-                                    Built MinuteDebate, a real-time debating
+                                    Created MinuteDebate, a real-time debating
                                     game where two anonymous players argue a
                                     randomly assigned topic for 60 seconds each
                                     while an AI judge scores persuasion and
-                                    coherence. I designed the game loop,
-                                    low-latency real-time interactions, the
-                                    interface, and the LLM-powered evaluation
-                                    pipeline so players receive instant,
-                                    structured feedback.
+                                    coherence. I designed the game loop, the
+                                    interface, the low-latency real-time
+                                    interactions, and a LLM-powered evaluation
+                                    pipeline so players receive feedback the
+                                    second each turn ends.
                                 </p>
                             </T>
                         </div>
@@ -329,21 +339,19 @@ export default async function HomePage({
                             </div>
                             <T>
                                 <p className="text-foreground text-xs">
-                                    Designed and developed gsmt as both my
-                                    portfolio and a live playground for
-                                    interaction design, typography, and
-                                    performance experiments. It works as a
-                                    testbed for animations, layout systems, and
-                                    reusable component abstractions that later
-                                    inform production work, while staying
-                                    minimal, fast, and content-first.
+                                    Designed and developed as my portfolio and a
+                                    live playground for interaction design,
+                                    typography, and performance experiments. I
+                                    test animations, layout systems, and
+                                    component abstractions here before they make
+                                    it into real work.
                                 </p>
                             </T>
                         </div>
                         <div className="flex h-max min-h-full flex-1 flex-col gap-y-4 p-4">
                             <T>
                                 <h2 className="font-medium text-muted-foreground text-xs">
-                                    Developer Tools & UI Utilities
+                                    Developer tools & UI utilities
                                 </h2>
                             </T>
                             <div className="flex flex-wrap gap-x-4 gap-y-2">
@@ -362,23 +370,21 @@ export default async function HomePage({
                             </div>
                             <T>
                                 <p className="text-foreground text-xs">
-                                    Built focused tools for developers such as
+                                    Built minimalist power tools, like
                                     cleaning-mode, an Electron utility that
                                     temporarily disables keyboard and touch
-                                    input so devices can be cleaned safely,
-                                    alongside libraries like use-selectify,
-                                    use-gif, and react-bypass. These projects
-                                    reflect my interest in ergonomic APIs,
-                                    well-scoped abstractions, and closing the
-                                    gap between interaction design and
-                                    implementation.
+                                    input so you can clean your device safely,
+                                    alongside many developer libraries like
+                                    use-selectify, use-gif, and react-bypass...
+                                    I care about ergonomic APIs and small,
+                                    well-scoped abstractions.
                                 </p>
                             </T>
                         </div>
                         <div className="flex h-max min-h-full flex-1 flex-col gap-y-4 p-4">
                             <T>
                                 <h2 className="font-medium text-muted-foreground text-xs">
-                                    Creative Coding & Simulations
+                                    Creative coding & simulations
                                 </h2>
                             </T>
                             <div className="flex flex-wrap gap-x-4 gap-y-2">
@@ -391,18 +397,19 @@ export default async function HomePage({
                                 <ExternalLink href="https://github.com/gilsmt/fractals">
                                     fractals
                                 </ExternalLink>
+                                <ExternalLink href="https://github.com/gilsmt/base-ui-masonry">
+                                    base-ui-masonry
+                                </ExternalLink>
                             </div>
                             <T>
                                 <p className="text-foreground text-xs">
                                     Created a range of creative coding
-                                    experiments including Mandelbrot renderers,
-                                    chaos-equation visualizers, shaders, and
-                                    fluid and particle simulations. These
-                                    explorations pushed my understanding of
-                                    WebGL, canvas, numerical methods, and
-                                    browser performance while sharpening my
-                                    instincts for data visualization and motion
-                                    aesthetics.
+                                    experiments including Mandelbrot fractal
+                                    renderers, chaos-equation visualizers,
+                                    shaders, and fluid and particle simulations.
+                                    These explorations pushed my understanding
+                                    of WebGL, canvas, numerical methods, and
+                                    browser performance.
                                 </p>
                             </T>
                         </div>
@@ -424,7 +431,7 @@ export default async function HomePage({
                     <React.Suspense
                         fallback={
                             <span className="text-[10px] text-muted-foreground/60">
-                                <T>@ — GSMT. All rights reserved.</T>
+                                <T>@ Gilberto. All rights reserved.</T>
                             </span>
                         }
                     >
@@ -437,7 +444,7 @@ export default async function HomePage({
                 <div className="inline-flex shrink gap-1 md:gap-2">
                     <div className="inline-flex flex-col">
                         <span className="truncate text-[10px] text-muted-foreground/60">
-                            gsmt.link
+                            {process.env.NEXT_PUBLIC_VERCEL_URL}
                         </span>
                         <Link
                             className="truncate text-[10px] text-muted-foreground/60 underline underline-offset-4"

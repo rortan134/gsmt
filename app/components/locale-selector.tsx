@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/app/lib/cn";
+import { cn } from "cn";
 import { useLocaleSelector } from "gt-next";
 import { useRouter } from "next/navigation";
 

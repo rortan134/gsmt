@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/app/lib/cn";
+import { cn } from "cn";
 import { motion } from "motion/react";
 import type * as React from "react";
 
