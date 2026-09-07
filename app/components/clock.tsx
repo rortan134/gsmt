@@ -1,7 +1,7 @@
 "use client";
 
-import { dayjs } from "@/app/lib/dayjs";
 import * as React from "react";
+import { dayjs } from "@/app/lib/dayjs";
 
 const Clock = ({ timezone }: { timezone: string }) => {
     const [time, setTime] = React.useState(() => dayjs().tz(timezone));

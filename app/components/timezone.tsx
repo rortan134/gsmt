@@ -1,9 +1,9 @@
 "use client";
 
-import { Clock } from "@/app/components/clock";
-import { dayjs } from "@/app/lib/dayjs";
 import { T, useLocaleSelector } from "gt-next";
 import * as React from "react";
+import { Clock } from "@/app/components/clock";
+import { dayjs } from "@/app/lib/dayjs";
 
 const BASE_TIMEZONE = "Europe/Madrid";
 

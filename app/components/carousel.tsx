@@ -5,8 +5,8 @@ import {
     BlossomDot,
     BlossomDots,
 } from "@blossom-carousel/react";
-import * as React from "react";
 import { cn } from "cn";
+import * as React from "react";
 
 const Carousel = ({ children }: React.PropsWithChildren) => {
     const id = React.useId().replaceAll(":", "");

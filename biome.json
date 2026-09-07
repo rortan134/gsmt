@@ -5,50 +5,14 @@
         "ultracite/biome/next",
         "ultracite/biome/react"
     ],
-    "files": {
-        "includes": ["!**/public"]
-    },
-    "formatter": {
-        "indentWidth": 4
-    },
-    "javascript": {
-        "formatter": {
-            "indentWidth": 4,
-            "quoteStyle": "double"
-        }
-    },
-    "json": {
-        "formatter": {
-            "indentWidth": 4
-        }
-    },
-    "assist": {
-        "actions": {
-            "source": {
-                "organizeImports": "off",
-                "useSortedAttributes": "on",
-                "useSortedKeys": "on"
-            }
-        }
-    },
-    "css": {
-        "parser": {
-            "tailwindDirectives": true
-        }
-    },
+    "files": { "includes": ["!**/public"] },
+    "formatter": { "indentWidth": 4 },
+    "javascript": { "formatter": { "indentWidth": 4 } },
+    "json": { "formatter": { "indentWidth": 4 } },
     "linter": {
         "rules": {
             "performance": {
                 "noNamespaceImport": "off"
-            },
-            "style": {
-                "noIncrementDecrement": "off",
-                "useConsistentMethodSignatures": "off",
-                "useDestructuring": "off"
-            },
-            "suspicious": {
-                "noUnnecessaryConditions": "off",
-                "noUnknownAttribute": "off"
             }
         }
     }

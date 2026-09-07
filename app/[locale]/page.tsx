@@ -1,14 +1,3 @@
-import { CopyToClipboard } from "@/app/components/copy-to-clipboard";
-import { CopyrightLine } from "@/app/components/copyright-line";
-import { ExternalLink } from "@/app/components/external-link";
-import { Header } from "@/app/components/header";
-import { Line } from "@/app/components/line";
-import { Monogram } from "@/app/components/monogram";
-import { PageShell } from "@/app/components/page-shell";
-import { Signature } from "@/app/components/signature";
-import { Timezone } from "@/app/components/timezone";
-import { TodayDate } from "@/app/components/today-date";
-import ProfilePicture from "@/public/pfp.jpg";
 import { Carousel } from "@components/carousel";
 import { getLocales, T } from "gt-next";
 import {
@@ -27,6 +16,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
+import { CopyToClipboard } from "@/app/components/copy-to-clipboard";
+import { CopyrightLine } from "@/app/components/copyright-line";
+import { ExternalLink } from "@/app/components/external-link";
+import { Header } from "@/app/components/header";
+import { Line } from "@/app/components/line";
+import { Monogram } from "@/app/components/monogram";
+import { PageShell } from "@/app/components/page-shell";
+import { Signature } from "@/app/components/signature";
+import { Timezone } from "@/app/components/timezone";
+import { TodayDate } from "@/app/components/today-date";
+import ProfilePicture from "@/public/pfp.jpg";
 
 export const metadata: Metadata = {
     title: "Gilberto S.",

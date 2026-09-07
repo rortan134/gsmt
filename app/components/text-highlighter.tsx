@@ -3,9 +3,9 @@
 import { cn } from "cn";
 import {
     motion,
-    useInView,
     type Transition,
     type UseInViewOptions,
+    useInView,
 } from "motion/react";
 import { useEffect, useImperativeHandle, useRef, useState } from "react";
 

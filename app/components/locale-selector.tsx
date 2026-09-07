@@ -13,7 +13,7 @@ const LocaleSelector = () => {
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const value = e.target.value;
+        const { value } = e.target;
         const href = value === "en" ? "/" : `/${value}`;
         router.push(href);
     };

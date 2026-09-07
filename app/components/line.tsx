@@ -10,7 +10,7 @@ function getFactorFromProps(
 ): number {
     const s = `${variant}\0${className ?? ""}`;
     let h = 1;
-    for (let i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length; i += 1) {
         h = (Math.imul(h, 131) + s.charCodeAt(i)) % 1_000_000_007;
     }
     const t = (h % 1_000_000) / 1_000_000;
