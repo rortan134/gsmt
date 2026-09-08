@@ -173,20 +173,12 @@ export default async function HomePage({
                     <p className="text-foreground text-sm">
                         I&apos;ve built data pipelines{" "}
                         <Braces className="inline-block size-4 opacity-50" />,
-                        web apps and APIs, charming native applications,
-                        shaders, fractal simulations, data visualizations, and
-                        in-app interactions. I take pride in often owning
-                        critical parts of a product and pushing things forward.
-                        I believe that a strong focus on{" "}
-                        <Link
-                            className="underline"
-                            href="/fundamentals"
-                            rel="noreferrer"
-                            target="_blank"
-                        >
-                            fundamentals
-                        </Link>{" "}
-                        drives the greatest progress.
+                        web apps and APIs, native applications, shaders, fractal
+                        simulations, data visualizations, and in-app
+                        interactions. I take pride in often owning critical
+                        parts of a product and pushing things forward. I believe
+                        that a strong focus on fundamentals drives the greatest
+                        progress.
                     </p>
                 </T>
                 <T>

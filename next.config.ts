@@ -2,7 +2,17 @@ import { withBotId } from "botid/next/config";
 import { withGTConfig } from "gt-next/config";
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+    async redirects() {
+        return [
+            {
+                destination: "https://www.cachd.app/c/bTFxPm8AlpaK",
+                permanent: false,
+                source: "/fundamentals",
+            },
+        ];
+    },
+};
 
 export default withBotId(
     withGTConfig(nextConfig, {

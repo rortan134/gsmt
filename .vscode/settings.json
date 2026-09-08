@@ -5,6 +5,6 @@
     "js/ts.preferences.useAliasesForRenames": false,
     "emmet.showExpandedAbbreviation": "never",
     "editor.codeActionsOnSave": {
-        "source.organizeImports.biome": "explicit",
-    },
+        "source.organizeImports.biome": "explicit"
+    }
 }
